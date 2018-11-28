@@ -9,7 +9,7 @@ import { AddMenuComponent } from './Menues/add-menu/add-menu.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
+import {LoginComponent} from './Login/login.component';
 
 @NgModule({
   declarations: [

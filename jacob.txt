@@ -1,0 +1,6 @@
+28-11-2018
+Started making basic layout for the angular.
+*main page looks like mookup
+*functionallity of create menu and login(forms)
+*created modul
+*made a nvbar
