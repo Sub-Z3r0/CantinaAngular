@@ -1,7 +1,9 @@
+import {FoodIcon} from './FoodIcon';
+
 export class SpecialOffers
 {
   id: number;
   Name: string;
   Price: number;
-  Icon: string;
+  Icon: FoodIcon;
 }
