@@ -1,7 +1,16 @@
 <ul id="navbar">
   <li><a routerLink="/">Main screen</a></li>
-  <li><a >menues</a></li>
+  <li><a  >menues</a></li>
   <li><a>Offers of the day</a></li>
   <li><a>admin..</a></li>
-  <li style="float:right" routerLink="/login"><a>Login</a></li>
+
+    <li class="dropdown">
+      <button class="dropbtn" (click)= dropContentFunction()>Dropdown</button>
+
+      <h2 id="hey" class="dropdown-content">
+        <app-login></app-login>
+      </h2>
+  </li>
+
+
 </ul>
