@@ -5,11 +5,12 @@ import {environment} from '../../../environments/environment';
 import { map } from 'rxjs/operators';
 @Injectable()
 export class AuthenticationService {
-
+  loginUrl = String( 'api/User');
   constructor(private http: HttpClient) {}
 
+
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(environment.apiUrl + '/token', { username, password })
+    return this.http.post<any>(environment.apiUrl + this.loginUrl, { username, password })
       .pipe(map(response => {
         const token = response.token;
         // login successful if there's a jwt token in the response
@@ -25,18 +26,4 @@ export class AuthenticationService {
       }));
   }
 
-  getToken(): string {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser && currentUser.token;
-  }
-
-  getUsername(): string {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser && currentUser.username;
-  }
-
-  logout(): void {
-    // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
-  }
 }

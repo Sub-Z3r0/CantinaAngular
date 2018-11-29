@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  apiUrl: 'https://todoapi-hk-easv.azurewebsites.net'
+  apiUrl: 'https://easvcantinarestapisql.azurewebsites.net/'
 };
 
 /*

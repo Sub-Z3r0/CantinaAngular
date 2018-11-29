@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {eventNames} from 'cluster';
+import {element} from 'protractor';
 
 @Component({
   selector: 'app-nvbar',
@@ -22,8 +24,8 @@ export class NvbarComponent implements OnInit {
         navbar.classList.remove('sticky');
       }};
 
+
   }
-  loginBar = true;
 
    dropContentFunction(){
 

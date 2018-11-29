@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
+import {AuthenticationService} from './Shared/Service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {Router} from '@angular/router';
     NvbarComponent,
     AddMenuComponent,
     LoginComponent
+
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,9 @@ import {Router} from '@angular/router';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

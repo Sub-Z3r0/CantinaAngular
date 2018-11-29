@@ -4,3 +4,12 @@ Started making basic layout for the angular.
 *functionallity of create menu and login(forms)
 *created modul
 *made a nvbar
+29-11-2018
+*dropdown
+*login
+*backin login
+*azure ( Front end, write htttps else it continus from your local host then you make http request
+*pair programming
+- more time consuming 
+- smaller error 
+- most effect then we dont have to search for anything

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../Shared/Service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   errormessage = '';
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private authenticationService: AuthenticationService) { }
   ngOnInit() {
     //  Initialize the form group
     this.loginForm = this.formBuilder.group({
@@ -35,7 +37,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    /*this.authenticationService.login(this.username.value, this.password.value)
+    this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
         success => {
           this.router.navigate(['/']);
@@ -43,7 +45,7 @@ export class LoginComponent implements OnInit {
         error => {
           this.errormessage = error.message;
           this.loading = false;
-        });*/
+        });
   }
   //close the login popup if you click on the X
   close()
