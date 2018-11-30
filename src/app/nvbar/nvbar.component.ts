@@ -40,5 +40,19 @@ export class NvbarComponent implements OnInit {
 
   }
 
+  Scroll() {
+    window.scrollTo({
+      top: document.getElementById('MenuList').offsetTop,
+      left: document.getElementById('MenuList').offsetLeft,
+      behavior: 'smooth'
+    })
+  }
 
+  Scroll2() {
+    window.scrollTo({
+      top: document.getElementById('OfferList').offsetTop,
+      left: document.getElementById('OfferList').offsetLeft,
+      behavior: 'smooth'
+    })
+  }
 }

@@ -28,7 +28,7 @@ import {AuthenticationService} from './Shared/Service/authentication.service';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     AuthenticationService
