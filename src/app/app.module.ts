@@ -12,6 +12,9 @@ import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
 import {AuthenticationService} from './Shared/Service/authentication.service';
 import { AdminViewComponent } from './admin-view/admin-view.component';
+import { PopUpComponent } from './Allergen/pop-up/pop-up.component';
+import {WorkerService} from "./Shared/Service/worker.service";
+import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
     AddMenuComponent,
     LoginComponent,
     AdminViewComponent,
+    PopUpComponent,
+    AddWorkerComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
     BrowserAnimationsModule,
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    WorkerService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+<app-pop-up id="PopUpWindow" style="display: none"></app-pop-up>
 <div class="totd">
    <p id="TipOfDay">tips of the day</p>
 </div>
@@ -7,6 +8,7 @@
     <li id="Menu1">
       <img src="https://i.postimg.cc/FR3Q6kdS/hot-food-in-a-bowl.png" width="200px" height="200px" alt="">
       <div class="Labels">
+        <div (click)="PopUp()" class="Allergen"></div>
       <p class="MenuTitle" id="Menu1Title">Chicken Soup</p>
       <p class="IngredientsTitle" id="Menu1Ingredients">Chicken,Onion,Tomate</p>
       </div>

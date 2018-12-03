@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {root} from "rxjs/internal-compatibility";
 
 @Component({
   selector: 'app-welcome',
@@ -12,4 +13,12 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  PopUp() {
+    document.getElementById('PopUpWindow').style.display='block';
+    window.scrollTo({
+      top: 0,
+      left: 1,
+      behavior: 'smooth'
+    });
+  }
 }

@@ -1,10 +1,11 @@
 .list{
-  padding-top: 0.5%;
+  padding-top: 1.5%;
   display: flex;
   flex-wrap: wrap;
 }
 .Container{
   margin-right: 0.5%;
+  margin-bottom: 0.4%;
   padding: 0.4%;
   Border: 1px solid #e3e3e3;
   Background-color: #f2f2f2;
@@ -18,4 +19,24 @@ h2{
 }
 h3, p{
   line-height: 0.6;
+}
+button{
+  float: right;
+}
+.AddButton{
+  margin-top: 0.2%;
+  margin-right: 0.1%;
+  font-size: 40px;
+  float: left;
+  padding: 0.5%;
+  color: lightskyblue;
+  background-color: #333333;
+  border: none;
+  border-radius: 100px;
+}
+.AddButton:hover
+{
+  cursor: pointer;
+  background-color: #4e4e4e;
+  color: #5bf0fa;
 }

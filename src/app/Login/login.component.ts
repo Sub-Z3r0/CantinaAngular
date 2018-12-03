@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
   //close the login popup if you click on the X
   close()
   {
-    var dropBTN = document.getElementById('hey').style.display='';
+    var dropBTN = document.getElementById('dropbtn').style.display='';
 
   }
 }
