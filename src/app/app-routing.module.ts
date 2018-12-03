@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {AddMenuComponent} from './Menues/add-menu/add-menu.component';
 import {LoginComponent} from './Login/login.component';
+import {AdminViewComponent} from "./admin-view/admin-view.component";
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'menu-add', component: AddMenuComponent }
+  { path: 'menu-add', component: AddMenuComponent },
+  { path: 'adminview', component: AdminViewComponent }
 ];
 
 @NgModule({

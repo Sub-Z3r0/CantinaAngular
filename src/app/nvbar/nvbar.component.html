@@ -1,13 +1,11 @@
 <ul id="navbar">
-  <li><a routerLink="/">Main screen</a></li>
-  <li (click)="Scroll()"><a>Menues</a></li>
-  <li (click)="Scroll2()"><a>Offers of the day</a></li>
-  <li><a>admin..</a></li>
-
+  <li><div id="Logo"></div></li>
+  <li (click)="Scroll()"><div id="MenuElement"><div id="MenuElementBackground"></div></div></li>
+  <li (click)="Scroll2()"><div id="OfferElement"><div id="OfferElementBackground"></div></div></li>
+  <li routerLink="/adminview"><div id="Admin"><div id="AdminBackground"></div></div></li>
     <li class="dropdown">
-      <button class="dropbtn" (click)= dropContentFunction()>Sign In</button>
-
-      <h2 id="hey" class="dropdown-content">
+      <button (click)="Scroll3()" class="dropbtn" (click)= dropContentFunction()>Sign In</button>
+      <h2 id="dropbtn" class="dropdown-content">
         <app-login></app-login>
       </h2>
   </li>

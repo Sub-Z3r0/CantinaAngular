@@ -5,7 +5,6 @@ form {
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
-
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -13,7 +12,9 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
+.loXginDiv{
+  font-size: 25px;
+}
 /* Set a style for all buttons */
 button {
   background-color: #4CAF50;
@@ -29,31 +30,6 @@ button {
 button:hover {
   opacity: 0.8;
 }
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
-
 /* The "Forgot password" text */
 span.psw {
   float: right;
@@ -66,27 +42,17 @@ span.psw {
     display: block;
     float: none;
   }
-  .cancelbtn {
-    width: 100%;
-  }
 }
+
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
 }
-
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
-.loginDiv
-{
 
-  width: 100%;
-  margin: auto;
-
-}
 #close{
   float: right;
-
   z-index: 1;
-
+  margin: 3% 3% 0 0;
 }
