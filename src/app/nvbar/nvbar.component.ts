@@ -26,7 +26,12 @@ export class NvbarComponent implements OnInit {
 
 
   }
+  OTD()
+  {
+    var elmnt = document.getElementById("OTD");
+    elmnt.scrollIntoView();
 
+  }
    dropContentFunction(){
 
     if(document.getElementById('hey').style.display == '') {
@@ -41,4 +46,8 @@ export class NvbarComponent implements OnInit {
   }
 
 
+  Menu() {
+    var elmnt = document.getElementById("menu");
+    elmnt.scrollIntoView();
+  }
 }

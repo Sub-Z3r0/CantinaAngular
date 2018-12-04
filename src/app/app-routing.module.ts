@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {AddMenuComponent} from './Menues/add-menu/add-menu.component';
 import {LoginComponent} from './Login/login.component';
+import {ReadMenuesComponent} from './Menues/read-menues/read-menues.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },

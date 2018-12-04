@@ -12,6 +12,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
 import {AuthenticationService} from './Shared/Service/authentication.service';
+import { ReadMenuesComponent } from './Menues/read-menues/read-menues.component';
+import {MenuService} from './Shared/Service/menuService';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {AuthenticationService} from './Shared/Service/authentication.service';
     WelcomeComponent,
     NvbarComponent,
     AddMenuComponent,
-    LoginComponent
+    LoginComponent,
+    ReadMenuesComponent
 
   ],
   imports: [
@@ -31,7 +34,8 @@ import {AuthenticationService} from './Shared/Service/authentication.service';
     BrowserAnimationsModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    MenuService
   ],
   bootstrap: [AppComponent]
 })

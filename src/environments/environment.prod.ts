@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
 
-  apiUrl: 'https://easvcantinarestapisql.azurewebsites.net/'
+    apiUrl: 'https://easvcantinarestapisql.azurewebsites.net/'
 };
