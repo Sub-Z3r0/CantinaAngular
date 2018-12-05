@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="newMainFoodCSS.css">
+
+</head>
+
+<body>
+
+
+
+
+<!-- Submit NewMainFood-->
+<div class="submit">
+  <div class="title">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Submit Recipe</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="form-group">
+            <label>Recipe Title</label>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Choose category</label>
+            <select class="js-search-category form-control" name="category" data-placeholder="Choose Category">
+              <option value="1">Kris</option>
+              <option value="2">You</option>
+              <option value="3">Are</option>
+              <option value="4">Still</option>
+              <option value="5">A</option>
+              <option value="6">Massive</option>
+              <option value="7">Cock</option>
+              <option value="8">Turtle</option>
+
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Short summary</label>
+            <textarea class="form-control" rows="1" required="required"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Ingredients:</label>
+
+            <div id="sortable">
+              <div class="box ui-sortable-handle">
+                <div class="row">
+
+                  <div class="col-lg-5 col-sm-5">
+                    <input type="text" class="form-control" placeholder="Name of ingredient">
+                  </div>
+                  <div class="col-lg-5 col-sm-5">
+                    <form method="get">
+                      <label>Tick off box if this contains a known allergen</label>
+                      <input type="checkbox" name="allergenCheck">
+                    </form>
+                  </div>
+                  <div class="col-lg-1 col-sm-1">
+                    <i class="fa fa-times-circle-o minusbtn" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-newIng">Add New ingredient To Database</button>
+
+            </div>
+            <div class="form-group">
+              <label>Choose Ingredient from Database</label>
+              <select class="js-search-category form-control" name="category" >
+                <option value="1">Kris</option>
+                <option value="2">You</option>
+                <option value="3">Are</option>
+                <option value="4">Still</option>
+                <option value="5">A</option>
+                <option value="6">Massive</option>
+                <option value="7">Cock</option>
+                <option value="8">Turtle</option>
+
+              </select>
+              <button type="button" class="btn btn-IngFromList">Add Selected ingredient</button>
+            </div>
+
+
+          </div>
+
+
+
+
+          <button type="submit" class="btn btn-submit">Submit Food</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+
+</html>

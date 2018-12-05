@@ -3,7 +3,6 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
   top: 0;
 }
 
@@ -14,10 +13,10 @@ li a, .dropbtn {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: #6e6660;
 }
 
 .dropbtn {
@@ -31,8 +30,7 @@ li a:hover, .dropdown:hover .dropbtn {
   position: absolute;
   margin-left: 82%;
   margin-top: 50px;
-  background-color: #f9f9f9;
-
+  color: #fff;
   min-width: 10%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -45,6 +43,48 @@ li a:hover, .dropdown:hover .dropbtn {
    position: sticky;
  }
 
-.dropdown-content a:hover {background-color: #444444}
+.dropdown-content a:hover {background-color: #fff}
+
+.navbar {
+  background-color: #fff;
+}
+
+
+.navbar-brand{
+  font-family: 'Dancing Script', Georgia, Times, serif;
+  font-size: 100%;
+  color: white;
+}
+
+
+.navbar .navbar-nav .btn-submit-recipe {
+  position: absolute;
+  right: 30px;
+  top: 0px;
+}
+.navbar .navbar-nav .btn-submit-recipe a {
+  margin-top: 13px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #e13b2b;
+}
+.navbar .navbar-nav .btn-submit-recipe a i {
+  margin-right: 5px;
+  margin-bottom: -5px;
+}
+.navbar .navbar-nav .btn-submit-recipe a:hover {
+  text-decoration-color: #e13b2b;
+}
+
+h4
+{
+  position: relative;
+  top: -10px;
+  margin-bottom: -10px;
+  margin-top: -15px;
+  color: #e13b2b;
+  font-size: 20px;
+}
 
 
