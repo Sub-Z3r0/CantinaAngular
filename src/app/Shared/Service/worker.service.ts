@@ -27,15 +27,13 @@ id = 0;
       {id: this.id++, Name: 'YesName', Account:'Worker502', Password:'12345asdfSafe'}
     ]
   }
-  getWorkers():Workers[]{
+  getWorkers():Workers[] {
     return this.workers;
   }
-
   addWorker(worker: Workers) {
     worker.id = this.id++;
     this.workers.push(worker);
   }
-
   deleteWorker(id: number) {
     this.workers = this.workers.filter(work => work.id !== id);
   }
