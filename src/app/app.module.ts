@@ -15,6 +15,7 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
 import { PopUpComponent } from './Allergen/pop-up/pop-up.component';
 import {WorkerService} from "./Shared/Service/worker.service";
 import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
+import { SubmitFoodComponent } from './submit-food/submit-food.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
     AdminViewComponent,
     PopUpComponent,
     AddWorkerComponent,
+    SubmitFoodComponent
   ],
   imports: [
     BrowserModule,

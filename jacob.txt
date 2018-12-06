@@ -4,6 +4,7 @@ Started making basic layout for the angular.
 *functionallity of create menu and login(forms)
 *created modul
 *made a nvbar
+
 29-11-2018
 *dropdown
 *login
@@ -13,3 +14,9 @@ Started making basic layout for the angular.
 - more time consuming 
 - smaller error 
 - most effect then we dont have to search for anything
+
+30-11-2018
+* full crud for  maninfood
+* full crud for ingredients
+* almost crud(need update ) for MOTD
+* create unit test class

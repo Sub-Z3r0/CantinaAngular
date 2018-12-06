@@ -1,0 +1,34 @@
+.btn-submit {
+  position: relative;
+  margin-top: 13px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #e13b2b;
+  bottom: -12px;
+
+}
+
+.btn-newIng {
+  position: relative;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: black;
+  bottom: 0px;
+
+}
+
+.btn-IngFromList
+{
+  position: relative;
+  margin-top: 13px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: black;
+  bottom: -12px;
+
+}
