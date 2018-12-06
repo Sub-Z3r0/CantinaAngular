@@ -85,8 +85,18 @@ h4
   margin-top: -15px;
   color: #e13b2b;
   font-size: 20px;
-  font-family: 'Rancho', Georgia, Times, serif;
+  font-family: 'Dancing Script', Georgia, Times, serif;
 
 }
 
+.nav-link
+{
+  position: center;
+  align-self: center;
+}
+
+.nav-item
+{
+ position: center;
+}
 
