@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
 import {AuthenticationService} from './Shared/Service/authentication.service';
+import { SubmitFoodComponent } from './submit-food/submit-food.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AuthenticationService} from './Shared/Service/authentication.service';
     WelcomeComponent,
     NvbarComponent,
     AddMenuComponent,
-    LoginComponent
+    LoginComponent,
+    SubmitFoodComponent
 
   ],
   imports: [
