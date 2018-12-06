@@ -14,6 +14,7 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from './Shared/Service/authentication.service';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-ma
     AddMenuComponent,
     LoginComponent,
     SubmitFoodComponent,
-    ChooseMainPageItemsComponent
+    ChooseMainPageItemsComponent,
+    AdminViewComponent
 
   ],
   imports: [
