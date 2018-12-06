@@ -13,6 +13,7 @@ import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
 import {AuthenticationService} from './Shared/Service/authentication.service';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
+import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SubmitFoodComponent } from './submit-food/submit-food.component';
     NvbarComponent,
     AddMenuComponent,
     LoginComponent,
-    SubmitFoodComponent
+    SubmitFoodComponent,
+    ChooseMainPageItemsComponent
 
   ],
   imports: [
