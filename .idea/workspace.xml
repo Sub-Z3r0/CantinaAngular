@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0d5b093-2dca-4d00-801d-083d32829c54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/nvbar/nvbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/nvbar/nvbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/submit-food/submit-food.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/submit-food/submit-food.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/submit-food/submit-food.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/submit-food/submit-food.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nvbar/NewMainFood.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nvbar/newMainFoodCSS.css" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -142,8 +141,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/nvbar/nvbar.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="261">
+              <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -167,28 +166,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/nvbar/newMainFoodCSS.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="17" column="21" lean-forward="true" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/submit-food/submit-food.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/nvbar/NewMainFood.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="36" selection-end-line="125" />
             </state>
           </provider>
         </entry>
@@ -462,7 +443,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68112000" />
+    <option name="totallyTimeSpent" value="68207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="184" width="1419" height="826" extended-state="0" />
@@ -811,8 +792,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/nvbar/nvbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="261">
+          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
         </state>
       </provider>
     </entry>
