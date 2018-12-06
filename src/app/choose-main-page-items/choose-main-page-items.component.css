@@ -6,6 +6,8 @@
   border-radius: 4px;
   background-color: #e13b2b;
   bottom: -12px;
+  margin-left: 12px;
+  align-self: center;
 
 }
 
@@ -21,8 +23,7 @@
 
 }
 
-.btn-IngFromList
-{
+.btn-IngFromList {
   position: relative;
   margin-top: 13px;
   padding: 10px;
@@ -30,5 +31,19 @@
   border-radius: 4px;
   background-color: black;
   bottom: -12px;
+}
+
+
+.btn-custom
+{
+  position: relative;
+  margin-top: 13px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #e13b2b;
+  bottom: -12px;
+  margin-left: 12px;
 
 }
+

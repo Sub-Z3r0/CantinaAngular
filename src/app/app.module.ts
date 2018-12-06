@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -12,9 +11,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
 import {AuthenticationService} from './Shared/Service/authentication.service';
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import { PopUpComponent } from './Allergen/pop-up/pop-up.component';
+import {WorkerService} from './Shared/Service/worker.service';
+import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
-import { AdminViewComponent } from './admin-view/admin-view.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,11 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
     LoginComponent,
     SubmitFoodComponent,
     ChooseMainPageItemsComponent,
-    AdminViewComponent
-
+    AdminViewComponent,
+    AdminViewComponent,
+    PopUpComponent,
+    AddWorkerComponent,
+    SubmitFoodComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
     BrowserAnimationsModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    WorkerService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,31 @@
+
+.PopUpContainer{
+  z-index: 1000;
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: rgba(246,246,246, .8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+#close{
+  font-size: 20px;
+  z-index: 69;
+  text-align: right;
+  margin: 6px 10px 0 0;
+}
+#close:hover{
+  cursor: pointer;
+}
+.Message{
+  background-color: #f9ce32;
+ }
+.Sentence{
+  font-size: 30px;
+  margin: 70px;
+  text-decoration: underline;
+}

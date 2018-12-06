@@ -29,16 +29,36 @@ export class NvbarComponent implements OnInit {
 
    dropContentFunction(){
 
-    if(document.getElementById('hey').style.display == '') {
+    if(document.getElementById('dropbtn').style.display == '') {
 
-      var dropBTN = document.getElementById('hey').style.display = 'block';
+      var dropBTN = document.getElementById('dropbtn').style.display = 'block';
     }
     else
     {
-      var dropBTN = document.getElementById('hey').style.display='';
+      var dropBTN = document.getElementById('dropbtn').style.display='';
     }
 
   }
 
-
+  Scroll() {
+    window.scrollTo({
+      top: document.getElementById('MenuList').offsetTop,
+      left: document.getElementById('MenuList').offsetLeft,
+      behavior: 'smooth'
+    })
+  }
+  Scroll2() {
+    window.scrollTo({
+      top: document.getElementById('OfferList').offsetTop,
+      left: document.getElementById('OfferList').offsetLeft,
+      behavior: 'smooth'
+    })
+  }
+  Scroll3(){
+    window.scrollTo({
+      top: 0,
+      left: 1,
+      behavior: 'smooth'
+    })
+  }
 }
