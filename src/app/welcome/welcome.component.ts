@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {root} from "rxjs/internal-compatibility";
+import {Component, OnInit} from '@angular/core';
 import {MOTD} from '../Shared/models/MOTD';
-import {MotdService} from '../Shared/Service/motd.service';
-import {MainFood} from '../Shared/models/MainFood';
-import {MainFoodService} from '../Shared/Service/main-food.service';
 import {SpecialOffers} from '../Shared/models/SpecialOffers';
+import {MainFood} from '../Shared/models/MainFood';
+import {MotdService} from '../Shared/Service/motd.service';
+import {MainFoodService} from '../Shared/Service/main-food.service';
 import {SpecielOffersService} from '../Shared/Service/speciel-offers.service';
+
 
 @Component({
   selector: 'app-welcome',
