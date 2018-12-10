@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {root} from "rxjs/internal-compatibility";
+import {MOTD} from '../Shared/models/MOTD';
+import {MotdService} from '../Shared/Service/motd.service';
 
 @Component({
   selector: 'app-welcome',
@@ -7,10 +9,18 @@ import {root} from "rxjs/internal-compatibility";
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
-  constructor() { }
+  motd: MOTD;
+  constructor(private motdService: MotdService) { }
 
   ngOnInit() {
+    this.refresh();
+  }
+  refresh()
+  {
+    this.motdService.getMOTDById(2)
+      .subscribe(listOfPets => {
+        this.motd = listOfPets;
+      });
   }
 
   PopUp() {
