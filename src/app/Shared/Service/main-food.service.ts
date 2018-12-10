@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {MOTD} from '../models/MOTD';
 import {MainFood} from '../models/MainFood';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

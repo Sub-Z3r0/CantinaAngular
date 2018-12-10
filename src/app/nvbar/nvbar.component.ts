@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {eventNames} from 'cluster';
 import {element} from 'protractor';
+import {tryCatch} from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-nvbar',
@@ -15,10 +16,7 @@ export class NvbarComponent implements OnInit {
   ngOnInit() {
     var navbar = document.getElementById('navbar');
 
-
-      var sticky = navbar.offsetTop;
-
-
+    var sticky = navbar.offsetTop;
 
 
     window.onscroll = function() {
