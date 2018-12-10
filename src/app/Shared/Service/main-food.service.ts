@@ -7,9 +7,21 @@ import {Ingredients} from "../models/Ingredients";
 })
 export class MainFoodService {
 mainFood:MainFood[];
-
+id=0;
   constructor() {
-
+    this.mainFood = [
+      {id:this.id++,
+        Name:'StrongChicken',
+        Icon:{id:2,
+          type:'MeatIcon'},
+        Ingredients:{id:1, type:'ASDF',foodIcon:{
+          id:1,
+            type:'FDSA'}
+            },
+        Allergen:{id:1,
+          type:'Lactose'}
+      }
+    ]
   }
   getMainFood():MainFood[]{
     return this.mainFood;
