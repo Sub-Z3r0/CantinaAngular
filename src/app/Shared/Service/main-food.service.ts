@@ -3,19 +3,20 @@ import {HttpClient} from '@angular/common/http';
 import {MOTD} from '../models/MOTD';
 import {MainFood} from '../models/MainFood';
 import {Observable} from 'rxjs';
+import {environment} from '../../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainFoodService {
-  apiUrl = 'https://cantinaappdatabase.azurewebsites.net/api/mainFood';
+  apiUrl = 'api/mainFood';
   constructor(private http: HttpClient) {
 
   }
   getMainFood(): Observable<MainFood[]>
   {
     return this.http.get<MainFood[]>
-    (this.apiUrl);
+    (environment.apiUrl+this.apiUrl);
   }
  /* addMainFood(mainFood: MainFood) {
     mainFood.id = this.id++;

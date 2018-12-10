@@ -82,29 +82,17 @@
     <p>Offers of the day</p>
   </div>
   <div class="top">
-    <div class="container">
-      <div class="row">
+          <div class="container" *ngIf="specielOffers">
+          <div class="row" *ngFor="let offers of specielOffers">
         <div class="col-lg-4">
           <h3><i class="fa fa-cutlery" aria-hidden="true"></i> Daily Choice 1</h3>
           <div class="box clearfix">
-            <h3>A lovely Chicken Soup</h3>
-            <p>May Contain Chicken</p>
+            <h3>{{offers.specialOfferName}}</h3>
+            <p>{{offers.price  }}DKR</p>
           </div>
         </div>
-        <div class="col-lg-4">
-          <h3><i class="fa fa-cutlery" aria-hidden="true"></i> Daily Choice 2</h3>
-          <div class="box clearfix">
-            <h3>Meat, Potato and sauce</h3>
-            <p>May Contain Peanuts</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <h3><i class="fa fa-cutlery" aria-hidden="true"></i> Daily Choice 3</h3>
-          <div class="box clearfix">
-            <h3>Nachos</h3>
-            <p>Beware of lactose intolerance</p>
-          </div>
-        </div>
+
+
       </div>
     </div>
   </div>

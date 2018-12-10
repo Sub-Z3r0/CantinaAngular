@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  apiUrl: 'https://easvcantinarestapisql.azurewebsites.net/'
+  apiUrl: 'https://cantinaappdatabase.azurewebsites.net/'
 };
 
 /*
