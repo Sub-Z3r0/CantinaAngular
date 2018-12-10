@@ -1,32 +1,23 @@
 import { Injectable } from '@angular/core';
-import {MainFood} from "../models/MainFood";
-import {Ingredients} from "../models/Ingredients";
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {MOTD} from '../models/MOTD';
+import {MainFood} from '../models/MainFood';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainFoodService {
-mainFood:MainFood[];
-id=0;
-  constructor() {
-    this.mainFood = [
-      {id:this.id++,
-        Name:'StrongChicken',
-        Icon:{id:2,
-          type:'MeatIcon'},
-        Ingredients:{id:1, type:'ASDF',foodIcon:{
-          id:1,
-            type:'FDSA'}
-            },
-        Allergen:{id:1,
-          type:'Lactose'}
-      }
-    ]
+  apiUrl = 'https://cantinaappdatabase.azurewebsites.net/api/mainFood';
+  constructor(private http: HttpClient) {
+
   }
-  getMainFood():MainFood[]{
-    return this.mainFood;
+  getMainFood(): Observable<MainFood[]>
+  {
+    return this.http.get<MainFood[]>
+    (this.apiUrl);
   }
-  addMainFood(mainFood: MainFood) {
+ /* addMainFood(mainFood: MainFood) {
     mainFood.id = this.id++;
     this.mainFood.push(mainFood);
   }
@@ -37,5 +28,5 @@ id=0;
   }
   deleteMainFood(id: number) {
     this.mainFood = this.mainFood.filter(mf => mf.id !== id);
-  }
+  }*/
 }

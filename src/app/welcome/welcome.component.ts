@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {root} from "rxjs/internal-compatibility";
 import {MOTD} from '../Shared/models/MOTD';
 import {MotdService} from '../Shared/Service/motd.service';
+import {MainFood} from '../Shared/models/MainFood';
+import {MainFoodService} from '../Shared/Service/main-food.service';
 
 @Component({
   selector: 'app-welcome',
@@ -10,7 +12,8 @@ import {MotdService} from '../Shared/Service/motd.service';
 })
 export class WelcomeComponent implements OnInit {
   motd: MOTD;
-  constructor(private motdService: MotdService) { }
+  mainfoods: MainFood[];
+  constructor(private motdService: MotdService, private  mainFoodService: MainFoodService) { }
 
   ngOnInit() {
     this.refresh();
@@ -21,6 +24,10 @@ export class WelcomeComponent implements OnInit {
       .subscribe(listOfPets => {
         this.motd = listOfPets;
       });
+    this.mainFoodService.getMainFood().subscribe(listOfMenues => {
+    this.mainfoods= listOfMenues;
+    });
+
   }
 
   PopUp() {

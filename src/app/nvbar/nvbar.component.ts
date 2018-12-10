@@ -14,7 +14,11 @@ export class NvbarComponent implements OnInit {
 
   ngOnInit() {
     var navbar = document.getElementById('navbar');
-    var sticky = navbar.offsetTop;
+
+
+      var sticky = navbar.offsetTop;
+
+
 
 
     window.onscroll = function() {

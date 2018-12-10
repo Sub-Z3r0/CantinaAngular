@@ -34,10 +34,11 @@
 
 
         <div class="box grid recipes">
+          <div  *ngIf="motd">
           <div class="by"><i class="fa fa-user" aria-hidden="true"></i>{{motd.tipOfTheDay}}</div>
+            </div>
+          </div>
 
-
-        </div>
 
       </div>
 
@@ -48,50 +49,28 @@
   <div class="mainHeader">
     <p>Today's Menu</p>
   </div>
-<div class="top">
-  <ul>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-      <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
-        <div class="box clearfix">
-          <img src="images/square-recipes1.jpg" alt="">
-          <h3>A lovely Chicken Soup</h3>
+  <div class="top">
+    <ul>
+      <div class="container" *ngIf=mainfoods>
+        <div class="row" *ngFor="let main of mainfoods">
+          <div class="col-lg-4">
+            <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
+            <div class="box clearfix">
 
-          <li>
-          <h6><p>May Contain Chicken</p></h6>
-          </li>
+              <h3>{{main.mainFoodName}}</h3>
 
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 2</h3>
-        <div class="box clearfix">
-          <img src="images/square-recipes2.jpg" alt="">
-          <h3>Meat, Potato and sauce</h3>
+              <li>
+                <h6><p>{{main.recipeLines}}</p></h6>
+              </li>
 
-          <li>
-          <h6><p>May Contain Peanuts</p></h6>
-          </li>
+            </div>
+          </div>
+
 
         </div>
       </div>
-      <div class="col-lg-4">
-        <i class="fa fa-cutlery" aria-hidden="true"></i> <h3>Daily Choice 3</h3>
-        <div class="box clearfix">
-       <img src="images/square-recipes3.jpg" alt="">
-          <h3>Nachos</h3>
-
-          <li>
-          <h6><p>Beware of lactose intolerance</p></h6>
-          </li>
-
-        </div>
-      </div>
-    </div>
+    </ul>
   </div>
-  </ul>
- </div>
 
 </div>
 

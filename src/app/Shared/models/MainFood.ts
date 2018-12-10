@@ -1,12 +1,12 @@
 import {FoodIcon} from './FoodIcon';
 import {Allergen} from './Allergen';
-import {Ingredients} from "./Ingredients";
+import {RecipeLine} from './RecipeLine';
 
 export class MainFood
 {
   id: number;
-  Name: string;
-  Ingredients: Ingredients;
-  Allergen: Allergen;
-  Icon: FoodIcon;
+  mainFoodName : string;
+  recipeLines?: RecipeLine[];
+  allergensTypeId? : Allergen[];
+  foodIconId? : number;
 }
