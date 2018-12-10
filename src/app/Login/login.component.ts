@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit {
   // Getters for easy access to form fields
   get username() { return this.loginForm.get('username'); }
   get password() { return this.loginForm.get('password'); }
+
   onSubmit() {
+    console.log("hey");
     this.submitted = true;
 
     // stop here if form is invalid
@@ -53,4 +55,6 @@ export class LoginComponent implements OnInit {
     var dropBTN = document.getElementById('dropbtn').style.display='';
 
   }
+
+
 }
