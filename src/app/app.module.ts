@@ -28,7 +28,6 @@ import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-ma
     SubmitFoodComponent,
     ChooseMainPageItemsComponent,
     AdminViewComponent,
-    AdminViewComponent,
     PopUpComponent,
     AddWorkerComponent,
     SubmitFoodComponent
