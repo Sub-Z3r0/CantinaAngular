@@ -34,22 +34,28 @@
     </div>
   </div>
   <div class="content">
-    <div class="container">
+    <div class="container" *ngIf=mainfoods>
       <div class="row">
+          <div class="col-lg-12">
+
+            <div class="form-group">
+              <label>Choose Daily Food 1</label>
+              <select  class="js-search-category form-control" name="category" data-placeholder="Choose Category">
+                <ng-container *ngFor="let main of mainfoods">
+                  <option value="{{main.mainFoodName}}">{{main.mainFoodName}}</option>
+                </ng-container>
+              </select>
+            </div>
+          </div>
+
         <div class="col-lg-12">
 
           <div class="form-group">
-            <label>Choose Daily Food 1</label>
+            <label>Choose Daily Food 2</label>
             <select class="js-search-category form-control" name="category" data-placeholder="Choose Category">
-              <option value="1">Kris</option>
-              <option value="2">You</option>
-              <option value="3">Are</option>
-              <option value="4">Still</option>
-              <option value="5">A</option>
-              <option value="6">Massive</option>
-              <option value="7">Cock</option>
-              <option value="8">Turtle</option>
-
+              <ng-container *ngFor="let main of mainfoods">
+                <option value="{{main.mainFoodName}}">{{main.mainFoodName}}</option>
+              </ng-container>
             </select>
           </div>
 
@@ -57,59 +63,30 @@
           <div class="col-lg-12">
 
             <div class="form-group">
-              <label>Choose Daily Food 2</label>
+              <label>Choose Daily Food 3</label>
               <select class="js-search-category form-control" name="category" data-placeholder="Choose Category">
-                <option value="1">Kris</option>
-                <option value="2">You</option>
-                <option value="3">Are</option>
-                <option value="4">Still</option>
-                <option value="5">A</option>
-                <option value="6">Massive</option>
-                <option value="7">Cock</option>
-                <option value="8">Turtle</option>
-
+                <ng-container *ngFor="let main of mainfoods">
+                  <option value="{{main.mainFoodName}}">{{main.mainFoodName}}</option>
+                </ng-container>
               </select>
             </div>
-
 
             <div class="col-lg-12">
 
               <div class="form-group">
-                <label>Choose Daily Food 3</label>
+                <label>Choose Tip Of The Day</label>
                 <select class="js-search-category form-control" name="category" data-placeholder="Choose Category">
-                  <option value="1">Kris</option>
-                  <option value="2">You</option>
-                  <option value="3">Are</option>
-                  <option value="4">Still</option>
-                  <option value="5">A</option>
-                  <option value="6">Massive</option>
-                  <option value="7">Cock</option>
-                  <option value="8">Turtle</option>
+                  <ng-container *ngFor="let main of mainfoods">
+                    <option value="{{main.mainFoodName}}">{{main.mainFoodName}}</option>
+                  </ng-container>
 
                 </select>
-              </div>
-
-              <div class="col-lg-12">
-
-                <div class="form-group">
-                  <label>Choose Tip Of The Day</label>
-                  <select class="js-search-category form-control" name="category" data-placeholder="Choose Category">
-                    <option value="1">Kris</option>
-                    <option value="2">You</option>
-                    <option value="3">Are</option>
-                    <option value="4">Still</option>
-                    <option value="5">A</option>
-                    <option value="6">Massive</option>
-                    <option value="7">Cock</option>
-                    <option value="8">Turtle</option>
-
-                  </select>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

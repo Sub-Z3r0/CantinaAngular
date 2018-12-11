@@ -84,6 +84,7 @@ export class NvbarComponent implements OnInit {
         success => {
           this.router.navigate(['adminview']);
           document.getElementById('id01').style.display='none';
+          window.location.reload();
         },
         error => {
           this.errormessage = error.message;
