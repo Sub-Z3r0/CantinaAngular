@@ -18,10 +18,11 @@ export class MainFoodService {
     return this.http.get<MainFood[]>
     (this.apiUrl);
   }
- /* addMainFood(mainFood: MainFood) {
-    mainFood.id = this.id++;
-    this.mainFood.push(mainFood);
-  }
+
+  addMainFood(mainFood : MainFood): Observable<MainFood>
+  {
+    return this.http.post<MainFood>(this.apiUrl, mainFood);
+  }/*
   upgradeMainFood(mainFood:MainFood){
     const foodToUpdate = this.mainFood.find(mf => mf.id === mainFood.id);
     const index = this.mainFood.indexOf(foodToUpdate);

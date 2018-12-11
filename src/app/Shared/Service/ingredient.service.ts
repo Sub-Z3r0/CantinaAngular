@@ -10,9 +10,7 @@ export class IngredientService {
 ingredients: Ingredients[];
 id= 0;
 constructor() {
-  this.ingredients = [
-    {id: this.id++, type:'Cereal', foodIcon:{id:1, type:'CerealIcon'}}
-  ]
+
 }
 
 
