@@ -30,7 +30,7 @@ export class NvbarComponent implements OnInit {
     });
 
     // reset login status
-    this.authenticationService.logout();
+    //this.authenticationService.logout();
 
 
     window.onscroll = function() {

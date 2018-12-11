@@ -5,7 +5,7 @@ import {environment} from '../../../environments/environment';
 import { map } from 'rxjs/operators';
 @Injectable()
 export class AuthenticationService {
-  loginUrl = String( 'https://cantinafakedb.azurewebsites.net/api/user');
+  loginUrl = String( 'https://cantinaappdatabase.azurewebsites.net/api/user');
   constructor(private http: HttpClient) {}
 
 
