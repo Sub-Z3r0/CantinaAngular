@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {eventNames} from 'cluster';
 import {element} from 'protractor';
+import {tryCatch} from 'rxjs/internal-compatibility';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../Shared/Service/authentication.service';
 
 @Component({
   selector: 'app-nvbar',
@@ -8,13 +12,25 @@ import {element} from 'protractor';
   styleUrls: ['./nvbar.component.css']
 })
 export class NvbarComponent implements OnInit {
-
-  constructor() {
+  loginForm: FormGroup;
+  submitted = false;
+  loading = false;
+  errormessage = '';
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private authenticationService: AuthenticationService) {
   }
 
   ngOnInit() {
     var navbar = document.getElementById('navbar');
-    var sticky = navbar.offsetTop;
+
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+
+    // reset login status
+    this.authenticationService.logout();
 
 
     window.onscroll = function() {
@@ -23,7 +39,6 @@ export class NvbarComponent implements OnInit {
       } else {
         navbar.classList.remove('sticky');
       }};
-
 
   }
 
@@ -60,5 +75,26 @@ export class NvbarComponent implements OnInit {
       left: 1,
       behavior: 'smooth'
     })
+  }
+  get username() { return this.loginForm.get('username'); }
+  get password() { return this.loginForm.get('password'); }
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.authenticationService.login(this.username.value, this.password.value)
+      .subscribe(
+        success => {
+          this.router.navigate(['adminview']);
+        },
+        error => {
+          this.errormessage = error.message;
+          this.loading = false;
+        });
   }
 }

@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {AddMenuComponent} from './Menues/add-menu/add-menu.component';
-import {LoginComponent} from './Login/login.component';
-import {AdminViewComponent} from './admin-view/admin-view.component';
 import {PopUpComponent} from './Allergen/pop-up/pop-up.component';
+import {AdminViewComponent} from './admin-view/admin-view.component';
 import {AddWorkerComponent} from './Workers/add-worker/add-worker.component';
 import {SubmitFoodComponent} from './submit-food/submit-food.component';
 import {ChooseMainPageItemsComponent} from './choose-main-page-items/choose-main-page-items.component';
+import {NgModule} from '@angular/core';
+
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },

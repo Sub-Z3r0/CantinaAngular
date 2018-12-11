@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {root} from "rxjs/internal-compatibility";
+import {Component, OnInit} from '@angular/core';
 import {MOTD} from '../Shared/models/MOTD';
+import {SpecialOffers} from '../Shared/models/SpecialOffers';
+import {MainFood} from '../Shared/models/MainFood';
 import {MotdService} from '../Shared/Service/motd.service';
+import {MainFoodService} from '../Shared/Service/main-food.service';
+import {SpecielOffersService} from '../Shared/Service/speciel-offers.service';
+
 
 @Component({
   selector: 'app-welcome',
@@ -10,7 +14,9 @@ import {MotdService} from '../Shared/Service/motd.service';
 })
 export class WelcomeComponent implements OnInit {
   motd: MOTD;
-  constructor(private motdService: MotdService) { }
+  mainfoods: MainFood[];
+  specielOffers: SpecialOffers[];
+  constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService) { }
 
   ngOnInit() {
     this.refresh();
@@ -21,6 +27,12 @@ export class WelcomeComponent implements OnInit {
       .subscribe(listOfPets => {
         this.motd = listOfPets;
       });
+    this.mainFoodService.getMainFood().subscribe(listOfMenues => {
+    this.mainfoods = listOfMenues;
+    });
+    this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
+      this.specielOffers = listOfOffers;
+    });
   }
 
   PopUp() {

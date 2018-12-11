@@ -1,5 +1,5 @@
 export class Allergen
 {
-  id: number;
-  type: string;
+  id?: number;
+  allergenType? : string;
 }
