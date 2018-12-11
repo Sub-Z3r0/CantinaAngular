@@ -8,7 +8,6 @@ import {Observable} from 'rxjs';
 })
 export class MotdService {
 
-  constructor() { }
 
   apiUrl = 'https://cantinaappdatabase.azurewebsites.net/api/motd';
   constructor(private http: HttpClient) { }
