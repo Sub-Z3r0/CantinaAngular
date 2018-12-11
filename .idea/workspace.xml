@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0d5b093-2dca-4d00-801d-083d32829c54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Menues/add-menu/add-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Menues/add-menu/add-menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/nvbar/nvbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/nvbar/nvbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/welcome/welcome.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/welcome/welcome.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/submit-food/submit-food.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/submit-food/submit-food.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -164,22 +160,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/welcome/welcome.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="19" column="194" selection-start-line="19" selection-start-column="194" selection-end-line="19" selection-end-column="194" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/nvbar/nvbar.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+            <state relative-caret-position="610">
+              <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
@@ -187,14 +171,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/nvbar/nvbar.component.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Menues/add-menu/add-menu.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="21" column="77" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/submit-food/submit-food.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -257,7 +247,6 @@
         <option value="$PROJECT_DIR$/src/app/admin-view/admin-view.component.css" />
         <option value="$PROJECT_DIR$/src/app/submit-food/submit-food.component.css" />
         <option value="$PROJECT_DIR$/src/app/Menues/add-menu/add-menu.component.css" />
-        <option value="$PROJECT_DIR$/src/app/submit-food/submit-food.component.html" />
         <option value="$PROJECT_DIR$/src/app/choose-main-page-items/choose-main-page-items.component.html" />
         <option value="$PROJECT_DIR$/src/app/choose-main-page-items/choose-main-page-items.component.css" />
         <option value="$PROJECT_DIR$/src/app/admin-view/admin-view.component.html" />
@@ -293,6 +282,7 @@
         <option value="$PROJECT_DIR$/src/app/Menues/add-menu/add-menu.component.ts" />
         <option value="$PROJECT_DIR$/src/app/nvbar/nvbar.component.html" />
         <option value="$PROJECT_DIR$/src/app/nvbar/nvbar.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/submit-food/submit-food.component.html" />
       </list>
     </option>
   </component>
@@ -354,6 +344,13 @@
               <item name="CantinaAngular" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CantinaAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CantinaAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="choose-main-page-items" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,13 +381,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="submit-food" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CantinaAngular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CantinaAngular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CantinaAngular" type="b2602c69:ProjectViewProjectNode" />
@@ -501,7 +491,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103186000" />
+    <option name="totallyTimeSpent" value="103192000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -513,10 +503,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="0" y="59" width="1419" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36285526" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36337626" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -652,9 +642,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Login/login.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Login/login.component.spec.ts" />
     <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -786,34 +774,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding>
-            <element signature="n#src#0;n#img#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Login/login.component.html" />
+    <entry file="file://$PROJECT_DIR$/src/app/Login/login.component.ts" />
     <entry file="file://$PROJECT_DIR$/src/app/nvbar/nvbar.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@angular/router/src/router.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -844,15 +808,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Menues/add-menu/add-menu.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="315">
           <caret line="21" column="77" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/submit-food/submit-food.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="460">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
         </state>
       </provider>
     </entry>
@@ -901,8 +865,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/nvbar/nvbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+        <state relative-caret-position="610">
+          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
