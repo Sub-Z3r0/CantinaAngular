@@ -13,7 +13,7 @@ import {CommonModule} from '@angular/common';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'menu-add', component: AddMenuComponent, canActivate: [AuthGuard]  },
+  { path: 'menu-add', component: AddMenuComponent},
   { path: 'adminview', component: AdminViewComponent, canActivate: [AuthGuard] },
   { path: 'adminview/addworker', component: AddWorkerComponent, canActivate: [AuthGuard]  },
   { path: 'allergen', component: PopUpComponent },

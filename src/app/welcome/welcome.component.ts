@@ -5,6 +5,7 @@ import {MainFood} from '../shared/models/MainFood';
 import {MotdService} from '../shared/Service/motd.service';
 import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
+import {AuthenticationService} from '../shared/Service/authentication.service';
 
 
 @Component({
@@ -16,9 +17,10 @@ export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
-  constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService) { }
+  constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
+    this.authenticationService.logout();
     this.refresh();
   }
   refresh()

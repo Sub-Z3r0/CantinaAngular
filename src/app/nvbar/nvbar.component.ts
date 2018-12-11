@@ -24,8 +24,8 @@ export class NvbarComponent implements OnInit {
     this.usernames = authenticationService.getUsername();
   }
 
-  ngOnInit() {
-    this.authenticationService.logout();
+  ngOnInit()
+  {
     var navbar = document.getElementById('navbar');
 
     this.loginForm = this.formBuilder.group({
