@@ -34,14 +34,16 @@
     </div>
   </div>
   <div class="content">
-    <div class="container">
+
       <div class="row">
+        <div class="container" *ngIf=mainfoods>
+        <div  *ngFor="let main of mainfoods">
         <div class="col-lg-12">
 
           <div class="form-group">
             <label>Choose Daily Food 1</label>
             <select class="js-search-category form-control" name="category" data-placeholder="Choose Category">
-              <option value="1">Kris</option>
+              <option value="1">{{main.mainFoodName}}</option>
               <option value="2">You</option>
               <option value="3">Are</option>
               <option value="4">Still</option>
@@ -52,7 +54,8 @@
 
             </select>
           </div>
-
+        </div>
+        </div>
 
           <div class="col-lg-12">
 
@@ -109,10 +112,10 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
-</div>
 <button type="submit" class="btn btn-submit">Submit Food</button>
 
 <button class="btn btn-custom" routerLink="/adminview">Back</button>
