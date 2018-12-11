@@ -28,18 +28,6 @@ export class NvbarComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
-    // reset login status
-    //this.authenticationService.logout();
-
-
-    window.onscroll = function() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add('sticky')
-      } else {
-        navbar.classList.remove('sticky');
-      }};
-
   }
 
    dropContentFunction(){

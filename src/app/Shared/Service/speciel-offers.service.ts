@@ -14,8 +14,7 @@ export class SpecielOffersService {
   apiUrl = 'https://cantinaappdatabase.azurewebsites.net/api/SpecialOffers';
   constructor(private http: HttpClient) { }
 
-  getSpecielFood(): Observable<SpecialOffers[]>
-  {
+  getSpecielFood(): Observable<SpecialOffers[]> {
     return this.http.get<SpecialOffers[]>
     (this.apiUrl);
   }
