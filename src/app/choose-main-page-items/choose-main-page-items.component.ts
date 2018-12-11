@@ -14,7 +14,7 @@ import {AuthenticationService} from '../shared/Service/authentication.service';
   styleUrls: ['./choose-main-page-items.component.css']
 })
 export class ChooseMainPageItemsComponent implements OnInit {
-  motd: MOTD;
+  motd: MOTD[];
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
   constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
@@ -26,16 +26,16 @@ export class ChooseMainPageItemsComponent implements OnInit {
   }
   refresh()
   {
-    this.motdService.getMOTDById(2)
-      .subscribe(listOfPets => {
-        this.motd = listOfPets;
-      });
+
     this.mainFoodService.getMainFood().subscribe(listOfMenues => {
       this.mainfoods = listOfMenues;
     });
     this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
     });
+    this.motdService.getMOTDAll().subscribe(listOfMotd => {
+      this.motd = listOfMotd;
+    } )
   }
 
 }
