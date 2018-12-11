@@ -16,6 +16,7 @@ import {WorkerService} from './shared/Service/worker.service';
 import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
+import {AuthGuard} from './_guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-ma
   ],
   providers: [
     AuthenticationService,
+    AuthGuard,
     WorkerService
   ],
   bootstrap: [AppComponent]

@@ -7,16 +7,18 @@ import {AddWorkerComponent} from './Workers/add-worker/add-worker.component';
 import {SubmitFoodComponent} from './submit-food/submit-food.component';
 import {ChooseMainPageItemsComponent} from './choose-main-page-items/choose-main-page-items.component';
 import {NgModule} from '@angular/core';
+import {AuthGuard} from './_guards/auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'menu-add', component: AddMenuComponent },
-  { path: 'adminview', component: AdminViewComponent},
-  { path: 'adminview/addworker', component: AddWorkerComponent },
+  { path: 'menu-add', component: AddMenuComponent, canActivate: [AuthGuard]  },
+  { path: 'adminview', component: AdminViewComponent, canActivate: [AuthGuard] },
+  { path: 'adminview/addworker', component: AddWorkerComponent, canActivate: [AuthGuard]  },
   { path: 'allergen', component: PopUpComponent },
-  { path: 'submit-food', component: SubmitFoodComponent},
-  { path: 'app-choose-main-page-items', component: ChooseMainPageItemsComponent}
+  { path: 'submit-food', component: SubmitFoodComponent, canActivate: [AuthGuard] },
+  { path: 'app-choose-main-page-items', component: ChooseMainPageItemsComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
