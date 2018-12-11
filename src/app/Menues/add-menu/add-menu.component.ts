@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {MainFoodService} from '../../Shared/Service/main-food.service';
+import {MainFoodService} from '../../shared/Service/main-food.service';
 
 @Component({
   selector: 'app-add-menu',
