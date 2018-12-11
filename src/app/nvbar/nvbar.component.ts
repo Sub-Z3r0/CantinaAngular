@@ -15,13 +15,17 @@ export class NvbarComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   loading = false;
+  usernames: string;
   errormessage = '';
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService)
+  {
+    this.usernames = authenticationService.getUsername();
   }
 
   ngOnInit() {
+    this.authenticationService.logout();
     var navbar = document.getElementById('navbar');
 
     this.loginForm = this.formBuilder.group({

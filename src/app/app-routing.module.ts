@@ -8,6 +8,7 @@ import {SubmitFoodComponent} from './submit-food/submit-food.component';
 import {ChooseMainPageItemsComponent} from './choose-main-page-items/choose-main-page-items.component';
 import {NgModule} from '@angular/core';
 import {AuthGuard} from './_guards/auth.guard';
+import {CommonModule} from '@angular/common';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
