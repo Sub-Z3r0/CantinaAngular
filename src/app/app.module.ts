@@ -8,7 +8,6 @@ import { AddMenuComponent } from './Menues/add-menu/add-menu.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
 import {AuthenticationService} from './shared/Service/authentication.service';
 import { AdminViewComponent } from './admin-view/admin-view.component';
@@ -24,7 +23,6 @@ import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-ma
     WelcomeComponent,
     NvbarComponent,
     AddMenuComponent,
-    LoginComponent,
     SubmitFoodComponent,
     ChooseMainPageItemsComponent,
     AdminViewComponent,
