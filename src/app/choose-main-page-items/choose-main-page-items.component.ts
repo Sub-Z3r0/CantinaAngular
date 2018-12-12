@@ -41,10 +41,30 @@ export class ChooseMainPageItemsComponent implements OnInit {
       this.motd = listOfMotd;
     } )
 
-    this.mainfoods.
   }
 
 
-  hey() {
+
+  saveDailyChoice() {
+
+    if (this.selected1 != undefined)
+    {
+      this.mainFoodService.chooseDailyFood(this.selected1)
+
+    }
+
+    if (this.selected2 != undefined)
+    {
+      this.mainFoodService.chooseDailyFood(this.selected2)
+
+    }
+
+    if (this.selected3 != undefined)
+    {
+    this.mainFoodService.chooseDailyFood(this.selected3)
+    }
+
   }
+
+
 }
