@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {MOTD} from '../shared/models/MOTD';
-import {SpecialOffers} from '../shared/models/SpecialOffers';
-import {MainFood} from '../shared/models/MainFood';
-import {MotdService} from '../shared/Service/motd.service';
-import {MainFoodService} from '../shared/Service/main-food.service';
-import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
-import {AuthenticationService} from '../shared/Service/authentication.service';
+import {MOTD} from '../Shared/models/MOTD';
+import {SpecialOffers} from '../Shared/models/SpecialOffers';
+import {MainFood} from '../Shared/models/MainFood';
+import {MotdService} from '../Shared/Service/motd.service';
+import {MainFoodService} from '../Shared/Service/main-food.service';
+import {SpecielOffersService} from '../Shared/Service/speciel-offers.service';
+import {AuthenticationService} from '../Shared/Service/authentication.service';
 
 
 @Component({

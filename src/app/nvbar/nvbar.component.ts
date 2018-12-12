@@ -4,7 +4,7 @@ import {element} from 'protractor';
 import {tryCatch} from 'rxjs/internal-compatibility';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../shared/Service/authentication.service';
+import {AuthenticationService} from '../Shared/Service/authentication.service';
 
 @Component({
   selector: 'app-nvbar',
