@@ -17,6 +17,7 @@ import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
 import {AuthGuard} from './_guards/auth.guard';
+import {MatSnackBarModule} from '@angular/material';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {AuthGuard} from './_guards/auth.guard';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
   ],
   providers: [
     AuthenticationService,

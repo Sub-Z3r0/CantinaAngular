@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
-import {Workers} from "../models/Workers";
 import {Ingredients} from "../models/Ingredients";
-import {worker} from "cluster";
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {environment} from '../../../environments/environment.prod';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class IngredientService {
 ingredients: Ingredients[];
+apiUrl = environment.apiUrl + 'api/ingredients';
 id= 0;
-constructor() {
+constructor(private http: HttpClient) {
 
 }
 
 
-getIngredients():Ingredients[]{
-  return this.ingredients;
+getIngredients():Observable<Ingredients[]>{
+  const params = new HttpParams()
+  return this.http.get<Ingredients[]>(this.apiUrl, {params, params});
 }
 addIngredient(ingredients: Ingredients) {
   ingredients.id = this.id++;
