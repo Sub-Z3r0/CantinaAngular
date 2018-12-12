@@ -17,6 +17,8 @@ import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
 import {AuthGuard} from './_guards/auth.guard';
+import { AddMotdComponent } from './add-motd/add-motd.component';
+import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import {AuthGuard} from './_guards/auth.guard';
     AdminViewComponent,
     PopUpComponent,
     AddWorkerComponent,
-    SubmitFoodComponent
+    SubmitFoodComponent,
+    AddMotdComponent,
+    AddSpecieloffersComponent
   ],
   imports: [
     BrowserModule,

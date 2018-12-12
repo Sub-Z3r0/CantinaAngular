@@ -35,18 +35,20 @@
   </div>
   <div class="content">
 
-      <div class="row">
+      <div class="row" formGroup="dF1">
         <div class="container" *ngIf=mainfoods>
 
         <div class="col-lg-12">
 
           <div class="form-group">
             <label>Choose Daily Food 1</label>
+
             <select class="js-search-category form-control" name="category" data-placeholder="Choose Category"
                     [(ngModel)]="selected1">
 
               <ng-container *ngFor="let main of mainfoods">
               <option [ngValue]="main">{{main.mainFoodName}}</option>
+
 
               </ng-container>
             </select>
@@ -61,7 +63,9 @@
                       data-placeholder="Choose Category" [(ngModel)]="selected2" >
 
                 <ng-container *ngFor="let main of mainfoods">
+
                   <option [ngValue]="main">{{main.mainFoodName}}</option>
+
 
                 </ng-container>
               </select>
@@ -77,7 +81,9 @@
                       [(ngModel)]="selected3">
 
                 <ng-container *ngFor="let main of mainfoods">
+
                   <option [ngValue]="main">{{main.mainFoodName}}</option>
+
 
                 </ng-container>
               </select>
