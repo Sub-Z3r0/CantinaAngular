@@ -29,8 +29,9 @@ export class WelcomeComponent implements OnInit {
       .subscribe(listOfPets => {
         this.motd = listOfPets;
       });
-
-    this.mainfoods = this.mainFoodService.readDailyFood();
+    this.mainFoodService.getMainFood().subscribe(listOfMenues => {
+    this.mainfoods = listOfMenues;
+    });
     this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
     });
