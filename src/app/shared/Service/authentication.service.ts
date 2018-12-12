@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthenticationService {
-  loginUrl = String( 'https://cantinaappdatabase.azurewebsites.net/api/user');
+  loginUrl = String( 'https://cantinaappdatabase.azurewebsites.net/api/authentication');
   constructor(private http: HttpClient) {}
 
 
