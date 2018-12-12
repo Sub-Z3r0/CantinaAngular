@@ -24,9 +24,12 @@ export class MainFoodService {
 
   chooseDailyFood( dailyFood : MainFood)
   {
-    this.dailyFoodList().push(dailyFood);
+    this.dailyFoodList.push(dailyFood);
   }
-
+  readDailyFood() : MainFood[]
+  {
+    return this.dailyFoodList;
+  }
   addMainFood(mainFood : MainFood): Observable<MainFood>
   {
     return this.http.post<MainFood>(this.apiUrl, mainFood);
