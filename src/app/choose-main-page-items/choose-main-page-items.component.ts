@@ -36,6 +36,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
     this.motdService.getMOTDAll().subscribe(listOfMotd => {
       this.motd = listOfMotd;
     } )
+
   }
 
 }
