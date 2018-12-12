@@ -17,9 +17,9 @@ export class ChooseMainPageItemsComponent implements OnInit {
   motd: MOTD[];
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
-  selected1 : MainFood;
-  selected2 : MainFood;
-  selected3 : MainFood;
+  selected1 : MainFood[];
+  selected2 : MainFood[];
+  selected3 : MainFood[];
   selected4 : MOTD;
   constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
 
@@ -34,12 +34,14 @@ export class ChooseMainPageItemsComponent implements OnInit {
     this.mainFoodService.getMainFood().subscribe(listOfMenues => {
       this.mainfoods = listOfMenues;
     });
+
     this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
     });
+
     this.motdService.getMOTDAll().subscribe(listOfMotd => {
       this.motd = listOfMotd;
-    } )
+    } );
 
   }
 
@@ -47,23 +49,27 @@ export class ChooseMainPageItemsComponent implements OnInit {
 
   saveDailyChoice() {
 
-    if (this.selected1 != undefined)
+    if (this.selected1 != null)
     {
-      this.mainFoodService.chooseDailyFood(this.selected1)
+    console.log("1");
+      this.mainFoodService.chooseDailyFood(this.selected1);
 
     }
 
-    if (this.selected2 != undefined)
+    if (this.selected2 != null)
     {
-      this.mainFoodService.chooseDailyFood(this.selected2)
+      console.log("2");
+      this.mainFoodService.chooseDailyFood(this.selected2);
 
     }
 
-    if (this.selected3 != undefined)
+    if (this.selected3 != null)
     {
-    this.mainFoodService.chooseDailyFood(this.selected3)
+      console.log("3");
+    this.mainFoodService.chooseDailyFood(this.selected3);
     }
-
+    localStorage.removeItem('dailyFood');
+    localStorage.setItem('dailyFood', JSON.stringify(this.mainFoodService.dailyFoodList));
   }
 
 

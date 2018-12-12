@@ -31,10 +31,12 @@ export class WelcomeComponent implements OnInit {
       });
 
     this.mainfoods = this.mainFoodService.readDailyFood();
+    console.log(this.mainfoods);
     this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
+      console.log(this.specielOffers);
     });
-  }
+      }
 
   PopUp() {
     document.getElementById('PopUpWindow').style.display='block';
