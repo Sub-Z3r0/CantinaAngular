@@ -15,10 +15,11 @@ const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'menu-add', component: AddMenuComponent},
   { path: 'adminview', component: AdminViewComponent },
-  { path: 'adminview/addworker', component: AddWorkerComponent  },
+
+  { path: 'adminview/addworker', component: AddWorkerComponent },
   { path: 'allergen', component: PopUpComponent },
   { path: 'submit-food', component: SubmitFoodComponent},
-  { path: 'app-choose-main-page-items', component: ChooseMainPageItemsComponent},
+    { path: 'app-choose-main-page-items', component: ChooseMainPageItemsComponent },
   { path: '**', redirectTo: '' },
 ];
 

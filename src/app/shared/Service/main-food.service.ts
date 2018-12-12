@@ -13,10 +13,18 @@ export class MainFoodService {
   constructor(private http: HttpClient) {
 
   }
+
+  dailyFoodList: MainFood[];
+
   getMainFood(): Observable<MainFood[]>
   {
     return this.http.get<MainFood[]>
     (this.apiUrl);
+  }
+
+  chooseDailyFood( dailyFood : MainFood)
+  {
+    this.dailyFoodList().push(dailyFood);
   }
 
   addMainFood(mainFood : MainFood): Observable<MainFood>
