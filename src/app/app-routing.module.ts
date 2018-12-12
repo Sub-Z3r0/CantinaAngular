@@ -9,13 +9,14 @@ import {ChooseMainPageItemsComponent} from './choose-main-page-items/choose-main
 import {NgModule} from '@angular/core';
 import {AuthGuard} from './_guards/auth.guard';
 import {CommonModule} from '@angular/common';
+import {AddSpecieloffersComponent} from './add-specieloffers/add-specieloffers.component';
 
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'menu-add', component: AddMenuComponent},
   { path: 'adminview', component: AdminViewComponent },
-
+  { path: 'add-specielOffers', component: AddSpecieloffersComponent },
   { path: 'adminview/addworker', component: AddWorkerComponent },
   { path: 'allergen', component: PopUpComponent },
   { path: 'submit-food', component: SubmitFoodComponent},
