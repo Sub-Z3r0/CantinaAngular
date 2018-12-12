@@ -15,7 +15,7 @@ _searchIngredient : string;
   ngOnInit() {
     this.ingredientService.getIngredients().subscribe(ingList => {
       this.ingredients = ingList, this.filterIngredients = ingList});
-    
+
   }
   get searchIngredient(): string {
     return this._searchIngredient;

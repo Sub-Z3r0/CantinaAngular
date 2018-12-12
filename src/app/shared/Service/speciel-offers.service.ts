@@ -18,4 +18,8 @@ export class SpecielOffersService {
     return this.http.get<SpecialOffers[]>
     (this.apiUrl);
   }
+
+  addpecielOffers(specielOffers: SpecialOffers) {
+    return this.http.post<SpecialOffers>(this.apiUrl, specielOffers);
+  }
 }
