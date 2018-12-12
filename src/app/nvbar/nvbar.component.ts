@@ -4,7 +4,7 @@ import {element} from 'protractor';
 import {tryCatch} from 'rxjs/internal-compatibility';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../Shared/Service/authentication.service';
+import {AuthenticationService} from '../shared/Service/authentication.service';
 
 @Component({
   selector: 'app-nvbar',
@@ -15,31 +15,23 @@ export class NvbarComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   loading = false;
+  usernames: string;
   errormessage = '';
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService)
+  {
+    this.usernames = authenticationService.getUsername();
   }
 
-  ngOnInit() {
+  ngOnInit()
+  {
     var navbar = document.getElementById('navbar');
 
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
-    // reset login status
-    this.authenticationService.logout();
-
-
-    window.onscroll = function() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add('sticky')
-      } else {
-        navbar.classList.remove('sticky');
-      }};
-
   }
 
    dropContentFunction(){
@@ -91,6 +83,7 @@ export class NvbarComponent implements OnInit {
       .subscribe(
         success => {
           this.router.navigate(['adminview']);
+          document.getElementById('id01').style.display='none';
         },
         error => {
           this.errormessage = error.message;

@@ -8,15 +8,18 @@ import { AddMenuComponent } from './Menues/add-menu/add-menu.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LoginComponent} from './Login/login.component';
 import {Router} from '@angular/router';
-import {AuthenticationService} from './Shared/Service/authentication.service';
+import {AuthenticationService} from './shared/Service/authentication.service';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { PopUpComponent } from './Allergen/pop-up/pop-up.component';
-import {WorkerService} from './Shared/Service/worker.service';
+import {WorkerService} from './shared/Service/worker.service';
 import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
+import {AuthGuard} from './_guards/auth.guard';
+import { AddMotdComponent } from './add-motd/add-motd.component';
+import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers.component';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +27,14 @@ import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-ma
     WelcomeComponent,
     NvbarComponent,
     AddMenuComponent,
-    LoginComponent,
     SubmitFoodComponent,
     ChooseMainPageItemsComponent,
     AdminViewComponent,
-    AdminViewComponent,
     PopUpComponent,
     AddWorkerComponent,
-    SubmitFoodComponent
+    SubmitFoodComponent,
+    AddMotdComponent,
+    AddSpecieloffersComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +42,11 @@ import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-ma
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     AuthenticationService,
+    AuthGuard,
     WorkerService
   ],
   bootstrap: [AppComponent]

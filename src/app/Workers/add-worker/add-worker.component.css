@@ -15,3 +15,8 @@ button:hover{
 #BackButton{
   margin-top: 0.5%;
 }
+
+.btn-logout
+{
+  background-color: black;
+}

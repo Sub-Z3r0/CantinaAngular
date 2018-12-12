@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {MainFoodService} from '../../Shared/Service/main-food.service';
+import {MainFoodService} from '../../shared/Service/main-food.service';
+import {AuthenticationService} from '../../shared/Service/authentication.service';
 
 @Component({
   selector: 'app-add-menu',
@@ -16,8 +17,11 @@ export class AddMenuComponent implements OnInit {
   });
   constructor(private menuService: MainFoodService) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+
   }
+
   save()
   {
     const menu = this.menuForm.value;
@@ -25,7 +29,5 @@ export class AddMenuComponent implements OnInit {
     this.menuService.addMainFood(menu)
       .subscribe(() => {
       });
-
-
   }
 }

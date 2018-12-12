@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {makeClassTargetFilter} from '@angular/compiler-cli/src/ngcc/src/host/fesm2015_host';
-import {WorkerService} from '../Shared/Service/worker.service';
-import {Workers} from '../Shared/models/Workers';
+import {WorkerService} from '../shared/Service/worker.service';
+import {Workers} from '../shared/models/Workers';
 
 @Component({
   selector: 'app-admin-view',

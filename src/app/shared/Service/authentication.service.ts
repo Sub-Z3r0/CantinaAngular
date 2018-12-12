@@ -3,9 +3,10 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import { map } from 'rxjs/operators';
+
 @Injectable()
 export class AuthenticationService {
-  loginUrl = String( 'https://cantinafakedb.azurewebsites.net/api/user');
+  loginUrl = String( 'https://cantinaappdatabase.azurewebsites.net/api/authentication');
   constructor(private http: HttpClient) {}
 
 
@@ -25,5 +26,18 @@ export class AuthenticationService {
         }
       }));
   }
+  getToken(): string {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser && currentUser.token;
+  }
 
+  getUsername(): string {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser && currentUser.username;
+  }
+
+  logout(): void {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
+  }
 }
