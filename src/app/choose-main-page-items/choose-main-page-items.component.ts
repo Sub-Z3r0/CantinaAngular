@@ -17,6 +17,10 @@ export class ChooseMainPageItemsComponent implements OnInit {
   motd: MOTD[];
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
+  selected1 : MainFood;
+  selected2 : MainFood;
+  selected3 : MainFood;
+  selected4 : MOTD;
   constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
 
 
@@ -38,4 +42,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
     } )
   }
 
+
+  hey() {
+  }
 }
