@@ -9,4 +9,5 @@ export class MainFood
   recipeLines?: RecipeLine[];
   allergensTypeId? : Allergen[];
   foodIconId? : number;
+  FoodDate? :Date;
 }

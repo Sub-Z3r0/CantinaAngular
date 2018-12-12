@@ -6,4 +6,5 @@ export class SpecialOffers
   specialOfferName : string;
   price: number;
   foodIconId? : number;
+  OffersDate? : Date;
 }
