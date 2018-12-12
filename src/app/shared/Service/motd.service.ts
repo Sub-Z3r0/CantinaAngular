@@ -24,4 +24,5 @@ export class MotdService {
     return this.http.get<MOTD[]>
     (this.apiUrl);
   }
+
 }
