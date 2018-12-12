@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import {Workers} from "../models/Workers";
 import {Ingredients} from "../models/Ingredients";
 import {worker} from "cluster";
+import {MainFood} from "../models/MainFood";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +13,13 @@ import {worker} from "cluster";
 export class IngredientService {
 ingredients: Ingredients[];
 id= 0;
-constructor() {
+  apiUrl = environment.apiUrl + 'api/ingredients';
+constructor(private http: HttpClient) {}
 
-}
 
+getIngredients(): Observable<Ingredients[]>{
+  return this.http.get<Ingredients[]>(this.apiUrl);
 
-getIngredients():Ingredients[]{
-  return this.ingredients;
 }
 addIngredient(ingredients: Ingredients) {
   ingredients.id = this.id++;

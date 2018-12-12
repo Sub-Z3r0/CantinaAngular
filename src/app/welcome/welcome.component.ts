@@ -17,7 +17,10 @@ export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
-  constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
+  constructor(private motdService: MotdService,
+              private  mainFoodService: MainFoodService,
+              private specielOfferService: SpecielOffersService,
+              private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
     this.authenticationService.logout();
@@ -26,8 +29,8 @@ export class WelcomeComponent implements OnInit {
   refresh()
   {
     this.motdService.getMOTDById(2)
-      .subscribe(listOfPets => {
-        this.motd = listOfPets;
+      .subscribe(listOfMessages => {
+        this.motd = listOfMessages;
       });
     this.mainFoodService.getMainFood().subscribe(listOfMenues => {
     this.mainfoods = listOfMenues;

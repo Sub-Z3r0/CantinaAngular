@@ -24,6 +24,7 @@ export class MainFoodService {
 
   chooseDailyFood( dailyFood : MainFood)
   {
+    // @ts-ignore
     this.dailyFoodList().push(dailyFood);
   }
 

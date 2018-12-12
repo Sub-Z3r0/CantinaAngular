@@ -17,6 +17,7 @@ import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
 import {AuthGuard} from './_guards/auth.guard';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {AuthGuard} from './_guards/auth.guard';
     AdminViewComponent,
     PopUpComponent,
     AddWorkerComponent,
-    SubmitFoodComponent
+    SubmitFoodComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,
