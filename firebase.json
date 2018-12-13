@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/CantinaAngular",
+    "public": "dist/cantinaangular",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -8,7 +8,6 @@ import { AddMenuComponent } from './Menues/add-menu/add-menu.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {Router} from '@angular/router';
 import {AuthenticationService} from './shared/Service/authentication.service';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { PopUpComponent } from './Allergen/pop-up/pop-up.component';
@@ -17,7 +16,18 @@ import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
 import {AuthGuard} from './_guards/auth.guard';
-import {MatSnackBarModule} from '@angular/material';
+import { SearchBoxComponent } from './search-box/search-box.component';
+import { AddMotdComponent } from './add-motd/add-motd.component';
+import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers.component';
+import {MenuUpdateComponent} from './specialOffers-update/menu-update.component';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -31,7 +41,11 @@ import {MatSnackBarModule} from '@angular/material';
     AdminViewComponent,
     PopUpComponent,
     AddWorkerComponent,
-    SubmitFoodComponent
+    SubmitFoodComponent,
+    SearchBoxComponent,
+    AddMotdComponent,
+    AddSpecieloffersComponent,
+    MenuUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +54,11 @@ import {MatSnackBarModule} from '@angular/material';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSnackBarModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    FlexLayoutModule,
   ],
   providers: [
     AuthenticationService,

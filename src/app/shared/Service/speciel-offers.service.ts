@@ -18,4 +18,18 @@ export class SpecielOffersService {
     return this.http.get<SpecialOffers[]>
     (this.apiUrl);
   }
+
+  getSpecielFoodById(id: number): Observable<SpecialOffers>
+  {
+    return this.http.get<SpecialOffers>(this.apiUrl + '/' + id);
+  }
+
+  addpecielOffers(specielOffers: SpecialOffers) {
+    return this.http.post<SpecialOffers>(this.apiUrl, specielOffers);
+  }
+
+  updateOffers(offer: SpecialOffers): Observable<SpecialOffers>
+  {
+    return this.http.put<SpecialOffers>(this.apiUrl + '/' + offer.id, offer);
+  }
 }

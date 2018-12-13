@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="searchIngredient" placeholder="Search Ingredients" />
+<ul *ngFor="let ingredient of filterIngredients">
+  <li>{{ingredient.ingredientName}}</li>
+</ul>

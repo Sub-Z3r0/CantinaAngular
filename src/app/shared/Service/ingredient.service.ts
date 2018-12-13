@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Ingredients} from "../models/Ingredients";
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {environment} from '../../../environments/environment.prod';
-import {Observable} from 'rxjs';
+import {worker} from "cluster";
+import {MainFood} from "../models/MainFood";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +14,11 @@ export class IngredientService {
 ingredients: Ingredients[];
 apiUrl = environment.apiUrl + 'api/ingredients';
 id= 0;
-constructor(private http: HttpClient) {
-
-}
+constructor(private http: HttpClient) {}
 
 
-getIngredients():Observable<Ingredients[]>{
-  const params = new HttpParams()
-  return this.http.get<Ingredients[]>(this.apiUrl, {params, params});
+getIngredients(): Observable<Ingredients[]>{
+  return this.http.get<Ingredients[]>(this.apiUrl);
 }
 addIngredient(ingredients: Ingredients) {
   ingredients.id = this.id++;
