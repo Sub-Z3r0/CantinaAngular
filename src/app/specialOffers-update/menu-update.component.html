@@ -10,15 +10,11 @@
         <div fxLayout="column">
 
           <mat-form-field>
-            <input class="form-control" matInput placeholder="Special Offer" formControlName="specialOfferName">
+            <input class="form-control" formControlName="specialOfferName">
           </mat-form-field>
 
           <mat-form-field>
-            <input  type="number" class="form-control" matInput placeholder="Price" formControlName="price">
-          </mat-form-field>
-
-          <mat-form-field>
-            <input type="date"  class="form-control" matInput placeholder="Date" formControlName="offerDate">
+            <input  type="number" class="form-control"  formControlName="price">
           </mat-form-field>
         </div>
         <button class="btn-light" type="submit">Save</button>
