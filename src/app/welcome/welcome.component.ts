@@ -36,7 +36,7 @@ export class WelcomeComponent implements OnInit {
     this.mainFoodService.getMainFood().subscribe(listOfMenues => {
     this.mainfoods = listOfMenues;
     });
-    this.specielOfferService.getSpecielFood(new Date()).subscribe(listOfOffers => {
+    this.specielOfferService.getTodaysFood(new Date()).subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
     });
   }

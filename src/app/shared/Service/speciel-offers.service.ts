@@ -18,9 +18,9 @@ export class SpecielOffersService {
     return this.http.get<SpecialOffers[]>
     (this.apiUrl);
   }
-  getSpecielFood(today: Date): Observable<SpecialOffers[]> {
+  getTodaysFood(today: Date): Observable<SpecialOffers[]> {
     return this.http.get<SpecialOffers[]>
-    (this.apiUrl+"?date=2018-12-13");
+    (this.apiUrl + '?date=2018-12-13');
   }
   getSpecielFoodById(id: number): Observable<SpecialOffers>
   {
