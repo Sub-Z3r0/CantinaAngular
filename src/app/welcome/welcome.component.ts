@@ -33,7 +33,7 @@ export class WelcomeComponent implements OnInit {
       .subscribe(listOfMessages => {
         this.motd = listOfMessages;
       });
-    this.mainFoodService.getMainFood().subscribe(listOfMenues => {
+    this.mainFoodService.getDailyMainfood(new Date()).subscribe(listOfMenues => {
     this.mainfoods = listOfMenues;
     });
     this.specielOfferService.getTodaysFood(new Date()).subscribe(listOfOffers => {

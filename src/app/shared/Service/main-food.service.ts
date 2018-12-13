@@ -5,6 +5,7 @@ import {MainFood} from '../models/MainFood';
 import {environment} from '../../../environments/environment.prod';
 import {Observable} from 'rxjs';
 import {isFatalDiagnosticError} from '@angular/compiler-cli/src/ngtsc/diagnostics';
+import {SpecialOffers} from '../models/SpecialOffers';
 
 @Injectable({
   providedIn: 'root'
@@ -53,5 +54,10 @@ export class MainFoodService {
     console.log(mainFood);
    this.http.put<MainFood>(this.apiUrl + '/' + mainFood.id, mainFood);
 
+  }
+
+  getDailyMainfood(date: Date): Observable<SpecialOffers[]>  {
+    return this.http.get<SpecialOffers[]>
+    (this.apiUrl + '?date='+date.getFullYear()+'-'+(date.getMonth()+1)+'-' + date.getDate());
   }
 }
