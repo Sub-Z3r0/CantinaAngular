@@ -1,4 +1,14 @@
-<div>
-  <app-nvbar></app-nvbar>
-  <router-outlet></router-outlet>
+<div fxFlexFill fxLayout="column" fxLayoutGap="10px">
+    <app-nvbar></app-nvbar>
+    <div fxLayout="column" fxFlex>
+      <div fxFlex style="margin: 1%">
+        <router-outlet></router-outlet>
+      </div>
+      <footer fxLayout="column">
+        <div fxLayout="row">
+          <hr fxFlex="100">
+        </div>
+        <p fxFlexAlign="center">Copyright ® EASV 2018 Cantina™  (Kasper SUCKS)</p>
+      </footer>
+  </div>
 </div>

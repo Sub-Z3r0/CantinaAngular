@@ -10,6 +10,7 @@ import {NgModule} from '@angular/core';
 import {AuthGuard} from './_guards/auth.guard';
 import {CommonModule} from '@angular/common';
 import {AddSpecieloffersComponent} from './add-specieloffers/add-specieloffers.component';
+import {MenuUpdateComponent} from './specialOffers-update/menu-update.component';
 
 
 const routes: Routes = [
@@ -17,10 +18,11 @@ const routes: Routes = [
   { path: 'menu-add', component: AddMenuComponent},
   { path: 'adminview', component: AdminViewComponent },
   { path: 'add-specielOffers', component: AddSpecieloffersComponent },
+  { path: 'menu-update/:id', component: MenuUpdateComponent},
   { path: 'adminview/addworker', component: AddWorkerComponent },
   { path: 'allergen', component: PopUpComponent },
   { path: 'submit-food', component: SubmitFoodComponent},
-    { path: 'app-choose-main-page-items', component: ChooseMainPageItemsComponent },
+  { path: 'app-choose-main-page-items', component: ChooseMainPageItemsComponent },
   { path: '**', redirectTo: '' },
 ];
 

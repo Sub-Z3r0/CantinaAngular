@@ -17,11 +17,14 @@ export class ChooseMainPageItemsComponent implements OnInit {
   motd: MOTD[];
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
-  selected1 : MainFood[];
-  selected2 : MainFood[];
-  selected3 : MainFood[];
+  selected1 : MainFood;
+  selected2 : MainFood;
+  selected3 : MainFood;
   selected4 : MOTD;
-  constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
+  constructor(private motdService: MotdService,
+              private  mainFoodService: MainFoodService,
+              private specielOfferService: SpecielOffersService,
+              private authenticationService: AuthenticationService) { }
 
 
   ngOnInit() {
@@ -51,9 +54,8 @@ export class ChooseMainPageItemsComponent implements OnInit {
 
     if (this.selected1 != null)
     {
-    console.log("1");
+      console.log("1");
       this.mainFoodService.chooseDailyFood(this.selected1);
-
     }
 
     if (this.selected2 != null)
