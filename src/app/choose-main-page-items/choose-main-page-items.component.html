@@ -89,6 +89,54 @@
               </select>
             </div>
           </div>
+          <div class="col-lg-12">
+
+            <div class="form-group">
+              <label>Choose Speciel Offers 1</label>
+
+              <select class="js-search-category form-control" name="category" data-placeholder="Choose Category"
+                      [(ngModel)]="selectedOffers4">
+
+                <ng-container *ngFor="let offers of specielOffers">
+                  <option [ngValue]="offers">{{offers.specialOfferName}}</option>
+
+
+                </ng-container>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-12">
+
+            <div class="form-group">
+              <label>Choose Speciel Offers 2</label>
+
+              <select class="js-search-category form-control" name="category" data-placeholder="Choose Category"
+                      [(ngModel)]="selectedOffers5">
+
+                <ng-container *ngFor="let offers of specielOffers">
+                  <option [ngValue]="offers">{{offers.specialOfferName}}</option>
+
+
+                </ng-container>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-12">
+
+            <div class="form-group">
+              <label>Choose Speciel Offers 3</label>
+
+              <select class="js-search-category form-control" name="category" data-placeholder="Choose Category"
+                      [(ngModel)]="selectedOffers6">
+
+                <ng-container *ngFor="let offers of specielOffers">
+                  <option [ngValue]="offers">{{offers.specialOfferName}}</option>
+
+
+                </ng-container>
+              </select>
+            </div>
+          </div>
 
           <div class="col-lg-12">
 

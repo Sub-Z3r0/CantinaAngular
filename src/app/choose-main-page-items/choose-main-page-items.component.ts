@@ -20,8 +20,17 @@ export class ChooseMainPageItemsComponent implements OnInit {
   selected1 : MainFood;
   selected2 : MainFood;
   selected3 : MainFood;
+  selectedOffers4: SpecialOffers;
+  selectedOffers5: SpecialOffers;
+  selectedOffers6: SpecialOffers;
   selected4 : MOTD;
-  constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
+  constructor(private motdService: MotdService,
+              private  mainFoodService: MainFoodService,
+              private specielOfferService: SpecielOffersService,
+              private authenticationService: AuthenticationService) {
+
+
+  }
 
 
   ngOnInit() {
@@ -46,9 +55,9 @@ export class ChooseMainPageItemsComponent implements OnInit {
   }
 
 
-
+  today: Date;
   saveDailyChoice() {
-
+this.today = new Date;
     if (this.selected1 != null)
     {
      this.mainFoodService.UpdateToDaily(this.selected1);
@@ -57,17 +66,34 @@ export class ChooseMainPageItemsComponent implements OnInit {
 
     if (this.selected2 != null)
     {
-      console.log("2");
       this.mainFoodService.UpdateToDaily(this.selected2);
 
     }
 
     if (this.selected3 != null)
     {
-      console.log("3");
     this.mainFoodService.UpdateToDaily(this.selected3);
     }
+    if (this.selectedOffers6 != null)
+    {
+      this.selectedOffers6.offersDate = this.today.getFullYear() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getDate();
 
+     console.log(this.selectedOffers6);
+      this.specielOfferService.UpdateToDaily(this.selectedOffers6);
+
+    }
+/*
+    if (this.selectedOffers5 != null)
+    {
+      this.mainFoodService.UpdateToDaily(this.selectedOffers5);
+
+    }
+
+    if (this.selectedOffers4 != null)
+    {
+      this.mainFoodService.UpdateToDaily(this.selectedOffers4);
+    }
+*/
     localStorage.removeItem('dailyFood');
     localStorage.setItem('dailyFood', JSON.stringify(this.mainFoodService.dailyFoodList));
   }
