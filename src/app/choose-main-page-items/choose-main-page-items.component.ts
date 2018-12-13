@@ -78,7 +78,7 @@ this.today = new Date;
       this.selectedOffers6.offersDate = this.today.getFullYear() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getDate();
 
      console.log(this.selectedOffers6);
-      this.specielOfferService.UpdateToDaily(this.selectedOffers6);
+      this.specielOfferService.updateOffers(this.selectedOffers6);
 
     }
 /*

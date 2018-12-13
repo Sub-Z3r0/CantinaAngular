@@ -26,7 +26,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatProgressSpinnerModule
-} from "@angular/material";
+} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 

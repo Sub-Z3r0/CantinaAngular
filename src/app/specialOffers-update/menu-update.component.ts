@@ -27,7 +27,7 @@ export class MenuUpdateComponent implements OnInit {
         this.specielOfferForm.patchValue({
           specialOfferName: offers.specialOfferName,
           price: offers.price,
-          offerDate: offers.OffersDate
+          offerDate: offers.offersDate
         });
       });
   }
