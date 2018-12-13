@@ -35,11 +35,11 @@ export class MenuUpdateComponent implements OnInit {
   save()
   {
     // data static for now, later we add forms!! ;D
-    const pet = this.specielOfferForm.value;
-    pet.id = this.id;
-    this.specielOffersService.updateOffers(pet)
+    const offer = this.specielOfferForm.value;
+    offer.id = this.id;
+    this.specielOffersService.updateOffers(offer)
       .subscribe(() => {
-        this.router.navigateByUrl('/adminview');
+        this.router.navigateByUrl('');
       });
   }
 
