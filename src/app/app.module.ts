@@ -19,6 +19,15 @@ import {AuthGuard} from './_guards/auth.guard';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AddMotdComponent } from './add-motd/add-motd.component';
 import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers.component';
+import {MenuUpdateComponent} from './specialOffers-update/menu-update.component';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressSpinnerModule
+} from "@angular/material";
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -35,7 +44,8 @@ import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers
     SubmitFoodComponent,
     SearchBoxComponent,
     AddMotdComponent,
-    AddSpecieloffersComponent
+    AddSpecieloffersComponent,
+    MenuUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +54,11 @@ import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    FlexLayoutModule,
   ],
   providers: [
     AuthenticationService,
