@@ -38,7 +38,6 @@ export class AddMenuComponent implements OnInit {
   save() {
     const value = this.foodForm.value;
 
-    debugger;
     value.foodSelect.forEach(ingredient => {
       const prod = ingredient as Ingredients;
       ingredient.recipeLines.push({
