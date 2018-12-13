@@ -82,7 +82,7 @@ export class NvbarComponent implements OnInit {
     this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
         success => {
-          this.router.navigate(['adminview']);
+          this.router.navigate(['']);
           document.getElementById('id01').style.display='none';
         },
         error => {
