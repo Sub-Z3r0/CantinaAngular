@@ -55,21 +55,22 @@ export class ChooseMainPageItemsComponent implements OnInit {
     if (this.selected1 != null)
     {
       console.log("1");
-      this.mainFoodService.chooseDailyFood(this.selected1);
+     this.mainFoodService.UpdateToDaily(this.selected1);
     }
 
     if (this.selected2 != null)
     {
       console.log("2");
-      this.mainFoodService.chooseDailyFood(this.selected2);
+      this.mainFoodService.UpdateToDaily(this.selected2);
 
     }
 
     if (this.selected3 != null)
     {
       console.log("3");
-    this.mainFoodService.chooseDailyFood(this.selected3);
+    this.mainFoodService.UpdateToDaily(this.selected3);
     }
+
     localStorage.removeItem('dailyFood');
     localStorage.setItem('dailyFood', JSON.stringify(this.mainFoodService.dailyFoodList));
   }

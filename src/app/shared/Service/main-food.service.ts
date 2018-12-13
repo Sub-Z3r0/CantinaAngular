@@ -46,4 +46,10 @@ export class MainFoodService {
   deleteMainFood(id: number) {
     this.mainFood = this.mainFood.filter(mf => mf.id !== id);
   }*/
+  UpdateToDaily(mainFood: MainFood) {
+    mainFood.FoodDate = new Date();
+    console.log(mainFood);
+   this.http.put<MainFood>(this.apiUrl + '/' + mainFood.id, mainFood);
+
+  }
 }

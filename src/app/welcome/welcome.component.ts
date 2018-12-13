@@ -16,6 +16,7 @@ import {AuthenticationService} from '../shared/Service/authentication.service';
 export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
+  count: number;
   specielOffers: SpecialOffers[];
   constructor(private motdService: MotdService, private  mainFoodService: MainFoodService, private specielOfferService: SpecielOffersService, private authenticationService: AuthenticationService) { }
 
@@ -25,16 +26,23 @@ export class WelcomeComponent implements OnInit {
   }
   refresh()
   {
-    this.motdService.getMOTDById(2)
+    this.motdService.getMOTDAll()
       .subscribe(listOfPets => {
-        this.motd = listOfPets;
+        this.count = listOfPets.length;
+
+          this.motdService.getMOTDById(Math.floor(Math.random() * this.count) + 1)
+          .subscribe(dailymotd => {
+            this.motd = dailymotd;
+          });
       });
 
+
+
     this.mainfoods = this.mainFoodService.readDailyFood();
-    console.log(this.mainfoods);
     this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
-      console.log(this.specielOffers);
+
+      console.log(new Date().toLocaleDateString());
     });
       }
 
