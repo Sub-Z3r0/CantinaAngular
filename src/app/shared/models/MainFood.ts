@@ -1,13 +1,14 @@
 import {FoodIcon} from './FoodIcon';
 import {Allergen} from './Allergen';
 import {RecipeLine} from './RecipeLine';
+import {AllergensInMenu} from './AllergensInMenu';
 
 export class MainFood
 {
   id: number;
   mainFoodName : string;
   recipeLines?: RecipeLine[];
-  allergensTypeId? : Allergen[];
+  AllergensInMenu? : AllergensInMenu[];
   foodIconId? : number;
   FoodDate? : Date;
 }

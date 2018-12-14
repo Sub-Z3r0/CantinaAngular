@@ -54,7 +54,7 @@ export class MainFoodService {
 
   }
 
-  getDailyMainfood(date: Date): Observable<MainFood>  {
+  getDailyMainfood(date: Date): Observable<MainFood[]>  {
     return this.http.get<MainFood[]>
     (this.apiUrl + '?date='+date.getFullYear()+'-'+(date.getMonth()+1)+'-' + date.getDate());
   }
