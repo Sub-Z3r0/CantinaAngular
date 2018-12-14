@@ -18,7 +18,6 @@ export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
-  user: Users[];
 
   constructor(private motdService: MotdService,
               private  mainFoodService: MainFoodService,
@@ -38,7 +37,7 @@ export class WelcomeComponent implements OnInit {
     this.mainFoodService.getMainFood().subscribe(listOfMenues => {
     this.mainfoods = listOfMenues;
     });
-    this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
+    this.specielOfferService.getTodaysFood(new Date()).subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
     });
   }

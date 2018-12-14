@@ -75,9 +75,9 @@ this.today = new Date;
     }
     if (this.selectedOffers6 != null)
     {
-      this.selectedOffers6.offersDate = this.today.getFullYear() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getDate();
-
-     console.log(this.selectedOffers6);
+      //this.selectedOffers6.offersDate = this.today.getFullYear() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getDate();
+this.selectedOffers6.offersDate= "2018-12-13T00:00:00";
+console.log(this.selectedOffers6);
       this.specielOfferService.updateOffers(this.selectedOffers6);
 
     }
