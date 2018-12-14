@@ -19,7 +19,6 @@ constructor(private http: HttpClient) {}
 
 getIngredients(): Observable<Ingredients[]>{
   return this.http.get<Ingredients[]>(this.apiUrl);
-
 }
 addIngredient(ingredients: Ingredients) {
   ingredients.id = this.id++;

@@ -19,6 +19,7 @@ import {AuthGuard} from './_guards/auth.guard';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AddMotdComponent } from './add-motd/add-motd.component';
 import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers.component';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers
     SubmitFoodComponent,
     SearchBoxComponent,
     AddMotdComponent,
-    AddSpecieloffersComponent
+    AddSpecieloffersComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,7 @@ import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    NgxTypeaheadModule
   ],
   providers: [
     AuthenticationService,
