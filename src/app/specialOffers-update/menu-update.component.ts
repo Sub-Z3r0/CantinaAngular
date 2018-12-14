@@ -14,8 +14,7 @@ export class MenuUpdateComponent implements OnInit {
 
   specielOfferForm = new FormGroup({
     specialOfferName: new FormControl(''),
-    price: new FormControl(''),
-    offerDate: new FormControl('')});
+    price: new FormControl('')});
 
   constructor(private route: ActivatedRoute, private specielOffersService: SpecielOffersService, private router: Router) { }
 
@@ -31,12 +30,15 @@ export class MenuUpdateComponent implements OnInit {
         });
       });
   }
-
+today: Date;
   save()
   {
+    this.today = new Date;
     // data static for now, later we add forms!! ;D
     const pet = this.specielOfferForm.value;
     pet.id = this.id;
+    pet.offersDate = this.today;
+    console.log(pet);
     this.specielOffersService.updateOffers(pet)
       .subscribe(() => {
         this.router.navigateByUrl('/adminview');
