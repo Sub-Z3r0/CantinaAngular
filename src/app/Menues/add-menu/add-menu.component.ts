@@ -7,6 +7,7 @@ import {Allergen} from '../../shared/models/Allergen';
 import {AllergenService} from '../../shared/Service/allergenService';
 import {IngredientService} from '../../shared/Service/ingredient.service';
 import {MainFood} from '../../shared/models/MainFood';
+import {RecipeLine} from '../../Shared/models/RecipeLine';
 
 @Component({
   selector: 'app-add-menu',

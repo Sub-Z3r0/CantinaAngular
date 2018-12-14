@@ -6,6 +6,7 @@ import {MotdService} from '../shared/Service/motd.service';
 import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {AuthenticationService} from '../shared/Service/authentication.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class ChooseMainPageItemsComponent implements OnInit {
   constructor(private motdService: MotdService,
               private  mainFoodService: MainFoodService,
               private specielOfferService: SpecielOffersService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private router: Router) {
 
   }
 
@@ -56,10 +58,36 @@ export class ChooseMainPageItemsComponent implements OnInit {
 
 
   saveDailyChoice() {
-
-
+    this.today = new Date;
+    if (this.selected1 != null) {
+    }
+    this.selected1.FoodDate = this.today;
+    console.log(this.selected1);
+    this.mainFoodService.UpdateToDaily(this.selected1)
+      .subscribe(() => {
+        this.router.navigateByUrl('');
+      });
+    if (this.selected2 != null) {
+    }
+    this.selected2.FoodDate = this.today;
+    console.log(this.selected2);
+    this.mainFoodService.UpdateToDaily(this.selected2)
+      .subscribe(() => {
+        this.router.navigateByUrl('');
+      });
+    if (this.selected3 != null) {
+    }
+    this.selected3.FoodDate = this.today;
+    console.log(this.selected3);
+    this.mainFoodService.UpdateToDaily(this.selected3)
+      .subscribe(() => {
+        this.router.navigateByUrl('');
+      });
+  }
 
   }
 
 
-}
+
+
+
