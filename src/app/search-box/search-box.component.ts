@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IngredientService} from "../shared/Service/ingredient.service";
 import {Ingredients} from "../shared/models/Ingredients";
-import {isString} from "util";
 
 @Component({
   selector: 'app-search-box',

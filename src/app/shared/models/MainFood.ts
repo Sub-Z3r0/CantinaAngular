@@ -1,4 +1,3 @@
-import {FoodIcon} from './FoodIcon';
 import {Allergen} from './Allergen';
 import {RecipeLine} from './RecipeLine';
 
