@@ -59,6 +59,7 @@ export class AddMenuComponent implements OnInit {
     var splitted = str.split(",");
     for (let i = 0; i < splitted.length; i++) {
       const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}};
+
       this.recips.push(recip);
     }
 

@@ -8,15 +8,10 @@
     <mat-card fxFlex="33">
       <form [formGroup]="specielOfferForm" (ngSubmit)="save()">
         <div fxLayout="column">
+            <input  class="form-control" formControlName=  "specialOfferName">
 
-          <mat-form-field>
-            <input class="form-control" formControlName="specialOfferName">
-          </mat-form-field>
-
-          <mat-form-field>
-<
             <input  type="number" class="form-control"  formControlName="price">
-          </mat-form-field>
+
         </div>
         <button class="btn-light" type="submit">Save</button>
         <button class="btn-dark" routerLink="">Back</button>

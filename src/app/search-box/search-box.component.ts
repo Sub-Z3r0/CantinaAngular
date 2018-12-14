@@ -9,31 +9,20 @@ import {Ingredients} from "../shared/models/Ingredients";
 })
 export class SearchBoxComponent implements OnInit {
 ingredients: Ingredients[];
-filterIngredients: Ingredients[];
-_searchIngredient : string;
+ingredientsName: string[] = [];
+search = '';
+
+  constructor(private ingredientService: IngredientService) { }
 
   ngOnInit() {
     this.ingredientService.getIngredients().subscribe(ingList => {
-      this.ingredients = ingList, this.filterIngredients = ingList});
-
-  }
-  get searchIngredient(): string {
-    return this._searchIngredient;
-  }
-
-  set searchIngredient(value: string) {
-    this._searchIngredient = value;
-    this.filterIngredients = this.filteredIngredients(value);
-
+      this.ingredients = ingList;
+      for (let name of this.ingredients) {
+        this.ingredientsName.push(name.ingredientName);
+      }});
   }
 
-  filteredIngredients(searchString : string){
-    return this.ingredients.filter(ingr => ingr.ingredientName.toLowerCase()
-      .indexOf(searchString.toLowerCase()) !== -1);
+  handleResult(result) {
+    this.search = result;
   }
-  constructor(private ingredientService: IngredientService) { }
-
-
-
-
 }

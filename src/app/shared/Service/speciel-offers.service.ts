@@ -35,4 +35,8 @@ export class SpecielOffersService {
   {
     return this.http.put<SpecialOffers>(this.apiUrl + '/' + offer.id, offer);
   }
+
+  deleteSpecial(id: number) {
+    return this.http.delete(this.apiUrl + '/' + id);
+  }
 }
