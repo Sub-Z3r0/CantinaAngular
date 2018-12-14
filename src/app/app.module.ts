@@ -27,7 +27,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatProgressSpinnerModule, MatSelectModule
+  MatProgressSpinnerModule, MatSelectModule,
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 

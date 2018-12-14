@@ -18,18 +18,22 @@ export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
-
+  loggedIn: boolean;
   constructor(private motdService: MotdService,
               private  mainFoodService: MainFoodService,
               private specielOfferService: SpecielOffersService,
               private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-    this.authenticationService.logout();
+
     this.refresh();
   }
+
   refresh()
   {
+    if (this.authenticationService.getToken()) {
+      this.loggedIn = true;
+    }
     this.motdService.getMOTDById(2)
       .subscribe(listOfMessages => {
         this.motd = listOfMessages;
