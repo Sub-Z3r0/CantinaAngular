@@ -72,7 +72,7 @@ export class NvbarComponent implements OnInit {
   get password() { return this.loginForm.get('password'); }
   onSubmit() {
     this.submitted = true;
-
+    window.location.reload();
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
@@ -83,7 +83,7 @@ export class NvbarComponent implements OnInit {
       .subscribe(
         success => {
           this.router.navigate(['']);
-          document.getElementById('id01').style.display='none';
+          document.getElementById('id01').style.display = 'none';
         },
         error => {
           this.errormessage = error.message;
