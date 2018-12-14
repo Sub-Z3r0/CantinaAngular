@@ -17,6 +17,8 @@ export class NvbarComponent implements OnInit {
   loading = false;
   usernames: string;
   errormessage = '';
+  loggedIn: boolean;
+
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private authenticationService: AuthenticationService)
@@ -26,6 +28,9 @@ export class NvbarComponent implements OnInit {
 
   ngOnInit()
   {
+    if (this.authenticationService.getToken()) {
+      this.loggedIn = true;
+    }
     var navbar = document.getElementById('navbar');
 
     this.loginForm = this.formBuilder.group({
@@ -45,6 +50,12 @@ export class NvbarComponent implements OnInit {
       var dropBTN = document.getElementById('dropbtn').style.display='';
     }
 
+  }
+
+  logout()
+  {
+    this.authenticationService.logout();
+    window.location.reload();
   }
 
   Scroll() {
@@ -72,7 +83,7 @@ export class NvbarComponent implements OnInit {
   get password() { return this.loginForm.get('password'); }
   onSubmit() {
     this.submitted = true;
-
+    window.location.reload();
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
@@ -83,7 +94,7 @@ export class NvbarComponent implements OnInit {
       .subscribe(
         success => {
           this.router.navigate(['']);
-          document.getElementById('id01').style.display='none';
+          document.getElementById('id01').style.display = 'none';
         },
         error => {
           this.errormessage = error.message;

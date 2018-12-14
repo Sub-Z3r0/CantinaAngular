@@ -85,9 +85,9 @@
             <a class="dropdown-item" href="contact.html">Contact</a>
           </div>
         </li>
-        <li class="btn btn-logout"  *ngIf="usernames"><div><a  [routerLink]="['']">logout {{usernames}}</a></div></li>
+        <li class="btn btn-logout" (click)="logout()" *ngIf="loggedIn" ><div><a  [routerLink]="['']">logout {{usernames}}</a></div></li>
         <li class="nav-item btn-submit-recipe">
-          <button class="fa fa-upload" class="btn btn-submit-recipe" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>        </li>
+          <button *ngIf="!loggedIn" class="fa fa-upload" class="btn btn-submit-recipe" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>        </li>
 
       </ul>
     </div>
