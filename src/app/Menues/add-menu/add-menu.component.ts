@@ -7,6 +7,7 @@ import {Allergen} from '../../shared/models/Allergen';
 import {AllergenService} from '../../shared/Service/allergenService';
 import {IngredientService} from '../../shared/Service/ingredient.service';
 import {MainFood} from '../../shared/models/MainFood';
+import {RecipeLine} from '../../shared/models/RecipeLine';
 
 @Component({
   selector: 'app-add-menu',
@@ -18,14 +19,18 @@ export class AddMenuComponent implements OnInit {
   // many to many relations
   ingredients: Ingredients[];
   allergens: Allergen[];
+  today: Date;
   loading = true;
-  foodForm = new FormGroup({
-    foodSelect: new FormControl('')
+  menuForm = new FormGroup({
+    mainFoodName: new FormControl(''),
+    recipeLines: new FormControl(''),
+    allergensTypeId: new FormControl(''),
+    foodIconId: new FormControl('')
   });
 
-place: MainFood;
+  place: MainFood;
   mainFood: MainFood;
-recips: RecipeLine[] = [];
+  recips: RecipeLine[] = [];
 
 
   constructor(private menuService: MainFoodService,
@@ -40,7 +45,8 @@ recips: RecipeLine[] = [];
         this.loading = false;
       });
   }
-  today: Date;
+
+
   save()
   {
     this.today = new Date;
@@ -50,7 +56,7 @@ recips: RecipeLine[] = [];
     var splitted = str.split(",");
       console.log(splitted);
     for (let i = 0; i < splitted.length; i++) {
-      const recip: RecipeLine ={ingredientsType{ingredientName :splitted[i]}}  ;
+      const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
 
       this.recips.push(recip);
     }
@@ -64,6 +70,5 @@ recips: RecipeLine[] = [];
       .subscribe(() => {
 
       });
-    
   }
 }

@@ -50,4 +50,11 @@ export class WelcomeComponent implements OnInit {
       behavior: 'smooth'
     });
   }
+  deleteMainFood(id: number)
+  {
+    this.mainFoodService.deleteFood(id)
+      .subscribe(m => {
+        this.refresh();
+      });
+  }
 }
