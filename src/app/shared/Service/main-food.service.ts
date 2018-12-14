@@ -58,4 +58,9 @@ export class MainFoodService {
     return this.http.get<MainFood[]>
     (this.apiUrl + '?date='+date.getFullYear()+'-'+(date.getMonth()+1)+'-' + date.getDate());
   }
+
+  deleteFood(id: number): Observable<any>
+  {
+    return this.http.delete(this.apiUrl + '/' + id);
+  }
 }
