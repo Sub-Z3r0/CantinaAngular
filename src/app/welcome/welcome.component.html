@@ -11,50 +11,61 @@
       </div>
     </div>
   </div>
-  <div class="jumbotron">
-    <div class="mainHeader">
-        <p>Today's Menu</p>
-    </div>
-    <div class="top">
-      <ul>
-        <div class="container" *ngIf=mainfoods>
-          <div class="row">
-            <div  *ngFor="let main of mainfoods">
-              <div class="col-lg-4">
-                <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
-                  <div class="box clearfix">
-                    <h3>{{main.mainFoodName}}</h3>
+  <div class="top">
+    <ul>
+      <div class="container" *ngIf=mainfoods>
+        <div class="row">
+        <div  *ngFor="let main of mainfoods">
+          <div class="col-lg-4">
+            <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
+            <div class="box clearfix">
+
+              <h3>
+                <p>
+                <a class="btn btn-primary" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  {{main.mainFoodName}}
+                </a>
+              </p>
+                <div class="collapse" id="{{main.id}}">
+                  <div class="card card-body">
                     <div  *ngFor="let recip of main.recipeLines">
                       <li>
                         <h6><p>{{recip.ingredientsType.ingredientName}}</p></h6>
                       </li>
                     </div>
                   </div>
-                </div>
-              </div>
+                </div></h3>
+                <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
             </div>
           </div>
         </ul>
       </div>
-    </div>
-    <div class="jumbotron">
-      <div class="mainHeaderOotd">
-        <p>Offers of the day</p>
-      </div>
-      <div class="top">
-        <div class="container" >
-         <div *ngIf="specielOffers">
-          <div class="row">
-            <div *ngFor="let offers of specielOffers">
-              <div class="col-lg-4">
-                <h3><i class="fa fa-cutlery" aria-hidden="true"></i></h3>
-                <div class="box clearfix">
-                  <h3>{{offers.specialOfferName}}</h3>
-                  <p>{{offers.price  }}DKR</p>
-                  <button routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
-                </div>
-              </div>
-            </div>
+    </ul>
+  </div>
+
+</div>
+<div class="jumbotron">
+  <div class="mainHeaderOotd">
+    <p>Offers of the day</p>
+  </div>
+  <div class="top">
+          <div class="container" >
+
+
+
+              <div *ngIf="specielOffers">
+                <div class="row">
+        <div *ngFor="let offers of specielOffers">
+
+        <div class="col-lg-4">
+
+          <h3><i class="fa fa-cutlery" aria-hidden="true"></i></h3>
+          <div class="box clearfix">
+
+            <h3>{{offers.specialOfferName}}</h3>
+            <p>{{offers.price  }}DKR</p>
+            <button routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
+            <button (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
           </div>
         </div>
       </div>
@@ -95,14 +106,17 @@
         </div>
      </div>
     </div>
-  </footer>
-<!-- Copyright -->
-  <div class="copyright">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">Made with <i class="fa fa-heart" aria-hidden="true"></i> &#8212; Copyright &copy; 2018 <a href="index.html">Erhvervsakademi Cantina - All rights reserved</a></div>
+  </div>
+</footer>
+
+
+      <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">Made with <i class="fa fa-heart" aria-hidden="true"></i> &#8212; Copyright &copy; 2018 <a href="index.html">Erhvervsakademi Cantina - All rights reserved</a></div>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
