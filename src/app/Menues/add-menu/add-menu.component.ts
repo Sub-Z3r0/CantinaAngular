@@ -52,14 +52,14 @@ export class AddMenuComponent implements OnInit {
     this.today = new Date;
     this.recips = [];
     this.place = this.menuForm.value;
-    var str = this.place.recipeLines;
-    var splitted = str.split(",");
-      console.log(splitted);
-    for (let i = 0; i < splitted.length; i++) {
-      const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
-
-      this.recips.push(recip);
-    }
+    // var str = this.place.recipeLines;
+    // var splitted = str.split(",");
+    //   console.log(splitted);
+    // for (let i = 0; i < splitted.length; i++) {
+    //   const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
+    //
+    //   this.recips.push(recip);
+    // }
 
     this.mainFood = this.place;
     this.mainFood.FoodDate= this.today;
