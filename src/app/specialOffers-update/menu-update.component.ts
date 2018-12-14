@@ -11,6 +11,7 @@ import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 export class MenuUpdateComponent implements OnInit {
 
   id: number;
+  today: Date;
 
   specielOfferForm = new FormGroup({
     specialOfferName: new FormControl(''),
@@ -30,7 +31,7 @@ export class MenuUpdateComponent implements OnInit {
         });
       });
   }
-today: Date;
+
   save()
   {
     this.today = new Date;
