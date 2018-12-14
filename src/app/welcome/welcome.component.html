@@ -80,8 +80,8 @@
 
                 <h3>{{offers.specialOfferName}}</h3>
                 <p>{{offers.price  }}DKR</p>
-                <button routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
-                <button (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
+                <button *ngIf="loggedIn" routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
+                <button *ngIf="loggedIn" (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
               </div>
 
             </div>
