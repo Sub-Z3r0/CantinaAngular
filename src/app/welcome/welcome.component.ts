@@ -57,4 +57,11 @@ export class WelcomeComponent implements OnInit {
         this.refresh();
       });
   }
+  deleteSpecialFood(id: number)
+  {
+    this.specielOfferService.deleteSpecial(id)
+      .subscribe(m => {
+        this.refresh();
+      });
+  }
 }

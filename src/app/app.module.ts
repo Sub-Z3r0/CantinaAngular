@@ -23,9 +23,10 @@ import {MenuUpdateComponent} from './specialOffers-update/menu-update.component'
 import {
   MatButtonModule,
   MatCardModule,
+  MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule, MatSelectModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -54,11 +55,12 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatCardModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     MatIconModule,
     FlexLayoutModule,
+    MatInputModule,
+    MatCardModule,
   ],
   providers: [
     AuthenticationService,
