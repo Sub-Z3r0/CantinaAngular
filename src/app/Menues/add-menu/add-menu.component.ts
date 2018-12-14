@@ -49,26 +49,26 @@ export class AddMenuComponent implements OnInit {
 
   save()
   {
-    this.today = new Date;
-    this.recips = [];
-    this.place = this.menuForm.value;
-    var str = this.place.recipeLines;
-    var splitted = str.split(",");
-     console.log(splitted);
-     for (let i = 0; i < splitted.length; i++) {
-      const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
-
-      this.recips.push(recip);
-    }
-
-    this.mainFood = this.place;
-    this.mainFood.FoodDate= this.today;
-    this.mainFood.recipeLines = this.recips;
-    console.log(this.mainFood);
-
-    this.menuService.addMainFood(this.mainFood)
-      .subscribe(() => {
-
-      });
+    // this.today = new Date;
+    // this.recips = [];
+    // this.place = this.menuForm.value;
+    // var str = this.place.recipeLines;
+    // var splitted = str.split(",");
+    //  console.log(splitted);
+    //  for (let i = 0; i < splitted.length; i++) {
+    //   const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
+    //
+    //   this.recips.push(recip);
+    // }
+    //
+    // this.mainFood = this.place;
+    // this.mainFood.FoodDate= this.today;
+    // this.mainFood.recipeLines = this.recips;
+    // console.log(this.mainFood);
+    //
+    // this.menuService.addMainFood(this.mainFood)
+    //   .subscribe(() => {
+    //
+    //   });
   }
 }
