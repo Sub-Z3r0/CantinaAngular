@@ -24,8 +24,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatIconModule,
-  MatInputModule,
-  MatProgressSpinnerModule
+  MatInputModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
