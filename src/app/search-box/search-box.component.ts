@@ -19,13 +19,11 @@ search = '';
     this.ingredientService.getIngredients().subscribe(ingList => {
       this.ingredients = ingList;
       for (let name of this.ingredients) {
-        debugger;
         this.ingredientsName.push(name.ingredientName);
       }});
   }
 
   handleResult(result) {
-    debugger;
     this.search = result;
   }
 }

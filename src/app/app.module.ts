@@ -20,6 +20,8 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { AddMotdComponent } from './add-motd/add-motd.component';
 import { AddSpecieloffersComponent } from './add-specieloffers/add-specieloffers.component';
 import { NgxTypeaheadModule } from 'ngx-typeahead';
+import {MenuUpdateComponent} from './specialOffers-update/menu-update.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { NgxTypeaheadModule } from 'ngx-typeahead';
     SearchBoxComponent,
     AddMotdComponent,
     AddSpecieloffersComponent,
+    MenuUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { NgxTypeaheadModule } from 'ngx-typeahead';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgxTypeaheadModule
+    NgxTypeaheadModule,
+    FlexLayoutModule
   ],
   providers: [
     AuthenticationService,

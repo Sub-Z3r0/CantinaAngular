@@ -18,8 +18,21 @@ export class SpecielOffersService {
     return this.http.get<SpecialOffers[]>
     (this.apiUrl);
   }
+  getTodaysFood(today: Date): Observable<SpecialOffers[]> {
+    return this.http.get<SpecialOffers[]>
+    (this.apiUrl + '?date='+today.getFullYear()+'-'+(today.getMonth()+1)+'-' + today.getDate());
+  }
+  getSpecielFoodById(id: number): Observable<SpecialOffers>
+  {
+    return this.http.get<SpecialOffers>(this.apiUrl + '/' + id);
+  }
 
   addpecielOffers(specielOffers: SpecialOffers) {
     return this.http.post<SpecialOffers>(this.apiUrl, specielOffers);
+  }
+
+  updateOffers(offer: SpecialOffers): Observable<SpecialOffers>
+  {
+    return this.http.put<SpecialOffers>(this.apiUrl + '/' + offer.id, offer);
   }
 }

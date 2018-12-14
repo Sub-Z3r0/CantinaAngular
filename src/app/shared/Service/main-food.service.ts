@@ -4,6 +4,8 @@ import {MOTD} from '../models/MOTD';
 import {MainFood} from '../models/MainFood';
 import {environment} from '../../../environments/environment.prod';
 import {Observable} from 'rxjs';
+import {isFatalDiagnosticError} from '@angular/compiler-cli/src/ngtsc/diagnostics';
+import {SpecialOffers} from '../models/SpecialOffers';
 
 @Injectable({
   providedIn: 'root'
@@ -14,18 +16,25 @@ export class MainFoodService {
 
   }
 
-  dailyFoodList: MainFood[];
-
+  dailyFoodList: MainFood[] = [];
   getMainFood(): Observable<MainFood[]>
   {
     return this.http.get<MainFood[]>
     (this.apiUrl);
   }
 
-  chooseDailyFood( dailyFood : MainFood)
+  chooseDailyFood( dailyFood: MainFood)
   {
-    // @ts-ignore
-    this.dailyFoodList().push(dailyFood);
+
+    console.log(this.dailyFoodList);
+    this.dailyFoodList.push(dailyFood);
+
+  }
+  readDailyFood() : MainFood[]
+  {
+
+    return JSON.parse(localStorage.getItem('dailyFood'));
+
   }
 
   addMainFood(mainFood : MainFood): Observable<MainFood>
@@ -40,4 +49,18 @@ export class MainFoodService {
   deleteMainFood(id: number) {
     this.mainFood = this.mainFood.filter(mf => mf.id !== id);
   }*/
+  UpdateToDaily(mainFood: MainFood): Observable<MainFood> {
+   return this.http.put<MainFood>(this.apiUrl + '/' + mainFood.id, mainFood);
+
+  }
+
+  getDailyMainfood(date: Date): Observable<MainFood>  {
+    return this.http.get<MainFood[]>
+    (this.apiUrl + '?date='+date.getFullYear()+'-'+(date.getMonth()+1)+'-' + date.getDate());
+  }
+
+  deleteFood(id: number): Observable<any>
+  {
+    return this.http.delete(this.apiUrl + '/' + id);
+  }
 }

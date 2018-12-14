@@ -6,6 +6,7 @@ import {MotdService} from '../shared/Service/motd.service';
 import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {AuthenticationService} from '../shared/Service/authentication.service';
+import {Users} from '../shared/models/Users';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
+
   constructor(private motdService: MotdService,
               private  mainFoodService: MainFoodService,
               private specielOfferService: SpecielOffersService,
@@ -32,10 +34,10 @@ export class WelcomeComponent implements OnInit {
       .subscribe(listOfMessages => {
         this.motd = listOfMessages;
       });
-    this.mainFoodService.getMainFood().subscribe(listOfMenues => {
+    this.mainFoodService.getDailyMainfood(new Date()).subscribe(listOfMenues => {
     this.mainfoods = listOfMenues;
     });
-    this.specielOfferService.getSpecielFood().subscribe(listOfOffers => {
+    this.specielOfferService.getTodaysFood(new Date()).subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
     });
   }
@@ -47,5 +49,12 @@ export class WelcomeComponent implements OnInit {
       left: 1,
       behavior: 'smooth'
     });
+  }
+  deleteMainFood(id: number)
+  {
+    this.mainFoodService.deleteFood(id)
+      .subscribe(m => {
+        this.refresh();
+      });
   }
 }
