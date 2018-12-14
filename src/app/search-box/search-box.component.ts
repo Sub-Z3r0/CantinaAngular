@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IngredientService} from "../shared/Service/ingredient.service";
 import {Ingredients} from "../shared/models/Ingredients";
+import {isString} from "util";
 
 @Component({
   selector: 'app-search-box',
@@ -8,9 +9,9 @@ import {Ingredients} from "../shared/models/Ingredients";
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
-  ingredients: Ingredients[];
-  ingredientsName: string[] = [];
-  search = '';
+ingredients: Ingredients[];
+ingredientsName: string[] = [];
+search = '';
 
   constructor(private ingredientService: IngredientService) { }
 

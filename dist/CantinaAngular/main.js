@@ -727,12 +727,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search_box_search_box_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./search-box/search-box.component */ "./src/app/search-box/search-box.component.ts");
 /* harmony import */ var _add_motd_add_motd_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./add-motd/add-motd.component */ "./src/app/add-motd/add-motd.component.ts");
 /* harmony import */ var _add_specieloffers_add_specieloffers_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./add-specieloffers/add-specieloffers.component */ "./src/app/add-specieloffers/add-specieloffers.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -772,7 +774,7 @@ var AppModule = /** @class */ (function () {
                 _submit_food_submit_food_component__WEBPACK_IMPORTED_MODULE_15__["SubmitFoodComponent"],
                 _search_box_search_box_component__WEBPACK_IMPORTED_MODULE_18__["SearchBoxComponent"],
                 _add_motd_add_motd_component__WEBPACK_IMPORTED_MODULE_19__["AddMotdComponent"],
-                _add_specieloffers_add_specieloffers_component__WEBPACK_IMPORTED_MODULE_20__["AddSpecieloffersComponent"]
+                _add_specieloffers_add_specieloffers_component__WEBPACK_IMPORTED_MODULE_20__["AddSpecieloffersComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -781,6 +783,9 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_21__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_21__["MatAutocompleteModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_21__["MatNativeDateModule"]
             ],
             providers: [
                 _shared_Service_authentication_service__WEBPACK_IMPORTED_MODULE_10__["AuthenticationService"],
@@ -1045,7 +1050,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"text\" [(ngModel)]=\"searchIngredient\" placeholder=\"Search Ingredients\" />\n<ul *ngFor=\"let ingredient of filterIngredients\">\n  <li>{{ingredient.ingredientName}}</li>\n</ul>\n"
+module.exports = "<form>\r\n  <mat-form-field class=\"example-full-width\">\r\n   <input type=\"text\" placeholder=\"Search Ingredients\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\" />\r\n   <mat-autocomplete #auto=\"matAutocomplete\">\r\n      <mat-option *ngFor=\"let ingredient of ingredients\" [value]=\"option\">\r\n        {{ingredient.ingredientName}}\r\n      </mat-option>\r\n    </mat-autocomplete>\r\n  </mat-form-field>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -1061,6 +1066,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchBoxComponent", function() { return SearchBoxComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_Service_ingredient_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/Service/ingredient.service */ "./src/app/shared/Service/ingredient.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1072,30 +1078,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var SearchBoxComponent = /** @class */ (function () {
     function SearchBoxComponent(ingredientService) {
         this.ingredientService = ingredientService;
+        this.myControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]();
     }
     SearchBoxComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.ingredientService.getIngredients().subscribe(function (ingList) {
-            _this.ingredients = ingList, _this.filterIngredients = ingList;
+            _this.ingredients = ingList;
         });
     };
-    Object.defineProperty(SearchBoxComponent.prototype, "searchIngredient", {
-        get: function () {
-            return this._searchIngredient;
-        },
-        set: function (value) {
-            this._searchIngredient = value;
-            this.filterIngredients = this.filteredIngredients(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    SearchBoxComponent.prototype.filteredIngredients = function (searchString) {
-        return this.ingredients.filter(function (ingr) { return ingr.ingredientName.toLowerCase()
-            .indexOf(searchString.toLowerCase()) !== -1; });
+    SearchBoxComponent.prototype._filter = function (value) {
+        var filterValue = value.toLowerCase();
+        return this.ingredients.filter(function (option) { return option.ingredientName.toLowerCase().includes(filterValue); });
     };
     SearchBoxComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
