@@ -6,6 +6,7 @@ import {MotdService} from '../shared/Service/motd.service';
 import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {AuthenticationService} from '../shared/Service/authentication.service';
+import {Users} from '../shared/models/Users';
 
 
 @Component({

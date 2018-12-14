@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Workers} from "../models/Workers";
 import {Ingredients} from "../models/Ingredients";
 import {worker} from "cluster";
 import {MainFood} from "../models/MainFood";
@@ -10,16 +9,16 @@ import {environment} from "../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
+
 export class IngredientService {
 ingredients: Ingredients[];
+apiUrl = environment.apiUrl + 'api/ingredients';
 id= 0;
-  apiUrl = environment.apiUrl + 'api/ingredients';
 constructor(private http: HttpClient) {}
 
 
 getIngredients(): Observable<Ingredients[]>{
   return this.http.get<Ingredients[]>(this.apiUrl);
-
 }
 addIngredient(ingredients: Ingredients) {
   ingredients.id = this.id++;

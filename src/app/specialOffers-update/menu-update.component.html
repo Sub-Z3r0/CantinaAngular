@@ -4,24 +4,25 @@
   <div fxLayout="row">
     <button routerLink="/adminview" mat-mini-fab mat-raised-button color="primary"><<</button>
   </div>
-  <div fxLayout="row" fxLayoutAlign="center top">
+  <div fxLayout="row" fxLayoutAlign="center">
     <mat-card fxFlex="33">
       <form [formGroup]="specielOfferForm" (ngSubmit)="save()">
         <div fxLayout="column">
 
           <mat-form-field>
-            <input class="form-control" matInput placeholder="Special Offer" formControlName="specialOfferName">
+            <input class="form-control" formControlName="specialOfferName">
           </mat-form-field>
 
           <mat-form-field>
-            <input  type="number" class="form-control" matInput placeholder="Price" formControlName="price">
+<
+            <input  type="number" class="form-control"  formControlName="price">
           </mat-form-field>
-
         </div>
         <button class="btn-light" type="submit">Save</button>
-        <button class="btn-dark" routerLink="/pets">Back</button>
+        <button class="btn-dark" routerLink="">Back</button>
       </form>
     </mat-card>
   </div>
 </div>
+
 
