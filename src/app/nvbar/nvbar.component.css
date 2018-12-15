@@ -5,7 +5,6 @@ ul {
   overflow: hidden;
   top: 0;
 }
-
 li a, .dropbtn {
   float: left;
   display: inline-block;
@@ -15,10 +14,6 @@ li a, .dropbtn {
   text-decoration: none;
 
 }
-
-li a:hover, .dropdown:hover .dropbtn {
-}
-
 .dropbtn {
   float: right;
 }
@@ -29,7 +24,6 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 .dropdown-content {
   display: none;
-
   position: absolute;
   margin-left: 82%;
   margin-top: 50px;
@@ -38,12 +32,6 @@ li a:hover, .dropdown:hover .dropbtn {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   align-self: center;
-
-
-
-}
-.sticky {
-  position: sticky;
 }
 
 .dropdown-content a:hover {background-color: #fff}
