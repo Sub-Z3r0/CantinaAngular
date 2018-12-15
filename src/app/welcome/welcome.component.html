@@ -26,13 +26,13 @@
             <div class="col-lg-4">
               <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
               <div class="box clearfix">
-
                 <h3>
                   <p>
                     <a class="btn btn-primary" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                       {{main.mainFoodName}}
                     </a>
                   </p>
+
                   <div class="collapse" id="{{main.id}}">
                     <div class="card card-body">
                       <div  *ngFor="let recip of main.recipeLines">
@@ -42,80 +42,83 @@
                       </div>
                     </div>
                   </div></h3>
+
                 <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </ul>
   </div>
-
 </div>
+
 <div class="jumbotron">
+
   <div class="mainHeaderOotd">
     <p>Offers of the day</p>
   </div>
+
   <div class="top">
     <div class="container" >
-
-
-
       <div *ngIf="specielOffers">
         <div class="row">
           <div *ngFor="let offers of specielOffers">
-
             <div class="col-lg-4">
 
               <h3><i class="fa fa-cutlery" aria-hidden="true"></i></h3>
+
               <div class="box clearfix">
 
                 <h3>{{offers.specialOfferName}}</h3>
                 <p>{{offers.price  }}DKR</p>
+
                 <button *ngIf="loggedIn" routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
                 <button *ngIf="loggedIn" (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
-              </div>
 
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
 </div>
+
 <footer>
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-sm-6">
+
         <h5>About - Danish</h5>
+
         <p>
           Vores kantine hedder Café healthy study og her kan du både købe morgenmad, frokost og lidt til den lille sult.
-
         </p>
+
       </div>
+
       <div class="col-lg-3 col-sm-6">
+
         <h5>About - English</h5>
         <p> Our cantina is called Café Healthy Study, here you're able to buy both breakfast, lunch and something for the sweet tooth.</p>
+
       </div>
+
       <div class="col-lg-3 col-sm-6">
         <h5>Contact Information</h5>
-        <p>
 
+        <p>
           <span style="font-size: 15px; color: #e13b2b;">
             <i class="fas fa-home"></i>
           </span>
           Spangsbjerg Kirkevej 103 <br>
 
-
           <span style="font-size: 15px; color: #e13b2b;">
             <i class="fas fa-city"></i>
           </span>
           6700 Esbjerg <br>
-
 
           <span style="font-size: 15px; color: #e13b2b;">
             <i class="fas fa-phone"></i>
@@ -139,5 +142,6 @@
     </div>
   </div>
 </div>
+
 </body>
 </html>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {makeClassTargetFilter} from '@angular/compiler-cli/src/ngcc/src/host/fesm2015_host';
 import {WorkerService} from '../shared/Service/worker.service';
 import {Workers} from '../shared/models/Workers';
+import {AuthenticationService} from "../shared/Service/authentication.service";
+import {getToken} from "codelyzer/angular/styles/cssLexer";
 
 @Component({
   selector: 'app-admin-view',
@@ -10,11 +12,14 @@ import {Workers} from '../shared/models/Workers';
 })
 export class AdminViewComponent implements OnInit {
   workers: Workers[];
-  constructor(private workerService: WorkerService) {
-
-  }
+  isLogged : boolean = false;
+  constructor(private workerService: WorkerService,
+              private authenticationService: AuthenticationService) {}
 
   ngOnInit() {
+    if (this.authenticationService.getToken()) {
+      this.isLogged = true;
+    }
     this.workers = this.workerService.getWorkers();
   }
 
