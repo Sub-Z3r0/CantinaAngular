@@ -52,38 +52,15 @@ export class NvbarComponent implements OnInit {
 
   }
 
-  logout()
-  {
+  logout() {
     this.authenticationService.logout();
     window.location.reload();
   }
 
-  Scroll() {
-    window.scrollTo({
-      top: document.getElementById('MenuList').offsetTop,
-      left: document.getElementById('MenuList').offsetLeft,
-      behavior: 'smooth'
-    })
-  }
-  Scroll2() {
-    window.scrollTo({
-      top: document.getElementById('OfferList').offsetTop,
-      left: document.getElementById('OfferList').offsetLeft,
-      behavior: 'smooth'
-    })
-  }
-  Scroll3(){
-    window.scrollTo({
-      top: 0,
-      left: 1,
-      behavior: 'smooth'
-    })
-  }
   get username() { return this.loginForm.get('username'); }
   get password() { return this.loginForm.get('password'); }
   onSubmit() {
     this.submitted = true;
-    window.location.reload();
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
@@ -95,6 +72,7 @@ export class NvbarComponent implements OnInit {
         success => {
           this.router.navigate(['']);
           document.getElementById('id01').style.display = 'none';
+          window.location.reload();
         },
         error => {
           this.errormessage = error.message;

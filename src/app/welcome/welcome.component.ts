@@ -25,7 +25,6 @@ export class WelcomeComponent implements OnInit {
               private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-
     this.refresh();
   }
 
