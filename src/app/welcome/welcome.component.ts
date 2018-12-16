@@ -7,6 +7,9 @@ import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {AuthenticationService} from '../shared/Service/authentication.service';
 import {Users} from '../shared/models/Users';
+import {RecipeLine} from "../Shared/models/RecipeLine";
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {forEach} from "@angular/router/src/utils/collection";
 
 
 @Component({
@@ -18,7 +21,10 @@ export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
+  allergenList : string[];
   loggedIn: boolean;
+  allergenForm: FormGroup;
+
   constructor(private motdService: MotdService,
               private  mainFoodService: MainFoodService,
               private specielOfferService: SpecielOffersService,
@@ -26,8 +32,10 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit() {
     this.refresh();
+    this.allergenForm = new FormGroup({
+      allergen: new FormControl('')
+    });
   }
-
   refresh()
   {
     if (this.authenticationService.getToken()) {

@@ -24,27 +24,25 @@
         <div class="row">
           <div  *ngFor="let main of mainfoods">
             <div class="col-lg-4">
-              <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
+              <i class="fa fa-cutlery" aria-hidden="true"></i><h3>{{main.mainFoodName}}</h3>
               <div class="box clearfix">
-                <h3>
-                  <p>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                      {{main.mainFoodName}}
-                    </a>
-                  </p>
-
-                  <div class="collapse" id="{{main.id}}">
-                    <div class="card card-body">
-                      <div  *ngFor="let recip of main.recipeLines">
-                        <li>
-                          <h6><p>{{recip.ingredientsType.ingredientName}}</p></h6>
-                        </li>
-                      </div>
-                    </div>
-                  </div></h3>
+                <h4>
+                    <div *ngFor="let ingrs of main.recipeLines">
+                      {{ingrs.ingredientsType.ingredientName}}</div>
+                </h4>
+                <div *ngFor="let allergens of allergenList">{{allergens}}</div>
 
                 <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
+                <a class="btn btn-default" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Allergens
+                </a>
+                <div class="collapse" id="{{main.id}}">
+                  <form [formGroup]="allergenForm" (ngSubmit)="saveAllergen()">
+                    <input id="AllergenInput"  formControlName="allergen" type="text" placeholder="Type 1 Allergen at once">
+                  <button type="submit" class="submit-click" class="btn btn-default">Submit</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
