@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {eventNames} from 'cluster';
-import {element} from 'protractor';
-import {tryCatch} from 'rxjs/internal-compatibility';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../shared/Service/authentication.service';
@@ -31,8 +28,6 @@ export class NvbarComponent implements OnInit {
     if (this.authenticationService.getToken()) {
       this.loggedIn = true;
     }
-    var navbar = document.getElementById('navbar');
-
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -40,16 +35,14 @@ export class NvbarComponent implements OnInit {
   }
 
    dropContentFunction(){
-
-    if(document.getElementById('dropbtn').style.display == '') {
-
+    if(document.getElementById('dropbtn').style.display == '')
+    {
       var dropBTN = document.getElementById('dropbtn').style.display = 'block';
     }
     else
     {
       var dropBTN = document.getElementById('dropbtn').style.display='';
     }
-
   }
 
   logout() {
@@ -59,13 +52,13 @@ export class NvbarComponent implements OnInit {
 
   get username() { return this.loginForm.get('username'); }
   get password() { return this.loginForm.get('password'); }
+
   onSubmit() {
     this.submitted = true;
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
-
     this.loading = true;
     this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
