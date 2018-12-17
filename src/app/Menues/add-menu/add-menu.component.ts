@@ -53,23 +53,23 @@ export class AddMenuComponent implements OnInit {
   {
     this.today = new Date;
     this.place = this.menuForm.value;
-    let str = this.place.recipeLines;
-    // var splitted = str.split(",");
-    //   console.log(splitted);
-    // for (let i = 0; i < splitted.length; i++) {
-    //   const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
-    //
-    //   this.recips.push(recip);
-    // }
+    let str = this.place.recipeLines.toLocaleString();
+     var splitted = str.split(",");
+       console.log(splitted);
+    for (let i = 0; i < splitted.length; i++) {
+       const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
+
+       this.recips.push(recip);
+     }
 
     this.alergenMenu = [];
-    let strAllergen = this.place.allergensInMenu;
-    // var splittedAllegerns = strAllergen.split(",");
-    // for (let i = 0; i < splittedAllegerns.length; i++) {
-    //   const allergens: AllergensInMenu ={AllergenType: {allergenType : splittedAllegerns[i]}};
-    //
-    //   this.alergenMenu.push(allergens);
-    // }
+    let strAllergen = this.place.allergensInMenu.toLocaleString();
+    var splittedAllegerns = strAllergen.split(",");
+     for (let i = 0; i < splittedAllegerns.length; i++) {
+       const allergens: AllergensInMenu ={allergenType: {allergenType : splittedAllegerns[i]}};
+
+       this.alergenMenu.push(allergens);
+     }
 
     this.mainFood = this.place;
     this.mainFood.FoodDate = this.today;
