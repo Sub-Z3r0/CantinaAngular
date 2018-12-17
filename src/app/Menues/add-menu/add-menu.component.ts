@@ -8,7 +8,7 @@ import {AllergenService} from '../../shared/Service/allergenService';
 import {IngredientService} from '../../shared/Service/ingredient.service';
 import {MainFood} from '../../shared/models/MainFood';
 import {RecipeLine} from '../../shared/models/RecipeLine';
-import {AllergensInMenu} from '../../Shared/models/AllergensInMenu';
+import {AllergensInMenu} from '../../shared/models/AllergensInMenu';
 import {AuthenticationService} from "../../shared/Service/authentication.service";
 
 @Component({

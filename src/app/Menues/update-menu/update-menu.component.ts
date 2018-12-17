@@ -6,8 +6,8 @@ import {MainFoodService} from '../../shared/Service/main-food.service';
 import {forEach} from '@angular/router/src/utils/collection';
 import {of} from 'rxjs';
 import {MainFood} from '../../shared/models/MainFood';
-import {RecipeLine} from '../../Shared/models/RecipeLine';
-import {AllergensInMenu} from '../../Shared/models/AllergensInMenu';
+import {RecipeLine} from '../../shared/models/RecipeLine';
+import {AllergensInMenu} from '../../shared/models/AllergensInMenu';
 
 @Component({
   selector: 'app-update-menu',
