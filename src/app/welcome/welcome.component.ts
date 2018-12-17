@@ -6,9 +6,11 @@ import {MotdService} from '../shared/Service/motd.service';
 import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {AuthenticationService} from '../shared/Service/authentication.service';
-import {Users} from '../shared/models/Users';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
+import {RecipeLine} from "../Shared/models/RecipeLine";
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {forEach} from "@angular/router/src/utils/collection";
 
 
 @Component({
@@ -24,10 +26,12 @@ export class WelcomeComponent implements OnInit {
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
+  allergenList : string[];
   loggedIn: boolean;
   specielOfferForm = new FormGroup({
     specialOfferName: new FormControl(''),
     price: new FormControl('')});
+  allergenForm: FormGroup;
   constructor(private motdService: MotdService,
               private mainFoodService: MainFoodService,
               private specielOffersService: SpecielOffersService,
@@ -37,10 +41,10 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit() {
     this.refresh();
-
-
+    this.allergenForm = new FormGroup({
+      allergen: new FormControl('')
+    });
   }
-
   refresh()
   {
     if (this.authenticationService.getToken()) {

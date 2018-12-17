@@ -1,5 +1,5 @@
 <form [formGroup]="menuForm" (ngSubmit)="save()">
-  <div class="container">
+  <div *ngIf="isLogged" class="container">
     <div class="row">
       <div class="col-2 pl-4 mt-3">
         <label>
@@ -26,5 +26,8 @@
         <button class="btn-dark btn-sm" routerLink="/">Back</button>
       </div>
     </div>
+  </div>
+  <div class="warning" *ngIf="!isLogged">
+    <p>You are not currently logged. This view is only available for specific users.</p>
   </div>
 </form>

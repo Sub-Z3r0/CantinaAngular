@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Ingredients} from "../models/Ingredients";
-import {worker} from "cluster";
-import {MainFood} from "../models/MainFood";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";

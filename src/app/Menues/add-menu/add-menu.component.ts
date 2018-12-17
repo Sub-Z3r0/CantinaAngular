@@ -9,6 +9,7 @@ import {IngredientService} from '../../shared/Service/ingredient.service';
 import {MainFood} from '../../shared/models/MainFood';
 import {RecipeLine} from '../../shared/models/RecipeLine';
 import {AllergensInMenu} from '../../Shared/models/AllergensInMenu';
+import {AuthenticationService} from "../../shared/Service/authentication.service";
 
 @Component({
   selector: 'app-add-menu',
@@ -33,15 +34,20 @@ export class AddMenuComponent implements OnInit {
   mainFood: MainFood;
   recips: RecipeLine[] = [];
   alergenMenu: AllergensInMenu[] = [];
+  isLogged : boolean = false;
 
 
   constructor(private menuService: MainFoodService,
               private allergenService: AllergenService,
-              private ingredientService: IngredientService) { }
+              private ingredientService: IngredientService,
+              private authenticationService: AuthenticationService) { }
 
 
   ngOnInit()
   {
+    if (this.authenticationService.getToken()) {
+      this.isLogged = true;
+    }
     this.ingredientService.getIngredients()
       .subscribe(ingredients => {
         this.loading = false;
@@ -53,23 +59,23 @@ export class AddMenuComponent implements OnInit {
   {
     this.today = new Date;
     this.place = this.menuForm.value;
-    let str = this.place.recipeLines;
-    // var splitted = str.split(",");
-    //   console.log(splitted);
-    // for (let i = 0; i < splitted.length; i++) {
-    //   const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
-    //
-    //   this.recips.push(recip);
-    // }
+    let str = this.place.recipeLines.toLocaleString();
+     var splitted = str.split(",");
+       console.log(splitted);
+    for (let i = 0; i < splitted.length; i++) {
+       const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
+
+       this.recips.push(recip);
+     }
 
     this.alergenMenu = [];
-    let strAllergen = this.place.allergensInMenus;
-    // var splittedAllegerns = strAllergen.split(",");
-    // for (let i = 0; i < splittedAllegerns.length; i++) {
-    //   const allergens: allergensInMenus ={AllergenType: {allergenType : splittedAllegerns[i]}};
-    //
-    //   this.alergenMenu.push(allergens);
-    // }
+    let strAllergen = this.place.allergensInMenu.toLocaleString();
+    var splittedAllegerns = strAllergen.split(",");
+     for (let i = 0; i < splittedAllegerns.length; i++) {
+       const allergens: AllergensInMenu ={allergenType: {allergenType : splittedAllegerns[i]}};
+
+       this.alergenMenu.push(allergens);
+     }
 
     this.mainFood = this.place;
     this.mainFood.foodDate = this.today;
