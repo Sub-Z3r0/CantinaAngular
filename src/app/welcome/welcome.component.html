@@ -73,10 +73,9 @@
               <h3>{{offers.specialOfferName}}</h3>
 
               <div class="box clearfix">
-
                 <h5 id="Offers">{{offers.price}}&nbsp;.-DKK</h5>
 
-                <button *ngIf="loggedIn" routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
+                <button *ngIf="loggedIn" (click)="updateSpecielOffer(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
                 <button *ngIf="loggedIn" (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
               </div>
@@ -87,7 +86,56 @@
     </div>
   </div>
 </div>
+<!-- modal for updating -->
 
+<form [formGroup]="specielOfferForm" (ngSubmit)="save()">
+
+<div id="id04" class="modal">
+
+  <form class="modal-content animate" (ngSubmit)="onSubmit()">
+
+
+    <div class="container">
+
+      <div fxLayout="column"
+           fxFill
+           fxLayoutGap="95px">
+        <div fxLayout="row" fxLayoutAlign="center">
+          <form [formGroup]="specielOfferForm" (ngSubmit)="save()">
+            <div fxLayout="column">
+              <label>
+                Special Offers Name
+               <input  class="form-control" formControlName=  "specialOfferName">
+              </label>
+              <label>
+                Price
+                <input  type="number" class="form-control"  formControlName="price">
+              </label>
+            </div>
+            <button class="btn-light" type="submit">Save</button>
+            <button class="btn-dark" onclick="document.getElementById('id04').style.display='none'">Back</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="errormessage" class="alert-danger">{{errormessage}}</div>
+  </form>
+
+</div>
+</form>
+<script>
+  // Get the modal
+  var modal = document.getElementById('id04');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+
+
+  }
+</script>
 <footer>
   <div class="container">
     <div class="row">

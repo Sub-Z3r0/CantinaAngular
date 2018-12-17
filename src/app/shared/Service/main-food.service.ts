@@ -32,9 +32,7 @@ export class MainFoodService {
   }
   readDailyFood() : MainFood[]
   {
-
     return JSON.parse(localStorage.getItem('dailyFood'));
-
   }
 
   addMainFood(mainFood : MainFood): Observable<MainFood>
@@ -56,11 +54,15 @@ export class MainFoodService {
 
   getDailyMainfood(date: Date): Observable<MainFood[]>  {
     return this.http.get<MainFood[]>
-    (this.apiUrl + '?date='+date.getFullYear()+'-'+(date.getMonth()+1)+'-' + date.getDate());
+    (this.apiUrl + '?date=' + date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate());
   }
 
   deleteFood(id: number): Observable<any>
   {
     return this.http.delete(this.apiUrl + '/' + id);
+  }
+
+  getFoodById(id: number): Observable<MainFood> {
+    return this.http.get<MainFood>(this.apiUrl + '/' + id);
   }
 }

@@ -30,6 +30,7 @@ import {
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {NgxTypeaheadModule} from "ngx-typeahead";
+import { UpdateMenuComponent } from './Menues/update-menu/update-menu.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {NgxTypeaheadModule} from "ngx-typeahead";
     SearchBoxComponent,
     AddMotdComponent,
     AddSpecieloffersComponent,
-    MenuUpdateComponent
+    MenuUpdateComponent,
+    UpdateMenuComponent
   ],
   imports: [
     BrowserModule,
