@@ -6,6 +6,8 @@ import {MainFoodService} from '../../shared/Service/main-food.service';
 import {forEach} from '@angular/router/src/utils/collection';
 import {of} from 'rxjs';
 import {MainFood} from '../../shared/models/MainFood';
+import {RecipeLine} from '../../Shared/models/RecipeLine';
+import {AllergensInMenu} from '../../Shared/models/AllergensInMenu';
 
 @Component({
   selector: 'app-update-menu',
@@ -15,14 +17,15 @@ import {MainFood} from '../../shared/models/MainFood';
 export class UpdateMenuComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private mainFoodService: MainFoodService, private router: Router) { }
-
+  recips: RecipeLine[] = [];
+  alergenMenu: AllergensInMenu[] = [];
   id: number;
   today: Date;
 
   mainFoodForm = new FormGroup({
     mainFoodName: new FormControl(''),
     recipeLines: new FormControl( ''),
-    allergens: new FormControl( '')
+    allergensInMenus: new FormControl( '')
   });
 
   private void
@@ -31,11 +34,21 @@ export class UpdateMenuComponent implements OnInit {
 
     this.mainFoodService.getFoodById(this.id)
       .subscribe(mFood => {
+        const recips = '';
+        for (const recip of mFood.recipeLines) {
+          recips = recips + recip.ingredientsType.ingredientName + ','  ;
+        }
+       recips = recips.substring(0, recips.length - 2);
+        const allergens = '';
+        for (const allergen of mFood.allergensInMenu) {
+          allergens = allergens + allergen.allergenType.allergenType + ','  ;
+        }
+        allergens = allergens.substring(0, allergens.length - 2);
         this.mainFoodForm.patchValue({
           mainFoodName: mFood.mainFoodName,
-          recipeLines: mFood.recipeLines,
+          recipeLines: recips,
           date: mFood.foodDate,
-          allergens: mFood.allergensInMenus
+          allergensInMenus: allergens
         });
       });
   }
@@ -45,8 +58,27 @@ export class UpdateMenuComponent implements OnInit {
     this.today = new Date;
 
     const mainFood = this.mainFoodForm.value;
+    let str = mainFood.recipeLines.toLocaleString();
+    var splitted = str.split(",");
+    console.log(splitted);
+    for (let i = 0; i < splitted.length; i++) {
+      const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
+
+        this.recips.push(recip);
+    }
+
+    this.alergenMenu = [];
+    let strAllergen = mainFood.allergensInMenus.toLocaleString();
+    var splittedAllegerns = strAllergen.split(",");
+    for (let i = 0; i < splittedAllegerns.length; i++) {
+      const allergens: AllergensInMenu = {allergenType: {allergenType : splittedAllegerns[i]}};
+      this.alergenMenu.push(allergens);
+    }
+
+    mainFood.foodDate= this.today;
+    mainFood.allergensInMenu = this.alergenMenu;
+    mainFood.recipeLines = this.recips;
     mainFood.id = this.id;
-    mainFood.date = this.today;
     this.mainFoodService.UpdateToDaily(mainFood)
       .subscribe(() => {
         this.router.navigateByUrl('');

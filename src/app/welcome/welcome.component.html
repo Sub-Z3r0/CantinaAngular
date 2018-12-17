@@ -38,6 +38,7 @@
 
                 <button *ngIf="loggedIn" (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
+                <button *ngIf="loggedIn" routerLink="update-mainfood/{{main.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
                 <a *ngIf="loggedIn" class="btn btn-default" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Allergens
                 </a>

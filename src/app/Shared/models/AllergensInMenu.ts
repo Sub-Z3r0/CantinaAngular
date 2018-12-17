@@ -6,5 +6,5 @@ export class AllergensInMenu
   MainFoodId?: number;
   MainFood?: MainFood;
   AllergenID? : number;
-  AllergenType? : Allergen;
+  allergenType? : Allergen;
 }
