@@ -9,12 +9,3 @@
   bottom: -12px;
   margin-left: 12px;
 }
-.warning{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: rgba(236, 240, 241, 1);
-  color: #985f0d;
-  text-align: center;
-  font-size: 50px;
-}

@@ -35,11 +35,13 @@ export class MenuUpdateComponent implements OnInit {
   save()
   {
     this.today = new Date;
+    // data static for now, later we add forms!! ;D
 
-    const special = this.specielOfferForm.value;
-    special.id = this.id;
-    special.offersDate = this.today;
-    this.specielOffersService.updateOffers(special)
+    const pet = this.specielOfferForm.value;
+    pet.id = this.id;
+    pet.offersDate = this.today;
+    console.log(pet);
+    this.specielOffersService.updateOffers(pet)
       .subscribe(() => {
         this.router.navigateByUrl('');
       });
