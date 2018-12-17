@@ -40,9 +40,9 @@
                 </h4></div>
                 <br><div *ngFor="let allergens of allergenList">{{allergens}}</div>
 
-                <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
+                <button *ngIf="loggedIn" (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
-                <a class="btn btn-default" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a *ngIf="loggedIn" class="btn btn-default" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Allergens
                 </a>
                 <div class="collapse" id="{{main.id}}">
