@@ -9,6 +9,7 @@ import {IngredientService} from '../../shared/Service/ingredient.service';
 import {MainFood} from '../../shared/models/MainFood';
 import {RecipeLine} from '../../shared/models/RecipeLine';
 import {AllergensInMenu} from '../../Shared/models/AllergensInMenu';
+import {AuthenticationService} from "../../shared/Service/authentication.service";
 
 @Component({
   selector: 'app-add-menu',
@@ -33,15 +34,20 @@ export class AddMenuComponent implements OnInit {
   mainFood: MainFood;
   recips: RecipeLine[] = [];
   alergenMenu: AllergensInMenu[] = [];
+  isLogged : boolean = false;
 
 
   constructor(private menuService: MainFoodService,
               private allergenService: AllergenService,
-              private ingredientService: IngredientService) { }
+              private ingredientService: IngredientService,
+              private authenticationService: AuthenticationService) { }
 
 
   ngOnInit()
   {
+    if (this.authenticationService.getToken()) {
+      this.isLogged = true;
+    }
     this.ingredientService.getIngredients()
       .subscribe(ingredients => {
         this.loading = false;
