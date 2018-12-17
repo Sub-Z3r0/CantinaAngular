@@ -25,7 +25,15 @@
           <div  *ngFor="let main of mainfoods">
 
             <div class="col-lg-4">
-              <i class="fa fa-cutlery" aria-hidden="true"></i><h3>{{main.mainFoodName}}</h3>
+              <i class="fa fa-cutlery" aria-hidden="true"></i>
+              <h3>{{main.mainFoodName}}
+                <i  id="algerns" class="fa fa-exclamation-circle" aria-hidden="true">
+
+                  <span  class="tooltiptext">
+                    <div *ngFor="let allergen of main.allergensInMenu">
+{{allergen.allergenType.allergenType}},&nbsp;
+               </div> </span>
+                </i></h3>
               <div class="box clearfix"><div id="IngredientDiv">
                 <h4 *ngFor="let ingrs of main.recipeLines">
                   {{ingrs.ingredientsType.ingredientName}},&nbsp;
