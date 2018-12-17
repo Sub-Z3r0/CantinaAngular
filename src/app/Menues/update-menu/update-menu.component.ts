@@ -34,14 +34,14 @@ export class UpdateMenuComponent implements OnInit {
 
     this.mainFoodService.getFoodById(this.id)
       .subscribe(mFood => {
-        const recips = '';
-        for (const recip of mFood.recipeLines) {
+        var recips = '';
+        for (let recip of mFood.recipeLines) {
           recips = recips + recip.ingredientsType.ingredientName + ','  ;
         }
        recips = recips.substring(0, recips.length - 2);
-        const allergens = '';
-        for (const allergen of mFood.allergensInMenu) {
-          allergens = allergens + allergen.allergenType.allergenType + ','  ;
+        var allergens = '';
+        for (let allergen of mFood.allergensInMenu) {
+          allergens = allergens + allergen.AllergenType.allergenType + ','  ;
         }
         allergens = allergens.substring(0, allergens.length - 2);
         this.mainFoodForm.patchValue({
