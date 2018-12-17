@@ -239,3 +239,21 @@ h3, h4
 h4{
   font-size: 16px;
 }
+
+#algerns:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltiptext {
+  display: flex;
+  visibility: hidden;
+  width: 150px;
+  background-color: lightgray;
+  color: #ff3a33;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
