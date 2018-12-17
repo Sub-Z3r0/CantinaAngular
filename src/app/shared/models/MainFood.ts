@@ -7,7 +7,7 @@ export class MainFood
   id: number;
   mainFoodName : string;
   recipeLines?: RecipeLine[];
-  AllergensInMenu? : AllergensInMenu[];
+  allergensInMenu? : AllergensInMenu[];
   foodIconId? : number;
   FoodDate? : Date;
 }
