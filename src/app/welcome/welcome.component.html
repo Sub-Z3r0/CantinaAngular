@@ -106,15 +106,17 @@
             <div fxLayout="column">
               <label>
                 Special Offers Name
-               <input  class="form-control" formControlName=  "specialOfferName">
+                <input  class="form-control" formControlName=  "specialOfferName">
               </label>
               <label>
                 Price
-                <input  type="number" class="form-control"  formControlName="price">
+               <input  type="number" class="form-control"  formControlName="price">
               </label>
             </div>
             <button class="btn-light" type="submit">Save</button>
-            <button class="btn-dark" onclick="document.getElementById('id04').style.display='none'">Back</button>
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
           </form>
         </div>
       </div>

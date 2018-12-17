@@ -185,7 +185,7 @@ span.psw {
 
 .close:hover,
 .close:focus {
-  color: red;
+  color: #ffc937;
   cursor: pointer;
 }
 
@@ -213,7 +213,6 @@ span.psw {
   }
   .cancelbtn {
     width: 100%;
-
   }
 }
 
