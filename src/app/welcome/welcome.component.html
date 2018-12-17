@@ -47,8 +47,10 @@
                         </li>
                       </div>
                     </div>
-                  </div></h3>
-                <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
+                  </div>
+                </h3>
+                <button *ngIf="loggedIn" routerLink="/update-mainfood/{{main.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
+                <button *ngIf="loggedIn" (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
               </div>
             </div>

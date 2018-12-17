@@ -63,18 +63,18 @@ export class AddMenuComponent implements OnInit {
     // }
 
     this.alergenMenu = [];
-    let strAllergen = this.place.AllergensInMenu;
+    let strAllergen = this.place.allergensInMenus;
     // var splittedAllegerns = strAllergen.split(",");
     // for (let i = 0; i < splittedAllegerns.length; i++) {
-    //   const allergens: AllergensInMenu ={AllergenType: {allergenType : splittedAllegerns[i]}};
+    //   const allergens: allergensInMenus ={AllergenType: {allergenType : splittedAllegerns[i]}};
     //
     //   this.alergenMenu.push(allergens);
     // }
 
     this.mainFood = this.place;
-    this.mainFood.FoodDate = this.today;
+    this.mainFood.foodDate = this.today;
     this.mainFood.recipeLines = this.recips;
-    this.mainFood.AllergensInMenu = this.alergenMenu;
+    this.mainFood.allergensInMenus = this.alergenMenu;
     console.log(this.mainFood);
 
     this.menuService.addMainFood(this.mainFood)

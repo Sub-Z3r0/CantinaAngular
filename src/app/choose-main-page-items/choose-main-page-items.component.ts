@@ -60,7 +60,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
   saveDailyChoice() {
     this.today = new Date;
     if (this.selected1 != null) {
-      this.selected1.FoodDate = this.today;
+      this.selected1.foodDate = this.today;
       this.mainFoodService.UpdateToDaily(this.selected1)
         .subscribe(() => {
           this.router.navigateByUrl('');
@@ -68,7 +68,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
     }
 
     if (this.selected2 != null) {
-      this.selected2.FoodDate = this.today;
+      this.selected2.foodDate = this.today;
       console.log(this.selected2);
       this.mainFoodService.UpdateToDaily(this.selected2)
         .subscribe(() => {
@@ -77,7 +77,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
     }
 
     if (this.selected3 != null) {
-      this.selected3.FoodDate = this.today;
+      this.selected3.foodDate = this.today;
       console.log(this.selected3);
       this.mainFoodService.UpdateToDaily(this.selected3)
         .subscribe(() => {
