@@ -26,7 +26,7 @@ export class AddMenuComponent implements OnInit {
   menuForm = new FormGroup({
     mainFoodName: new FormControl(''),
     recipeLines: new FormControl(''),
-    AllergensInMenu: new FormControl(''),
+    allergensInMenu: new FormControl(''),
     foodIconId: new FormControl('')
   });
 
@@ -69,10 +69,10 @@ export class AddMenuComponent implements OnInit {
      }
 
     this.alergenMenu = [];
-    let strAllergen = this.place.allergensInMenus.toLocaleString();
+    let strAllergen = this.place.allergensInMenu.toLocaleString();
     var splittedAllegerns = strAllergen.split(",");
      for (let i = 0; i < splittedAllegerns.length; i++) {
-       const allergens: AllergensInMenu = {AllergenType: {allergenType : splittedAllegerns[i]}};
+       const allergens: AllergensInMenu = {allergenType: {allergenType : splittedAllegerns[i]}};
 
        this.alergenMenu.push(allergens);
      }
@@ -80,7 +80,7 @@ export class AddMenuComponent implements OnInit {
     this.mainFood = this.place;
     this.mainFood.foodDate = this.today;
     this.mainFood.recipeLines = this.recips;
-    this.mainFood.allergensInMenus = this.alergenMenu;
+    this.mainFood.allergensInMenu = this.alergenMenu;
     console.log(this.mainFood);
 
     this.menuService.addMainFood(this.mainFood)
