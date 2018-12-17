@@ -71,7 +71,7 @@ export class WelcomeComponent implements OnInit {
     console.log(pet);
     this.specielOffersService.updateOffers(pet)
       .subscribe(() => {
-        this.router.navigateByUrl('');
+        window.location.reload();
       });
   }
 
@@ -109,5 +109,6 @@ export class WelcomeComponent implements OnInit {
         });
       });
     document.getElementById('id04').style.display='block';
+
   }
 }
