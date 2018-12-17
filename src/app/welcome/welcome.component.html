@@ -75,7 +75,7 @@
               <div class="box clearfix">
                 <h5 id="Offers">{{offers.price}}&nbsp;.-DKK</h5>
 
-                <button *ngIf="loggedIn" routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
+                <button *ngIf="loggedIn" (click)="updateSpecielOffer(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
                 <button *ngIf="loggedIn" (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
               </div>

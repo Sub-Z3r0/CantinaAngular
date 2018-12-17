@@ -69,10 +69,10 @@ export class AddMenuComponent implements OnInit {
      }
 
     this.alergenMenu = [];
-    let strAllergen = this.place.allergensInMenu.toLocaleString();
+    let strAllergen = this.place.allergensInMenus.toLocaleString();
     var splittedAllegerns = strAllergen.split(",");
      for (let i = 0; i < splittedAllegerns.length; i++) {
-       const allergens: AllergensInMenu ={allergenType: {allergenType : splittedAllegerns[i]}};
+       const allergens: AllergensInMenu = {AllergenType: {allergenType : splittedAllegerns[i]}};
 
        this.alergenMenu.push(allergens);
      }
