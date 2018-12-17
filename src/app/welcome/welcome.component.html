@@ -38,6 +38,7 @@
 
                 <button *ngIf="loggedIn" (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
+                <button *ngIf="loggedIn" routerLink="update-mainfood/{{main.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
                 <a *ngIf="loggedIn" class="btn btn-default" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Allergens
                 </a>
@@ -105,15 +106,15 @@
             <div fxLayout="column">
               <label>
                 Special Offers Name
-               <input  class="form-control" formControlName=  "specialOfferName">
+                <input  class="form-control" formControlName=  "specialOfferName">
               </label>
               <label>
                 Price
-                <input  type="number" class="form-control"  formControlName="price">
+               <input  type="number" class="form-control"  formControlName="price">
               </label>
             </div>
-            <button class="btn-light" type="submit">Save</button>
-            <button class="btn-dark" onclick="document.getElementById('id04').style.display='none'">Back</button>
+            <button class="saveThis" type="submit">Save</button>
+              <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
           </form>
         </div>
       </div>

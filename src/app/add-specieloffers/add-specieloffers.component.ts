@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {SpecielOffersService} from '../Shared/Service/speciel-offers.service';
+import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {Router} from '@angular/router';
 
 @Component({
