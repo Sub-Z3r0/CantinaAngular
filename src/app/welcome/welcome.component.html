@@ -29,26 +29,43 @@
       <div class="container" *ngIf=mainfoods>
         <div class="row">
           <div  *ngFor="let main of mainfoods">
-            <div class="col-lg-4">
-              <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
-              <div class="box clearfix">
 
-                <h3>
+            <div class="col-lg-4">
+
+              <i class="fa f a-cutlery" aria-hidden="true"></i>
+              <h3>Daily Choice 1 <i  id="algerns" class="fa fa-exclamation-circle" aria-hidden="true">
+
+                  <span  class="tooltiptext">
+                    <div *ngFor="let allergen of main.allergensInMenu">
+{{allergen.allergenType.allergenType}},&nbsp;
+               </div> </span>
+              </i></h3>
+
+
+              <div class="box clearfix">
+              <h3>
                   <p>
                     <a class="btn btn-primary" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                       {{main.mainFoodName}}
                     </a>
+
+
                   </p>
                   <div class="collapse" id="{{main.id}}">
                     <div class="card card-body">
                       <div  *ngFor="let recip of main.recipeLines">
                         <li>
                           <h6><p>{{recip.ingredientsType.ingredientName}}</p></h6>
+
                         </li>
                       </div>
+
                     </div>
                   </div></h3>
+
                 <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
+
+
 
               </div>
             </div>
