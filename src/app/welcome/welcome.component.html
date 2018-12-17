@@ -25,12 +25,11 @@
           <div  *ngFor="let main of mainfoods">
             <div class="col-lg-4">
               <i class="fa fa-cutlery" aria-hidden="true"></i><h3>{{main.mainFoodName}}</h3>
-              <div class="box clearfix">
-                <h4>
-                    <div *ngFor="let ingrs of main.recipeLines">
-                      {{ingrs.ingredientsType.ingredientName}}</div>
-                </h4>
-                <div *ngFor="let allergens of allergenList">{{allergens}}</div>
+              <div class="box clearfix"><div id="IngredientDiv">
+                <h4 *ngFor="let ingrs of main.recipeLines">
+                  {{ingrs.ingredientsType.ingredientName}},&nbsp;
+                </h4></div>
+                <br><div *ngFor="let allergens of allergenList">{{allergens}}</div>
 
                 <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
 
@@ -63,14 +62,14 @@
       <div *ngIf="specielOffers">
         <div class="row">
           <div *ngFor="let offers of specielOffers">
-            <div class="col-lg-4">
+            <div id="OfferContainer">
 
               <h3><i class="fa fa-cutlery" aria-hidden="true"></i></h3>
+              <h3>{{offers.specialOfferName}}</h3>
 
               <div class="box clearfix">
 
-                <h3>{{offers.specialOfferName}}</h3>
-                <p>{{offers.price  }}DKR</p>
+                <h5 id="Offers">{{offers.price}}&nbsp;.-DKK</h5>
 
                 <button *ngIf="loggedIn" routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
                 <button *ngIf="loggedIn" (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>

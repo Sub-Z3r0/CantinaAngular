@@ -113,7 +113,22 @@ body {
   border-radius: 6px;
 
 }
-
+#IngredientDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Offers{
+  float: right;
+  color: #e13b2b;
+}
+#OfferContainer
+{
+  width: 200px;
+  border: 1px solid #f4ed55;
+  text-decoration: underline;
+  text-decoration-color: #e13b2b;
+}
 .recipe-detail {
   padding: 60px 0;
 }
@@ -150,7 +165,7 @@ body {
 }
 
 h5 {
-  color: #e13b2b;
+  color: #c1b9ba;
 }
 
 
@@ -195,7 +210,9 @@ footer .btn {
 .copyright i {
   color: #f44336;
 }
-
+h3{
+  font-weight: bold;
+}
 h3, h4
 {
   font-size: 18px;
