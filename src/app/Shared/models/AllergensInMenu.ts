@@ -3,8 +3,8 @@ import {Allergen} from './Allergen';
 
 export class AllergensInMenu
 {
-  mainFoodId?: number;
-  mainFoodType?: MainFood;
-  allergenID? : number;
-   allergenType? : Allergen;
+  MainFoodId?: number;
+  MainFood?: MainFood;
+  AllergenID? : number;
+  AllergenType? : Allergen;
 }

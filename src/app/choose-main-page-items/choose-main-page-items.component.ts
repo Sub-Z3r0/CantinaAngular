@@ -7,8 +7,6 @@ import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {AuthenticationService} from '../shared/Service/authentication.service';
 import {Router} from '@angular/router';
-import {RecipeLine} from '../Shared/models/RecipeLine';
-import {AllergensInMenu} from '../Shared/models/AllergensInMenu';
 
 
 @Component({
@@ -28,8 +26,6 @@ export class ChooseMainPageItemsComponent implements OnInit {
   selectedOffers6: SpecialOffers ;
   selected4 : MOTD;
   today: Date;
-  recips: RecipeLine[] = [];
-  allegerns: AllergensInMenu[] = [];
   constructor(private motdService: MotdService,
               private  mainFoodService: MainFoodService,
               private specielOfferService: SpecielOffersService,
@@ -62,75 +58,27 @@ export class ChooseMainPageItemsComponent implements OnInit {
 
 
   saveDailyChoice() {
-    //current date
     this.today = new Date;
-    //first selection
     if (this.selected1 != null) {
-      this.recips = [];
-      this.allegerns = [];
-      this.selected1.FoodDate = this.today;
-      for (let i  = 0; i < this.selected1.recipeLines.length ; i++) {
-        const recip: RecipeLine =
-          { ingredientsType: {ingredientName : this.selected1.recipeLines[i].ingredientsType.ingredientName}};
-        this.recips.push(recip);
-        }
-
-
-      for (let i  = 0; i < this.selected1.allergensInMenu.length ; i++) {
-        const alergen: AllergensInMenu =
-          { allergenType: {allergenType : this.selected1.allergensInMenu[i].allergenType.allergenType}};
-        this.allegerns.push(alergen);
-      }
-      this.selected1.recipeLines = this.recips;
-      this.selected1.allergensInMenu = this.allegerns;
+      this.selected1.foodDate = this.today;
       this.mainFoodService.UpdateToDaily(this.selected1)
         .subscribe(() => {
           this.router.navigateByUrl('');
         });
     }
-//selection 2
+
     if (this.selected2 != null) {
-      this.recips = [];
-      this.allegerns = [];
-      this.selected2.FoodDate = this.today;
-      for (let i  = 0; i < this.selected2.recipeLines.length ; i++) {
-        const recip: RecipeLine =
-          { ingredientsType: {ingredientName : this.selected2.recipeLines[i].ingredientsType.ingredientName}};
-        this.recips.push(recip);
-      }
-
-
-      for (let i  = 0; i < this.selected2.allergensInMenu.length ; i++) {
-        const alergen: AllergensInMenu =
-          { allergenType: {allergenType : this.selected2.allergensInMenu[i].allergenType.allergenType}};
-        this.allegerns.push(alergen);
-      }
-      this.selected2.recipeLines = this.recips;
-      this.selected2.allergensInMenu = this.allegerns;
+      this.selected2.foodDate = this.today;
+      console.log(this.selected2);
       this.mainFoodService.UpdateToDaily(this.selected2)
         .subscribe(() => {
           this.router.navigateByUrl('');
         });
     }
-//selection 3
+
     if (this.selected3 != null) {
-      this.recips = [];
-      this.allegerns = [];
-      this.selected3.FoodDate = this.today;
-      for (let i  = 0; i < this.selected3.recipeLines.length ; i++) {
-        const recip: RecipeLine =
-          { ingredientsType: {ingredientName : this.selected3.recipeLines[i].ingredientsType.ingredientName}};
-        this.recips.push(recip);
-      }
-
-
-      for (let i  = 0; i < this.selected3.allergensInMenu.length ; i++) {
-        const alergen: AllergensInMenu =
-          { allergenType: {allergenType : this.selected3.allergensInMenu[i].allergenType.allergenType}};
-        this.allegerns.push(alergen);
-      }
-      this.selected3.recipeLines = this.recips;
-      this.selected3.allergensInMenu = this.allegerns;
+      this.selected3.foodDate = this.today;
+      console.log(this.selected3);
       this.mainFoodService.UpdateToDaily(this.selected3)
         .subscribe(() => {
           this.router.navigateByUrl('');
