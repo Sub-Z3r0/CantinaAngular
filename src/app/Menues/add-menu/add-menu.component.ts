@@ -25,7 +25,7 @@ export class AddMenuComponent implements OnInit {
   menuForm = new FormGroup({
     mainFoodName: new FormControl(''),
     recipeLines: new FormControl(''),
-    AllergensInMenu: new FormControl(''),
+    allergensInMenu: new FormControl(''),
     foodIconId: new FormControl('')
   });
 
