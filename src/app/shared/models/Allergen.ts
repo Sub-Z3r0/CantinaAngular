@@ -4,5 +4,5 @@ export class Allergen
 {
   id?: number;
   allergenType? : string;
-  allergensInMenu?: AllergensInMenu[];
+  AllergensInMenu?: AllergensInMenu[];
 }

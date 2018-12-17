@@ -11,6 +11,37 @@ body {
   text-shadow: 1px 1px 1px #ccc;
   color: #e13b2b;
 }
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
 
 .mainHeaderOotd {
   text-align: center;
@@ -125,6 +156,8 @@ body {
 {
   width: 200px;
   border: 1px solid #f4ed55;
+}
+#ItContains, #OfferContainer{
   text-decoration: underline;
   text-decoration-color: #e13b2b;
 }
@@ -224,15 +257,16 @@ h3, h4
 }
 .tooltiptext {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   visibility: hidden;
   width: 150px;
-  background-color: lightgray;
-  color: #ff3a33;
+  background-color: #fbfbfb;
+  box-shadow: 0 6px 15px rgba(28, 29, 30, 0.22);
+  color: #ff473d;
   text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-
-  /* Position the tooltip text - see examples below! */
+  padding: 5px;
+  border-radius: 4px;
   position: absolute;
   z-index: 1;}
 
@@ -242,18 +276,4 @@ h4{
 
 #algerns:hover .tooltiptext {
   visibility: visible;
-}
-.tooltiptext {
-  display: flex;
-  visibility: hidden;
-  width: 150px;
-  background-color: lightgray;
-  color: #ff3a33;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
 }

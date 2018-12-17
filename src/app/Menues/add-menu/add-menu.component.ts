@@ -9,6 +9,7 @@ import {IngredientService} from '../../shared/Service/ingredient.service';
 import {MainFood} from '../../shared/models/MainFood';
 import {RecipeLine} from '../../shared/models/RecipeLine';
 import {AllergensInMenu} from '../../Shared/models/AllergensInMenu';
+import {AuthenticationService} from "../../shared/Service/authentication.service";
 
 @Component({
   selector: 'app-add-menu',
@@ -33,15 +34,20 @@ export class AddMenuComponent implements OnInit {
   mainFood: MainFood;
   recips: RecipeLine[] = [];
   alergenMenu: AllergensInMenu[] = [];
+  isLogged : boolean = false;
 
 
   constructor(private menuService: MainFoodService,
               private allergenService: AllergenService,
-              private ingredientService: IngredientService) { }
+              private ingredientService: IngredientService,
+              private authenticationService: AuthenticationService) { }
 
 
   ngOnInit()
   {
+    if (this.authenticationService.getToken()) {
+      this.isLogged = true;
+    }
     this.ingredientService.getIngredients()
       .subscribe(ingredients => {
         this.loading = false;
@@ -63,18 +69,18 @@ export class AddMenuComponent implements OnInit {
      }
 
     this.alergenMenu = [];
-    let strAllergen = this.place.allergensInMenu.toLocaleString();
+    let strAllergen = this.place.allergensInMenus.toLocaleString();
     var splittedAllegerns = strAllergen.split(",");
      for (let i = 0; i < splittedAllegerns.length; i++) {
-       const allergens: AllergensInMenu ={allergenType: {allergenType : splittedAllegerns[i]}};
+       const allergens: AllergensInMenu = {AllergenType: {allergenType : splittedAllegerns[i]}};
 
        this.alergenMenu.push(allergens);
      }
 
     this.mainFood = this.place;
-    this.mainFood.FoodDate = this.today;
+    this.mainFood.foodDate = this.today;
     this.mainFood.recipeLines = this.recips;
-    this.mainFood.allergensInMenu = this.alergenMenu;
+    this.mainFood.allergensInMenus = this.alergenMenu;
     console.log(this.mainFood);
 
     this.menuService.addMainFood(this.mainFood)
