@@ -41,7 +41,7 @@ export class UpdateMenuComponent implements OnInit {
        recips = recips.substring(0, recips.length - 2);
         var allergens = '';
         for (let allergen of mFood.allergensInMenu) {
-          allergens = allergens + allergen.AllergenType.allergenType + ','  ;
+          allergens = allergens + allergen.allergenType.allergenType + ','  ;
         }
         allergens = allergens.substring(0, allergens.length - 2);
         this.mainFoodForm.patchValue({
