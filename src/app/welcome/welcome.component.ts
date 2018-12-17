@@ -19,7 +19,7 @@ export class WelcomeComponent implements OnInit {
 
   id: number;
   today: Date;
-
+  motdList: MOTD[];
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
@@ -47,10 +47,14 @@ export class WelcomeComponent implements OnInit {
     if (this.authenticationService.getToken()) {
       this.loggedIn = true;
     }
-    this.motdService.getMOTDById(2)
-      .subscribe(listOfMessages => {
-        this.motd = listOfMessages;
-      });
+    this.motdService.getMOTDAll().subscribe(m =>
+    {
+      this.motdList = m;
+      this.motdService.getMOTDById(this.motdList[Math.floor(Math.random()*this.motdList.length)+1].id)
+        .subscribe(listOfMessages => {
+          this.motd = listOfMessages;
+        });
+    })
     this.mainFoodService.getDailyMainfood(new Date()).subscribe(listOfMenues => {
       this.mainfoods = listOfMenues;
     });
