@@ -29,28 +29,43 @@
       <div class="container" *ngIf=mainfoods>
         <div class="row">
           <div  *ngFor="let main of mainfoods">
-            <div class="col-lg-4">
-              <i class="fa fa-cutlery" aria-hidden="true"></i><h3>Daily Choice 1</h3>
-              <div class="box clearfix">
 
+            <div class="col-lg-4">
+
+              <i class="fa f a-cutlery" aria-hidden="true"></i>
+              <h3>Daily Choice 1 <i  id="algerns" class="fa fa-exclamation-circle" aria-hidden="true">
+
+                  <span  class="tooltiptext">
+                    <div *ngFor="let allergen of main.allergensInMenu">
+                    {{allergen.allergenType.allergenType}},&nbsp;
+               </div> </span>
+              </i></h3>
+
+
+              <div class="box clearfix">
                 <h3>
                   <p>
                     <a class="btn btn-primary" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                       {{main.mainFoodName}}
                     </a>
+
+
                   </p>
                   <div class="collapse" id="{{main.id}}">
                     <div class="card card-body">
                       <div  *ngFor="let recip of main.recipeLines">
                         <li>
                           <h6><p>{{recip.ingredientsType.ingredientName}}</p></h6>
+
                         </li>
                       </div>
+
                     </div>
-                  </div>
-                </h3>
-                <button *ngIf="loggedIn" routerLink="/update-mainfood/{{main.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
-                <button *ngIf="loggedIn" (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
+                  </div></h3>
+
+                <button (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
+
+
 
               </div>
             </div>
@@ -82,7 +97,7 @@
 
                 <h3>{{offers.specialOfferName}}</h3>
                 <p>{{offers.price  }}DKR</p>
-                <button *ngIf="loggedIn" routerLink="/menu-update/{{offers.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
+                <button *ngIf="loggedIn" (click)="updateSpecielOffer(offers.id)"  class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
                 <button *ngIf="loggedIn" (click)="deleteSpecialFood(offers.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
               </div>
 
@@ -95,6 +110,56 @@
   </div>
 
 </div>
+
+<!-- modal for updating -->
+
+<form [formGroup]="specielOfferForm" (ngSubmit)="save()">
+
+<div id="id04" class="modal">
+
+  <form class="modal-content animate" (ngSubmit)="onSubmit()">
+
+
+    <div class="container">
+
+      <div fxLayout="column"
+           fxFill
+           fxLayoutGap="95px">
+        <div fxLayout="row" fxLayoutAlign="center">
+          <form [formGroup]="specielOfferForm" (ngSubmit)="save()">
+            <div fxLayout="column">
+              <input  class="form-control" formControlName=  "specialOfferName">
+
+              <input  type="number" class="form-control"  formControlName="price">
+            </div>
+            <button class="btn-light" type="submit">Save</button>
+            <button class="btn-dark" routerLink="">Back</button>
+          </form>
+        </div>
+      </div>
+
+
+
+      <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+    <div *ngIf="errormessage" class="alert-danger">{{errormessage}}</div>
+  </form>
+
+</div>
+</form>
+<script>
+  // Get the modal
+  var modal = document.getElementById('id04');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+
+
+  }
+</script>
 <footer>
   <div class="container">
     <div class="row">

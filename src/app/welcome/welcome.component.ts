@@ -7,6 +7,8 @@ import {MainFoodService} from '../shared/Service/main-food.service';
 import {SpecielOffersService} from '../shared/Service/speciel-offers.service';
 import {AuthenticationService} from '../shared/Service/authentication.service';
 import {Users} from '../shared/models/Users';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,17 +17,28 @@ import {Users} from '../shared/models/Users';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+
+  id: number;
+  today: Date;
+
   motd: MOTD;
   mainfoods: MainFood[];
   specielOffers: SpecialOffers[];
   loggedIn: boolean;
+  specielOfferForm = new FormGroup({
+    specialOfferName: new FormControl(''),
+    price: new FormControl('')});
   constructor(private motdService: MotdService,
-              private  mainFoodService: MainFoodService,
-              private specielOfferService: SpecielOffersService,
+              private mainFoodService: MainFoodService,
+              private specielOffersService: SpecielOffersService,
+              private router: Router,
               private authenticationService: AuthenticationService) { }
+
 
   ngOnInit() {
     this.refresh();
+
+
   }
 
   refresh()
@@ -38,11 +51,27 @@ export class WelcomeComponent implements OnInit {
         this.motd = listOfMessages;
       });
     this.mainFoodService.getDailyMainfood(new Date()).subscribe(listOfMenues => {
-    this.mainfoods = listOfMenues;
+      this.mainfoods = listOfMenues;
     });
-    this.specielOfferService.getTodaysFood(new Date()).subscribe(listOfOffers => {
+    this.specielOffersService.getTodaysFood(new Date()).subscribe(listOfOffers => {
       this.specielOffers = listOfOffers;
     });
+  }
+
+
+  save()
+  {
+    this.today = new Date;
+    // data static for now, later we add forms!! ;D
+
+    const pet = this.specielOfferForm.value;
+    pet.id = this.id;
+    pet.offersDate = this.today;
+    console.log(pet);
+    this.specielOffersService.updateOffers(pet)
+      .subscribe(() => {
+        this.router.navigateByUrl('');
+      });
   }
 
   PopUp() {
@@ -62,9 +91,22 @@ export class WelcomeComponent implements OnInit {
   }
   deleteSpecialFood(id: number)
   {
-    this.specielOfferService.deleteSpecial(id)
+    this.specielOffersService.deleteSpecial(id)
       .subscribe(m => {
         this.refresh();
       });
+  }
+  updateSpecielOffer(id: number)
+  {
+    this.specielOffersService.getSpecielFoodById(id)
+      .subscribe(offers => {
+        this.id = id;
+        this.specielOfferForm.patchValue({
+          specialOfferName: offers.specialOfferName,
+          price: offers.price,
+          offerDate: offers.offersDate
+        });
+      });
+    document.getElementById('id04').style.display='block';
   }
 }
