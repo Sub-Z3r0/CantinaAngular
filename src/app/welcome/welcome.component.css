@@ -150,6 +150,9 @@ body {
   justify-content: center;
 }
 #Offers{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #e13b2b;
 }
 #OfferContainer

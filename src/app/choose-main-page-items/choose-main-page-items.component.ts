@@ -142,6 +142,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
           this.router.navigateByUrl('');
         });
     }
+
     if (this.selectedOffers4 != null) {
       this.selectedOffers4.offersDate = this.today;
       console.log(this.selectedOffers4);
@@ -150,6 +151,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
           this.router.navigateByUrl('');
         });
     }
+
     if (this.selectedOffers5 != null) {
       this.selectedOffers5.offersDate = this.today;
       console.log(this.selectedOffers5);
