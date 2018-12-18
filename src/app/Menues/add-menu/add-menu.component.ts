@@ -10,6 +10,7 @@ import {MainFood} from '../../shared/models/MainFood';
 import {RecipeLine} from '../../shared/models/RecipeLine';
 import {AllergensInMenu} from '../../shared/models/AllergensInMenu';
 import {AuthenticationService} from '../../shared/Service/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-menu',
@@ -37,7 +38,8 @@ export class AddMenuComponent implements OnInit {
   constructor(private menuService: MainFoodService,
               private allergenService: AllergenService,
               private ingredientService: IngredientService,
-              private authenticationService: AuthenticationService) { }
+              private authenticationService: AuthenticationService,
+              private router: Router) { }
 
 
   ngOnInit() {
@@ -77,7 +79,7 @@ export class AddMenuComponent implements OnInit {
 
     this.menuService.addMainFood(this.mainFood)
       .subscribe(() => {
-
+        this.router.navigateByUrl('');
       });
   }
 }

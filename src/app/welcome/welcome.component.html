@@ -19,7 +19,7 @@
 
       <div class="container" *ngIf=mainfoods>
         <div class="row" fxLayoutAlign="end">
-          <button mat-fab *ngIf="loggedIn" color="warn" routerLink="/menu-add">+</button>
+          <button mat-fab   *ngIf="loggedIn"  class="mattAddIcon" routerLink="/menu-add">+</button>
         </div>
         <div class="row">
           <div  *ngFor="let main of mainfoods">
@@ -27,9 +27,9 @@
             <div class="col-lg-4">
               <i class="fa fa-cutlery" aria-hidden="true"></i>
               <h3>{{main.mainFoodName}}
-                <i  id="algerns" class="fa fa-exclamation-circle" aria-hidden="true">
-                  <span  class="tooltiptext">
-                    <p id="ItContains">It may contains:</p>
+                <i *ngIf="!main.allergensInMenu" id="algerns" class="fa fa-exclamation-circle" aria-hidden="true">
+                  <span class="tooltiptext">
+                    <p id="ItContains">Contains:</p>
                     <p *ngFor="let allergen of main.allergensInMenu">
                       {{allergen.allergenType.allergenType}},&nbsp;
                </p> </span>
@@ -59,7 +59,7 @@
   <div class="top">
     <div class="container" >
       <div class="row" fxLayoutAlign="end">
-        <button mat-fab *ngIf="loggedIn" color="warn" routerLink="/add-specielOffers">+</button>
+        <button mat-fab *ngIf="loggedIn" class="mattAddIcon" routerLink="/add-specielOffers">+</button>
       </div>
       <div *ngIf="specielOffers">
         <div class="row">
