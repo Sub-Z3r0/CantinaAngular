@@ -67,7 +67,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
     if (this.selected1 != null) {
       this.recips = [];
       this.allegerns = [];
-      this.selected1.FoodDate = this.today;
+      this.selected1.foodDate = this.today;
       for (let i  = 0; i < this.selected1.recipeLines.length ; i++) {
         const recip: RecipeLine =
           { ingredientsType: {ingredientName : this.selected1.recipeLines[i].ingredientsType.ingredientName}};
@@ -93,7 +93,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
     if (this.selected2 != null) {
       this.recips = [];
       this.allegerns = [];
-      this.selected2.FoodDate = this.today;
+      this.selected2.foodDate = this.today;
       console.log(this.selected2);
       for (let i  = 0; i < this.selected2.recipeLines.length ; i++) {
         const recip: RecipeLine =
@@ -120,7 +120,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
     if (this.selected3 != null) {
       this.recips = [];
       this.allegerns = [];
-      this.selected3.FoodDate = this.today;
+      this.selected3.foodDate = this.today;
       console.log(this.selected3);
       for (let i  = 0; i < this.selected3.recipeLines.length ; i++) {
         const recip: RecipeLine =
