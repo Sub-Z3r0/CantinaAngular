@@ -19,7 +19,7 @@
 
       <div class="container" *ngIf=mainfoods>
         <div class="row" fxLayoutAlign="end">
-          <button mat-fab  color="warn" routerLink="/menu-add">+</button>
+          <button mat-fab *ngIf="loggedIn" color="warn" routerLink="/menu-add">+</button>
         </div>
         <div class="row">
           <div  *ngFor="let main of mainfoods">
@@ -39,19 +39,8 @@
                   {{ingrs.ingredientsType.ingredientName}},&nbsp;
                 </h4></div>
                 <br><div *ngFor="let allergens of allergenList">{{allergens}}</div>
-
-                <button *ngIf="loggedIn" (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
-
                 <button *ngIf="loggedIn" routerLink="update-mainfood/{{main.id}}" class="btn btn-dark btn-sm mr-1 ml-2">Update</button>
-                <a *ngIf="loggedIn" class="btn btn-default" data-toggle="collapse" href="#{{main.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                  Allergens
-                </a>
-                <div class="collapse" id="{{main.id}}">
-                  <form [formGroup]="allergenForm" (ngSubmit)="saveAllergen()">
-                    <input id="AllergenInput"  formControlName="allergen" type="text" placeholder="Type 1 Allergen at once">
-                  <button type="submit" class="submit-click" class="btn btn-default">Submit</button>
-                  </form>
-                </div>
+                <button *ngIf="loggedIn" (click)="deleteMainFood(main.id)" class="btn btn-dark btn-sm mr-1 ml-2">Delete</button>
               </div>
             </div>
           </div>
@@ -69,6 +58,9 @@
 
   <div class="top">
     <div class="container" >
+      <div class="row" fxLayoutAlign="end">
+        <button mat-fab *ngIf="loggedIn" color="warn" routerLink="/add-specielOffers">+</button>
+      </div>
       <div *ngIf="specielOffers">
         <div class="row">
           <div *ngFor="let offers of specielOffers">
