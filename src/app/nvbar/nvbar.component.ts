@@ -18,13 +18,11 @@ export class NvbarComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              private authenticationService: AuthenticationService)
-  {
+              private authenticationService: AuthenticationService) {
     this.usernames = authenticationService.getUsername();
   }
 
-  ngOnInit()
-  {
+  ngOnInit() {
     if (this.authenticationService.getToken()) {
       this.loggedIn = true;
     }
@@ -34,14 +32,11 @@ export class NvbarComponent implements OnInit {
     });
   }
 
-   dropContentFunction(){
-    if(document.getElementById('dropbtn').style.display == '')
-    {
-      var dropBTN = document.getElementById('dropbtn').style.display = 'block';
-    }
-    else
-    {
-      var dropBTN = document.getElementById('dropbtn').style.display='';
+   dropContentFunction() {
+    if (document.getElementById('dropbtn').style.display == '') {
+      let dropBTN = document.getElementById('dropbtn').style.display = 'block';
+    } else {
+      let dropBTN = document.getElementById('dropbtn').style.display = '';
     }
   }
 

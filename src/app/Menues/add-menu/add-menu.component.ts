@@ -9,7 +9,7 @@ import {IngredientService} from '../../shared/Service/ingredient.service';
 import {MainFood} from '../../shared/models/MainFood';
 import {RecipeLine} from '../../shared/models/RecipeLine';
 import {AllergensInMenu} from '../../shared/models/AllergensInMenu';
-import {AuthenticationService} from "../../shared/Service/authentication.service";
+import {AuthenticationService} from '../../shared/Service/authentication.service';
 
 @Component({
   selector: 'app-add-menu',
@@ -18,9 +18,6 @@ import {AuthenticationService} from "../../shared/Service/authentication.service
 })
 export class AddMenuComponent implements OnInit {
 
-  // many to many relations
-  ingredients: Ingredients[];
-  allergens: Allergen[];
   today: Date;
   loading = true;
   menuForm = new FormGroup({
@@ -34,7 +31,7 @@ export class AddMenuComponent implements OnInit {
   mainFood: MainFood;
   recips: RecipeLine[] = [];
   alergenMenu: AllergensInMenu[] = [];
-  isLogged : boolean = false;
+  isLogged = false;
 
 
   constructor(private menuService: MainFoodService,
@@ -43,8 +40,7 @@ export class AddMenuComponent implements OnInit {
               private authenticationService: AuthenticationService) { }
 
 
-  ngOnInit()
-  {
+  ngOnInit() {
     if (this.authenticationService.getToken()) {
       this.isLogged = true;
     }
@@ -55,22 +51,21 @@ export class AddMenuComponent implements OnInit {
   }
 
 
-  save()
-  {
+  save() {
     this.today = new Date;
     this.place = this.menuForm.value;
-    let str = this.place.recipeLines.toLocaleString();
-     var splitted = str.split(",");
+    const str = this.place.recipeLines.toLocaleString();
+     const splitted = str.split(',');
        console.log(splitted);
     for (let i = 0; i < splitted.length; i++) {
-       const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
+       const recip: RecipeLine = {ingredientsType: {ingredientName : splitted[i]}}  ;
 
        this.recips.push(recip);
      }
 
     this.alergenMenu = [];
-    let strAllergen = this.place.allergensInMenu.toLocaleString();
-    var splittedAllegerns = strAllergen.split(",");
+    const strAllergen = this.place.allergensInMenu.toLocaleString();
+    const splittedAllegerns = strAllergen.split(',');
      for (let i = 0; i < splittedAllegerns.length; i++) {
        const allergens: AllergensInMenu = {allergenType: {allergenType : splittedAllegerns[i]}};
 
