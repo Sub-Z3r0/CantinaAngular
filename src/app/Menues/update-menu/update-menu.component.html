@@ -4,13 +4,18 @@
   <div fxLayout="row" fxLayoutAlign="center">
     <form [formGroup]="mainFoodForm" (ngSubmit)="save()">
       <div fxLayout="column">
-
-        <input  class="form-control" formControlName=  "mainFoodName">
-
-        <input  class="form-control" formControlName=  "recipeLines">
-
-        <input   class="form-control" formControlName=  "allergensInMenus">
-
+        <label>
+          Food Name
+          <input  class="form-control" formControlName=  "mainFoodName">
+        </label>
+        <label>
+          Ingredients
+          <input  class="form-control" formControlName=  "recipeLines">
+        </label>
+        <label>
+          Allergens
+          <input   class="form-control" formControlName=  "allergensInMenus">
+        </label>
       </div>
       <button class="btn-light" type="submit">Save</button>
       <button class="btn-dark" routerLink="">Back</button>
