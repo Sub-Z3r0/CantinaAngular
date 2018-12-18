@@ -27,13 +27,14 @@
             <div class="col-lg-4">
               <i class="fa fa-cutlery" aria-hidden="true"></i>
               <h3>{{main.mainFoodName}}
-                <i *ngIf="!main.allergensInMenu" id="algerns" class="fa fa-exclamation-circle" aria-hidden="true">
+                <i *ngIf="main.allergensInMenu?.length > 0" id="algerns" class="fa fa-exclamation-circle" aria-hidden="true">
                   <span class="tooltiptext">
                     <p id="ItContains">Contains:</p>
                     <p *ngFor="let allergen of main.allergensInMenu">
                       {{allergen.allergenType.allergenType}},&nbsp;
                </p> </span>
-                </i></h3>
+                </i>
+              </h3>
               <div class="box clearfix"><div id="IngredientDiv">
                 <h4 *ngFor="let ingrs of main.recipeLines">
                   {{ingrs.ingredientsType.ingredientName}},&nbsp;
