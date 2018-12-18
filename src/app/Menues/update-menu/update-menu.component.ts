@@ -25,7 +25,7 @@ export class UpdateMenuComponent implements OnInit {
   mainFoodForm = new FormGroup({
     mainFoodName: new FormControl(''),
     recipeLines: new FormControl( ''),
-    allergensInMenus: new FormControl( '')
+    allergensInMenu: new FormControl( '')
   });
 
   private void
@@ -48,7 +48,7 @@ export class UpdateMenuComponent implements OnInit {
           mainFoodName: mFood.mainFoodName,
           recipeLines: recips,
           date: mFood.foodDate,
-          allergensInMenus: allergens
+          allergensInMenu: allergens
         });
       });
   }
@@ -58,6 +58,8 @@ export class UpdateMenuComponent implements OnInit {
     this.today = new Date;
 
     const mainFood = this.mainFoodForm.value;
+    mainFood.foodIconId = 0 ;
+
     if ( mainFood.recipeLines.toString() !== "") {
       let str = mainFood.recipeLines.toLocaleString();
       var splitted = str.split(",");
@@ -69,8 +71,9 @@ export class UpdateMenuComponent implements OnInit {
       }
       mainFood.recipeLines = this.recips;
     }
-    if ( mainFood.allergensInMenus.toString() !== "") {
-      let strAllergen = mainFood.allergensInMenus.toLocaleString();
+
+    if ( mainFood.allergensInMenu.toString() !== "") {
+      let strAllergen = mainFood.allergensInMenu.toLocaleString();
       var splittedAllegerns = strAllergen.split(",");
       for (let i = 0; i < splittedAllegerns.length; i++) {
         const allergens: AllergensInMenu = {allergenType: {allergenType: splittedAllegerns[i]}};
@@ -78,6 +81,7 @@ export class UpdateMenuComponent implements OnInit {
       }
       mainFood.allergensInMenu = this.alergenMenu;
     }
+
 
     mainFood.foodDate= this.today;
 
