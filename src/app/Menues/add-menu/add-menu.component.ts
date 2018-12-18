@@ -48,10 +48,7 @@ export class AddMenuComponent implements OnInit {
     if (this.authenticationService.getToken()) {
       this.isLogged = true;
     }
-    this.ingredientService.getIngredients()
-      .subscribe(ingredients => {
-        this.loading = false;
-      });
+   
   }
 
 
