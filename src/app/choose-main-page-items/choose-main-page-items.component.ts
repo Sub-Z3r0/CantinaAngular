@@ -83,10 +83,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
       this.selected1.recipeLines = this.recips;
       this.selected1.allergensInMenu = this.allegerns;
 
-      this.mainFoodService.UpdateToDaily(this.selected1)
-        .subscribe(() => {
-          this.router.navigateByUrl('');
-        });
+      this.mainFoodService.UpdateToDaily(this.selected1);
     }
 
 //selection 2
@@ -110,10 +107,7 @@ export class ChooseMainPageItemsComponent implements OnInit {
       this.selected2.recipeLines = this.recips;
       this.selected2.allergensInMenu = this.allegerns;
 
-      this.mainFoodService.UpdateToDaily(this.selected2)
-        .subscribe(() => {
-          this.router.navigateByUrl('');
-        });
+      this.mainFoodService.UpdateToDaily(this.selected2);
     }
 
 //selection 3
@@ -137,38 +131,27 @@ export class ChooseMainPageItemsComponent implements OnInit {
       this.selected3.recipeLines = this.recips;
       this.selected3.allergensInMenu = this.allegerns;
 
-      this.mainFoodService.UpdateToDaily(this.selected3)
-        .subscribe(() => {
-          this.router.navigateByUrl('');
-        });
+      this.mainFoodService.UpdateToDaily(this.selected3);
     }
 
     if (this.selectedOffers4 != null) {
       this.selectedOffers4.offersDate = this.today;
       console.log(this.selectedOffers4);
-      this.specielOfferService.updateOffers(this.selectedOffers4)
-        .subscribe(() => {
-          this.router.navigateByUrl('');
-        });
+      this.specielOfferService.updateOffers(this.selectedOffers4);
     }
 
     if (this.selectedOffers5 != null) {
       this.selectedOffers5.offersDate = this.today;
       console.log(this.selectedOffers5);
-      this.specielOfferService.updateOffers(this.selectedOffers5)
-        .subscribe(() => {
-          this.router.navigateByUrl('');
-        });
+      this.specielOfferService.updateOffers(this.selectedOffers5);
+
     }
     if (this.selectedOffers6 != null) {
       this.selectedOffers6.offersDate = this.today;
       console.log(this.selectedOffers6);
-      this.specielOfferService.updateOffers(this.selectedOffers6)
-        .subscribe(() => {
-          this.router.navigateByUrl('');
-        });
+      this.specielOfferService.updateOffers(this.selectedOffers6);
     }
-
+    this.router.navigateByUrl('/');
 
   }
 

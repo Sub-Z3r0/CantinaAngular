@@ -50,29 +50,37 @@ export class AddMenuComponent implements OnInit {
 
   save() {
     this.today = new Date;
+
+
     this.place = this.menuForm.value;
+      this.mainFood = this.place;
+    if (this.place.recipeLines.toString() !== "") {
+
     const str = this.place.recipeLines.toLocaleString();
-     const splitted = str.split(',');
-       console.log(splitted);
+    const splitted = str.split(',');
+    console.log(splitted);
     for (let i = 0; i < splitted.length; i++) {
-       const recip: RecipeLine = {ingredientsType: {ingredientName : splitted[i]}}  ;
+      const recip: RecipeLine = {ingredientsType: {ingredientName: splitted[i]}};
 
-       this.recips.push(recip);
-     }
-
+      this.recips.push(recip);
+    }
+    this.mainFood.recipeLines = this.recips;
+  }
+  if ( this.place.recipeLines.toString() !== "") {
     this.alergenMenu = [];
     const strAllergen = this.place.allergensInMenu.toLocaleString();
     const splittedAllegerns = strAllergen.split(',');
-     for (let i = 0; i < splittedAllegerns.length; i++) {
-       const allergens: AllergensInMenu = {allergenType: {allergenType : splittedAllegerns[i]}};
+    for (let i = 0; i < splittedAllegerns.length; i++) {
+      const allergens: AllergensInMenu = {allergenType: {allergenType: splittedAllegerns[i]}};
 
-       this.alergenMenu.push(allergens);
-     }
-
-    this.mainFood = this.place;
-    this.mainFood.foodDate = this.today;
-    this.mainFood.recipeLines = this.recips;
+      this.alergenMenu.push(allergens);
+    }
     this.mainFood.allergensInMenu = this.alergenMenu;
+  }
+
+    this.mainFood.foodDate = this.today;
+
+
     console.log(this.mainFood);
 
     this.menuService.addMainFood(this.mainFood)
