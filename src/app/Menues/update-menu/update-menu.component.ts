@@ -69,7 +69,7 @@ export class UpdateMenuComponent implements OnInit {
       }
       mainFood.recipeLines = this.recips;
     }
-    if ( mainFood.recipeLines.toString() !== "") {
+    if ( mainFood.allergensInMenus.toString() !== "") {
       let strAllergen = mainFood.allergensInMenus.toLocaleString();
       var splittedAllegerns = strAllergen.split(",");
       for (let i = 0; i < splittedAllegerns.length; i++) {
