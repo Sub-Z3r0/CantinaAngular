@@ -58,26 +58,30 @@ export class UpdateMenuComponent implements OnInit {
     this.today = new Date;
 
     const mainFood = this.mainFoodForm.value;
-    let str = mainFood.recipeLines.toLocaleString();
-    var splitted = str.split(",");
-    console.log(splitted);
-    for (let i = 0; i < splitted.length; i++) {
-      const recip: RecipeLine ={ingredientsType: {ingredientName :splitted[i]}}  ;
+    if ( mainFood.recipeLines.toString() !== "") {
+      let str = mainFood.recipeLines.toLocaleString();
+      var splitted = str.split(",");
+      console.log(splitted);
+      for (let i = 0; i < splitted.length; i++) {
+        const recip: RecipeLine = {ingredientsType: {ingredientName: splitted[i]}};
 
         this.recips.push(recip);
+      }
+      mainFood.recipeLines = this.recips;
     }
-
-    this.alergenMenu = [];
-    let strAllergen = mainFood.allergensInMenus.toLocaleString();
-    var splittedAllegerns = strAllergen.split(",");
-    for (let i = 0; i < splittedAllegerns.length; i++) {
-      const allergens: AllergensInMenu = {allergenType: {allergenType : splittedAllegerns[i]}};
-      this.alergenMenu.push(allergens);
+    if ( mainFood.recipeLines.toString() !== "") {
+      let strAllergen = mainFood.allergensInMenus.toLocaleString();
+      var splittedAllegerns = strAllergen.split(",");
+      for (let i = 0; i < splittedAllegerns.length; i++) {
+        const allergens: AllergensInMenu = {allergenType: {allergenType: splittedAllegerns[i]}};
+        this.alergenMenu.push(allergens);
+      }
+      mainFood.allergensInMenu = this.alergenMenu;
     }
 
     mainFood.foodDate= this.today;
-    mainFood.allergensInMenu = this.alergenMenu;
-    mainFood.recipeLines = this.recips;
+
+
     mainFood.id = this.id;
     this.mainFoodService.UpdateToDaily(mainFood)
       .subscribe(() => {
