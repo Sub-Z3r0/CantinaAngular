@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class AddSpecieloffersComponent implements OnInit {
 
+  today: Date;
   specielOfferForm = new FormGroup({
     specialOfferName: new FormControl(''),
     price: new FormControl('')});
@@ -20,8 +21,10 @@ export class AddSpecieloffersComponent implements OnInit {
   }
   save()
   {
+    this.today = new Date();
     // data static for now, later we add forms!! ;D
     const specielOffers = this.specielOfferForm.value;
+    specielOffers.offersDate = this.today;
     this.specielOffersService.addpecielOffers(specielOffers)
       .subscribe(() => {
         this.router.navigateByUrl('/');
