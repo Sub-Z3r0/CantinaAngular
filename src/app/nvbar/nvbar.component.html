@@ -57,9 +57,6 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li *ngIf="loggedIn" class="nav-item">
-        <a class="nav-link" routerLink="/menu-add">Add Menu</a>
-        </li>
         <li id="LogOutBtn" class="btn btn-submit-recipe" (click)="logout()" *ngIf="loggedIn"><div><i class="fas fa-sign-out-alt"></i>{{usernames}}</div></li>
         <li class="nav-item btn-submit-recipe">
           <button *ngIf="!loggedIn" class="fa fa-upload" class="btn btn-submit-recipe" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>        </li>

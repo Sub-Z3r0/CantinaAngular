@@ -16,7 +16,11 @@
 
   <div class="top">
     <ul>
+
       <div class="container" *ngIf=mainfoods>
+        <div class="row" fxLayoutAlign="end">
+          <button mat-fab  color="warn" routerLink="/menu-add">+</button>
+        </div>
         <div class="row">
           <div  *ngFor="let main of mainfoods">
 
