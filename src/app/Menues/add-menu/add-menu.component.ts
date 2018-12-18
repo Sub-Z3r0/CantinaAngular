@@ -24,8 +24,7 @@ export class AddMenuComponent implements OnInit {
   menuForm = new FormGroup({
     mainFoodName: new FormControl(''),
     recipeLines: new FormControl(''),
-    allergensInMenu: new FormControl(''),
-    foodIconId: new FormControl('')
+    allergensInMenu: new FormControl('')
   });
 
   place: MainFood;
@@ -56,6 +55,7 @@ export class AddMenuComponent implements OnInit {
 
     this.place = this.menuForm.value;
       this.mainFood = this.place;
+      this.mainFood.foodIconId = 0;
     if (this.place.recipeLines.toString() !== "") {
 
     const str = this.place.recipeLines.toLocaleString();
@@ -68,7 +68,7 @@ export class AddMenuComponent implements OnInit {
     }
     this.mainFood.recipeLines = this.recips;
   }
-  if ( this.place.recipeLines.toString() !== "") {
+  if ( this.place.allergensInMenu.toString() !== "") {
     this.alergenMenu = [];
     const strAllergen = this.place.allergensInMenu.toLocaleString();
     const splittedAllegerns = strAllergen.split(',');
