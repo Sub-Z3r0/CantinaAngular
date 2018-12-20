@@ -63,7 +63,6 @@ export class UpdateMenuComponent implements OnInit {
     if ( mainFood.recipeLines.toString() !== "") {
       let str = mainFood.recipeLines.toLocaleString();
       var splitted = str.split(",");
-      console.log(splitted);
       for (let i = 0; i < splitted.length; i++) {
         const recip: RecipeLine = {ingredientsType: {ingredientName: splitted[i]}};
 

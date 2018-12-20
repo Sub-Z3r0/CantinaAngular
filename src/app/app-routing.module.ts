@@ -3,7 +3,6 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {AddMenuComponent} from './Menues/add-menu/add-menu.component';
 import {PopUpComponent} from './Allergen/pop-up/pop-up.component';
 import {AdminViewComponent} from './admin-view/admin-view.component';
-import {AddWorkerComponent} from './Workers/add-worker/add-worker.component';
 import {SubmitFoodComponent} from './submit-food/submit-food.component';
 import {ChooseMainPageItemsComponent} from './choose-main-page-items/choose-main-page-items.component';
 import {NgModule} from '@angular/core';
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'add-specielOffers', component: AddSpecieloffersComponent , canActivate: [AuthGuard]},
   { path: 'menu-update/:id', component: MenuUpdateComponent, canActivate: [AuthGuard]},
   { path: 'update-mainfood/:id', component: UpdateMenuComponent, canActivate: [AuthGuard]},
-  { path: 'adminview/addworker', component: AddWorkerComponent , canActivate: [AuthGuard]},
   { path: 'allergen', component: PopUpComponent , canActivate: [AuthGuard]},
   { path: 'submit-food', component: SubmitFoodComponent, canActivate: [AuthGuard]},
   { path: 'app-choose-main-page-items', component: ChooseMainPageItemsComponent , canActivate: [AuthGuard]},

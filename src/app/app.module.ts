@@ -11,8 +11,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AuthenticationService} from './shared/Service/authentication.service';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { PopUpComponent } from './Allergen/pop-up/pop-up.component';
-import {WorkerService} from './shared/Service/worker.service';
-import { AddWorkerComponent } from './Workers/add-worker/add-worker.component';
 import { SubmitFoodComponent } from './submit-food/submit-food.component';
 import { ChooseMainPageItemsComponent } from './choose-main-page-items/choose-main-page-items.component';
 import {AuthGuard} from './_guards/auth.guard';
@@ -23,11 +21,9 @@ import {MenuUpdateComponent} from './specialOffers-update/menu-update.component'
 import {
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatProgressSpinnerModule, MatSelectModule,
-} from '@angular/material';
+  MatProgressSpinnerModule, } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {NgxTypeaheadModule} from "ngx-typeahead";
 import { UpdateMenuComponent } from './Menues/update-menu/update-menu.component';
@@ -43,7 +39,6 @@ import { UpdateMenuComponent } from './Menues/update-menu/update-menu.component'
     ChooseMainPageItemsComponent,
     AdminViewComponent,
     PopUpComponent,
-    AddWorkerComponent,
     SubmitFoodComponent,
     SearchBoxComponent,
     AddMotdComponent,
@@ -69,8 +64,7 @@ import { UpdateMenuComponent } from './Menues/update-menu/update-menu.component'
   ],
   providers: [
     AuthenticationService,
-    AuthGuard,
-    WorkerService
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

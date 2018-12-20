@@ -16,37 +16,18 @@ export class MainFoodService {
 
   }
 
-  dailyFoodList: MainFood[] = [];
   getMainFood(): Observable<MainFood[]>
   {
     return this.http.get<MainFood[]>
     (this.apiUrl);
   }
 
-  chooseDailyFood( dailyFood: MainFood)
-  {
-
-    console.log(this.dailyFoodList);
-    this.dailyFoodList.push(dailyFood);
-
-  }
-  readDailyFood() : MainFood[]
-  {
-    return JSON.parse(localStorage.getItem('dailyFood'));
-  }
 
   addMainFood(mainFood : MainFood): Observable<MainFood>
   {
     return this.http.post<MainFood>(this.apiUrl, mainFood);
-  }/*
-  upgradeMainFood(mainFood:MainFood){
-    const foodToUpdate = this.mainFood.find(mf => mf.id === mainFood.id);
-    const index = this.mainFood.indexOf(foodToUpdate);
-    this.mainFood[index] = mainFood;
   }
-  deleteMainFood(id: number) {
-    this.mainFood = this.mainFood.filter(mf => mf.id !== id);
-  }*/
+
   UpdateToDaily(mainFood: MainFood): Observable<MainFood> {
    return this.http.put<MainFood>(this.apiUrl + '/' + mainFood.id, mainFood);
 

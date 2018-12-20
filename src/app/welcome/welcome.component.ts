@@ -50,7 +50,7 @@ export class WelcomeComponent implements OnInit {
     this.motdService.getMOTDAll().subscribe(m =>
     {
       this.motdList = m;
-      this.motdService.getMOTDById(this.motdList[Math.floor(Math.random()*this.motdList.length)+1].id)
+      this.motdService.getMOTDById(this.motdList[Math.floor(Math.random()*this.motdList.length)].id)
         .subscribe(listOfMessages => {
           this.motd = listOfMessages;
         });

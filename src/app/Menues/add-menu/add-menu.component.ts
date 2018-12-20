@@ -60,7 +60,6 @@ export class AddMenuComponent implements OnInit {
 
     const str = this.place.recipeLines.toLocaleString();
     const splitted = str.split(',');
-    console.log(splitted);
     for (let i = 0; i < splitted.length; i++) {
       const recip: RecipeLine = {ingredientsType: {ingredientName: splitted[i]}};
 
@@ -82,8 +81,6 @@ export class AddMenuComponent implements OnInit {
 
     this.mainFood.foodDate = this.today;
 
-
-    console.log(this.mainFood);
 
     this.menuService.addMainFood(this.mainFood)
       .subscribe(() => {
